@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Nav } from "react-bootstrap";
-import styles from '../../css/Layout.module.css'
+import styles from '../../css/Layout.module.css';
 
 /// props.children
 
@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
           <main>{children}</main>
           </Col>
         </Row>
-        <Row class="footer">
+        <Row>
           <Col xs="12">
             <p>Es el footer</p>
           </Col>
