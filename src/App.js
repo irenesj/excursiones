@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       <Layout>
-      <Filters />
+       <Filters/>
       </Layout>
     </div>
   );

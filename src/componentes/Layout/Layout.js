@@ -3,13 +3,12 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import styles from '../../css/Layout.module.css';
 
-/// props.children
 
 const Layout = ({ children }) => {
 
     return(
       <Container>
-        <Row>
+        <Row className={styles.nav}>
           <Col xs="12" md="7">
             <Nav>
               <Nav.Item>
@@ -23,9 +22,9 @@ const Layout = ({ children }) => {
               </Nav.Item>
             </Nav>
           </Col>
-          <Col md="5">
+          <Col className={styles.searchBar} md="5">
             <div class="form-group">
-              <input type="search"  class="form-control"/>
+              <input placeholder="Busca el sitio al que quieres ir..." type="search"  class="form-control"/>
             </div>
           </Col>
         </Row>
@@ -34,9 +33,9 @@ const Layout = ({ children }) => {
           <main>{children}</main>
           </Col>
         </Row>
-        <Row>
+        <Row className={styles.footer}>
           <Col xs="12">
-            <p>Es el footer</p>
+            <p>Este es el footer</p>
           </Col>
         </Row>
         </Container>

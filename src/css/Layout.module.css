@@ -1,7 +1,30 @@
+.nav {
+
+  
+
+}
+
+.nav a{
+
+    color: #7db83f;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    
+
+}
+
+.searchBar {
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 .footer {
     
     position: fixed;
     bottom: 10px;
-    left: 150px;
+    left: 600px;
 
 }
