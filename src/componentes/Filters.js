@@ -1,22 +1,30 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import {ListGroup} from 'react-bootstrap';
-
-
-
+import {Col, Container, ListGroup, Row} from 'react-bootstrap';
+import styles from '../css/Filters.module.css';
 
 function Filters(){
 
     return(
-        <div>
-        <ListGroup>
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-        <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-        </ListGroup>
-        </div>
+       
+      <Row>
+          <Col xs="3">
+            <ListGroup variant="flush">
+                    <ListGroup.Item><a href="#">Taramundi</a></ListGroup.Item>
+                    <ListGroup.Item><a href="#">Oviedo</a></ListGroup.Item>
+                    <ListGroup.Item>Cangas de Onís</ListGroup.Item>
+                    <ListGroup.Item>Ribadesella</ListGroup.Item>
+                    <ListGroup.Item>Picos de Europa</ListGroup.Item>
+                    <ListGroup.Item>Río Sella</ListGroup.Item>
+                    <ListGroup.Item>Gijón</ListGroup.Item>
+                    <ListGroup.Item>Llanes</ListGroup.Item>
+                    <ListGroup.Item>Parque natural de Ponga</ListGroup.Item>
+                    <ListGroup.Item>Lastres</ListGroup.Item>
+                </ListGroup>
+            </Col>
+      </Row>
+                
+       
     );
 
 }

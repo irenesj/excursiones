@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
           <Col xs="12" md="7">
             <Nav>
               <Nav.Item>
-                <Nav.Link href="/home">***</Nav.Link>
+                <Nav.Link href="/home">Viajar Juntos</Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link href="">Regístrate</Nav.Link>
@@ -35,7 +35,10 @@ const Layout = ({ children }) => {
         </Row>
         <Row className={styles.footer}>
           <Col xs="12">
-            <p>Este es el footer</p>
+            <p>Copyright © 2022 Viajar Juntos. Todos los derechos reservados.</p>    
+            <p>Contacto: viajarjuntos@gmail.com</p>    
+            <p>Redes sociales</p>
+            <a href="#">Facebook</a> <a href="#">Instagram</a>
           </Col>
         </Row>
         </Container>

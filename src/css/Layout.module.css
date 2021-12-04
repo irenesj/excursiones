@@ -1,18 +1,26 @@
 .nav {
 
-  
+    border-radius: 5px;
+    background-color: #80C900;
 
 }
 
 .nav a{
 
-    color: #7db83f;
+    color: white;
     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     font-weight: bold;
-    padding-top: 20px;
-    padding-bottom: 15px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    transition: .5s;
     
 
+}
+
+.nav a:hover{
+
+    color: white;
+    background-color: #2F4A00;
 }
 
 .searchBar {
@@ -22,9 +30,19 @@
 }
 
 .footer {
-    
+
     position: fixed;
     bottom: 10px;
-    left: 600px;
+    left: 40%;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    text-align: center;
+
+}
+
+.footer a {
+
+    text-decoration: none;
+    color: #80C900;
 
 }
