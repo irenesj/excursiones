@@ -8,7 +8,7 @@ function Register(){
 
         <Container>
             <Row>
-                <h4>Regístrate para poder añadir y/o apuntarte a excursiones</h4>
+                <p>Tienes que registrarte para poder añadir y/o apuntarte a nuestras excursiones</p>
             </Row>
             <Row>
                 <Col xs="10">
