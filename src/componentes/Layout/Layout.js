@@ -13,13 +13,13 @@ const Layout = ({ children }) => {
           <Col xs="12" md="7">
             <Nav>
               <Nav.Item>
-                <Nav.Link href="/home">Viajar Juntos</Nav.Link>
+                <Nav.Link><Link to="/">Viajar Juntos</Link></Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="">Regístrate</Nav.Link>
+                <Nav.Link><Link to="register">Regístrate</Link></Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link>Inicia sesión</Nav.Link>
+                <Nav.Link><Link to="login">Inicia sesión</Link></Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>
@@ -37,8 +37,7 @@ const Layout = ({ children }) => {
         <Row className={styles.footer}>
           <Col xs="12">
             <p>Copyright © 2022 Viajar Juntos. Todos los derechos reservados.</p>    
-            <p><a href="mailto:viajarjuntos@gmail.com">Contacto</a></p>    
-            <p>Redes sociales</p>
+            <p><a href="mailto:viajarjuntos@gmail.com">Contacto</a></p>
           </Col>
         </Row>
         </Container>

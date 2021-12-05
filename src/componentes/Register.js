@@ -7,7 +7,7 @@ function Register(){
 
         <Container>
             <Row>
-                <Col>
+                <Col xs="10">
                     <Form>
                         <Row className="mb-3">
                             <Form.Group as={Col} controlId="formGridEmail">
