@@ -12,8 +12,8 @@ const Layout = ({ children }) => {
         <Row className={styles.nav}>
           <Col xs="12" md="7">
             <Nav>
-              <Nav.Item className={styles.logo}>
-               Excursiones Juntos
+              <Nav.Item>
+                ***
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link><Link to="register">Regístrate</Link></Nav.Link>
