@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
                 <Nav.Link href="">Regístrate</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link href="">Inicia sesión</Nav.Link>
+                <Nav.Link>Inicia sesión</Nav.Link>
               </Nav.Item>
             </Nav>
           </Col>

@@ -10,8 +10,8 @@ function Filters(){
       <Row>
           <Col xs="3">
             <ListGroup variant="flush">
-                    <ListGroup.Item><a href="#">Taramundi</a></ListGroup.Item>
-                    <ListGroup.Item><a href="#">Oviedo</a></ListGroup.Item>
+                    <ListGroup.Item>Taramundi</ListGroup.Item>
+                    <ListGroup.Item>Oviedo</ListGroup.Item>
                     <ListGroup.Item>Cangas de Onís</ListGroup.Item>
                     <ListGroup.Item>Ribadesella</ListGroup.Item>
                     <ListGroup.Item>Picos de Europa</ListGroup.Item>
