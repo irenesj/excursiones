@@ -1,11 +1,15 @@
 import React from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import styles from '../css/Register.module.css';
 
 function Register(){
 
     return(
 
         <Container>
+            <Row>
+                <h4>Regístrate para poder añadir y/o apuntarte a excursiones</h4>
+            </Row>
             <Row>
                 <Col xs="10">
                     <Form>

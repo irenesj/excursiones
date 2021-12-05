@@ -1,31 +1,39 @@
 .nav {
 
     border-radius: 5px;
-    background-color: #80C900;
+    background-color: #95bd51;
 
 }
 
 .nav a{
 
     color: white;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
-    font-weight: bold;
+    font-family:'Franklin Gothic Medium', Arial, sans-serif;
+    font-size: 18px; 
+    font-weight: normal; 
+    line-height: 40px; 
+    margin-left: 8px;
     padding-top: 25px;
     padding-bottom: 20px;
-    transition: .5s;
-    
 
 }
 
-.nav a:hover{
+.logo{
 
-    color: white;
-    background-color: #2F4A00;
+    color: #373D2D;
+    font-family: 'Trocchi';
+    font-size: 30px; 
+    font-weight: bold; 
+    font-style: italic;
+    line-height: 40px; 
+    margin: 0;
+    padding-top: 25px;
+    padding-bottom: 20px;
 }
 
 .searchBar {
 
-    padding-top: 15px;
+    padding-top: 25px;
     padding-bottom: 15px;
 }
 
@@ -43,6 +51,6 @@
 .footer a {
 
     text-decoration: none;
-    color: #80C900;
+    color: #95bd51;
 
 }

@@ -8,7 +8,7 @@ function Login(){
     return(
         <Container>
             <Row>
-                <Col xs="5">
+                <Col xs="4">
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Correo electrónico</Form.Label>
