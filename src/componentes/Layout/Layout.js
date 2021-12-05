@@ -1,5 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import styles from '../../css/Layout.module.css';
 
@@ -36,9 +37,8 @@ const Layout = ({ children }) => {
         <Row className={styles.footer}>
           <Col xs="12">
             <p>Copyright © 2022 Viajar Juntos. Todos los derechos reservados.</p>    
-            <p>Contacto: viajarjuntos@gmail.com</p>    
+            <p><a href="mailto:viajarjuntos@gmail.com">Contacto</a></p>    
             <p>Redes sociales</p>
-            <a href="#">Facebook</a> <a href="#">Instagram</a>
           </Col>
         </Row>
         </Container>

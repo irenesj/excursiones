@@ -38,7 +38,7 @@ function Register(){
                                 <Form.Control />
                             </Form.Group>
 
-                            <Form.Group as={Col} controlId="formGridState">
+                            <Form.Group as={Col} controlId="formGridCommunity">
                                 <Form.Label>Comunidad Autónoma</Form.Label>
                                 <Form.Select defaultValue="Elige...">
                                     <option>Elige...</option>
@@ -62,31 +62,84 @@ function Register(){
                                 </Form.Select>
                             </Form.Group>
 
-                            <Form.Group as={Col} controlId="formGridState">
+                            <Form.Group as={Col} controlId="formGridProvince">
                                 <Form.Label>Provincia</Form.Label>
                                 <Form.Select defaultValue="Elige...">
                                     <option>Elige...</option>
-                                    <option>Andalucía</option>
-                                    <option>Aragón</option>
+                                    <optgroup label="Andalucía">
+                                        <option>Almería</option>
+                                        <option>Cádiz</option>
+                                        <option>Cordoba</option>
+                                        <option>Granada</option>
+                                        <option>Huelva</option>
+                                        <option>Jaén</option>
+                                        <option>Málaga</option>
+                                        <option>Sevilla</option>
+                                    </optgroup>
+                                    <optgroup label="Aragón">
+                                        <option>Huesca</option>
+                                        <option>Teruel</option>
+                                        <option>Zaragoza</option>
+                                    </optgroup>
                                     <option>Asturias</option>
                                     <option>Cantabria</option>
-                                    <option>Castilla La Mancha</option>
-                                    <option>Castilla y León</option>
-                                    <option>Cataluña</option>
-                                    <option>Extremadura</option>
-                                    <option>Galicia</option>
+                                    <optgroup label="Castilla La Mancha">
+                                        <option>Albacete</option>
+                                        <option>Ciudad Real</option>
+                                        <option>Cuenca</option>
+                                        <option>Guadalajara</option>
+                                        <option>Toledo</option>
+                                    </optgroup>
+                                    <optgroup label="Castilla y León">
+                                        <option>Ávila</option>
+                                        <option>Burgos</option>
+                                        <option>León</option>
+                                        <option>Palencia</option>
+                                        <option>Salamanca</option>
+                                        <option>Segovia</option>
+                                        <option>Soria</option>
+                                        <option>Valladolid</option>
+                                        <option>Zamora</option>
+                                    </optgroup>
+                                    <optgroup label="Cataluña">
+                                        <option>Barcelona</option>
+                                        <option>Gerona</option>
+                                        <option>Lérida</option>
+                                        <option>Tarragona</option>
+                                    </optgroup>
+                                    <optgroup label="Extremadura">
+                                        <option>Badajoz</option>
+                                        <option>Cáceres</option>
+                                    </optgroup>
+                                    <optgroup label="Galicia">
+                                        <option>La Coruña</option>
+                                        <option>Lugo</option>
+                                        <option>Orense</option>
+                                        <option>Pontevedra</option>
+                                    </optgroup>
                                     <option>Islas Baleares</option>
-                                    <option>Canarias</option>
+                                    <optgroup label="Canarias">
+                                        <option>Las Palmas</option>
+                                        <option>Santa Cruz de Tenerife</option>
+                                    </optgroup>
                                     <option>La Rioja</option>
                                     <option>Madrid</option>
                                     <option>Murcia</option>
                                     <option>Navarra</option>
-                                    <option>País Vasco</option>
-                                    <option>Valencia</option>
+                                    <optgroup label="País Vasco">
+                                        <option>Álava</option>
+                                        <option>Guipúzcua</option>
+                                        <option>Vizcaya</option>
+                                    </optgroup>
+                                    <optgroup label="Valencia">
+                                        <option>Alicante</option>
+                                        <option>Castellón</option>
+                                        <option>Valencia</option>
+                                    </optgroup>
                                 </Form.Select>
                             </Form.Group>
 
-                            <Form.Group as={Col} controlId="formGridZip">
+                            <Form.Group as={Col} controlId="formGridPostalCode">
                                 <Form.Label>Código postal</Form.Label>
                                 <Form.Control />
                             </Form.Group>

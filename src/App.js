@@ -10,7 +10,6 @@ function App() {
     <div>
       <Layout>
        <Filters/>
-       <Register/>
       </Layout>
     </div>
   );
