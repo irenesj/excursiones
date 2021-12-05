@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
         <Row className={styles.footer}>
           <Col xs="12">
             <p>Copyright © 2022 Excursiones Juntos. Todos los derechos reservados.</p>    
-            <p><a href="mailto:viajarjuntos@gmail.com">Contacto</a></p>
+            <p><a href="mailto:excursionesjuntos@gmail.com">Contacto</a></p>
           </Col>
         </Row>
         </Container>
