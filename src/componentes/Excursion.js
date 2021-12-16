@@ -4,10 +4,11 @@ function Excursion(props){
 
     return(
         <div>
-            Nombre: {props.nombre}
-            Zona:
-            Dificultad:
-            Descripción:
+            Nombre: {props.nombre} <br/>
+            Zona: {props.zona} <br/>
+            Dificultad: {props.dificultad} <br/>
+            Horas estimadas para completar el trayecto: {props.horas} <br/>
+            Descripción: {props.descripcion} <br/><br/>
         </div>
     );
 }

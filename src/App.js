@@ -8,7 +8,6 @@ function App() {
   return (
     <div>
       <Layout>
-       
       </Layout>
     </div>
   );

@@ -11,7 +11,6 @@ function Filters(){
         <ListGroup.Item>Taramundi</ListGroup.Item>
         <ListGroup.Item>Oviedo</ListGroup.Item>
         <ListGroup.Item>Cangas de Onís</ListGroup.Item>
-        <ListGroup.Item>Ribadesella</ListGroup.Item>
         <ListGroup.Item>Picos de Europa</ListGroup.Item>
         <ListGroup.Item>Río Sella</ListGroup.Item>
         <ListGroup.Item>Gijón</ListGroup.Item>
