@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import styles from '../../css/Layout.module.css';
+import Filters from "../Filters";
+import Excursions from "../Excursions";
 
 
 const Layout = ({ children }) => {
@@ -32,6 +34,14 @@ const Layout = ({ children }) => {
         <Row>
           <Col>
           <main>{children}</main>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs="3">
+            <Filters/>
+          </Col>
+          <Col xs="9">
+            <Excursions/>
           </Col>
         </Row>
         <Row className={styles.footer}>
