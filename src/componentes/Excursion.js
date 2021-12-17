@@ -5,10 +5,10 @@ function Excursion(props){
     return(
         <div>
             <img src="" height="200px" width="400px" alt="Excursiones"/>
-            Nombre: {props.nombre} <br/>
+            {props.nombre} <br/>
             Zona: {props.zona} <br/>
             Dificultad: {props.dificultad} <br/>
-            Horas estimadas para completar el trayecto: {props.horas} <br/>
+            Horas estimadas: {props.horas} <br/>
             Descripción: {props.descripcion} <br/><br/>
         </div>
     );
