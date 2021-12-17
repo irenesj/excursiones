@@ -1,4 +1,20 @@
-.login {
+.login{
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.form {
+    background: #95bd51;
+    padding: 1.5em;
+    border-radius: 1em;
     
+}
+
+.btn{
+
+    text-align: center;
 }

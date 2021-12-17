@@ -2,24 +2,37 @@
 
     border-radius: 5px;
     background-color: #95bd51;
+    border-radius: 0.5em;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 20px;
 
+}
+
+.logo{
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 35px;
+    font-weight: bolder;
+    font-style: italic;
+    padding-bottom: 15px;
+    padding-left: 10px;
 }
 
 .nav a{
 
     color: white;
     font-family:'Franklin Gothic Medium', Arial, sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    padding-top: 30px;
-    padding-bottom: 20px;
+    padding-top: 18px;
+    padding-left: 20px;
 
 }
 
 .searchBar {
 
-    padding-top: 25px;
-    padding-bottom: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .footer {
@@ -36,6 +49,7 @@
 .footer a {
 
     text-decoration: none;
+    font-weight: bold;
     color: #95bd51;
 
 }

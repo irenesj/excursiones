@@ -6,21 +6,18 @@ function Register(){
 
     return(
 
-        <Container>
+        <Container className={styles.register}>
             <Row>
-                <p>Tienes que registrarte para poder añadir y/o apuntarte a nuestras excursiones</p>
-            </Row>
-            <Row>
-                <Col xs="10">
-                    <Form>
+                <Col xs="12">
+                    <Form className={styles.form}>
                         <Row className="mb-3">
                             <Form.Group as={Col} controlId="formGridEmail">
-                                <Form.Label>Correo electrónico</Form.Label>
+                                <Form.Label>Correo electrónico *</Form.Label>
                                 <Form.Control type="email" placeholder="Escribe tu correo electrónico" />
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridPassword">
-                                <Form.Label>Contraseña</Form.Label>
+                                <Form.Label>Contraseña *</Form.Label>
                                 <Form.Control type="password" placeholder="Escribe tu contraseña" />
                             </Form.Group>
                         </Row>
@@ -38,12 +35,12 @@ function Register(){
                         <Row className="mb-3">
 
                             <Form.Group as={Col} controlId="formGridCity">
-                                <Form.Label>Ciudad</Form.Label>
+                                <Form.Label>Ciudad *</Form.Label>
                                 <Form.Control />
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridCommunity">
-                                <Form.Label>Comunidad Autónoma</Form.Label>
+                                <Form.Label>Comunidad Autónoma *</Form.Label>
                                 <Form.Select defaultValue="Elige...">
                                     <option>Elige...</option>
                                     <option>Andalucía</option>
@@ -67,7 +64,7 @@ function Register(){
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridProvince">
-                                <Form.Label>Provincia</Form.Label>
+                                <Form.Label>Provincia *</Form.Label>
                                 <Form.Select defaultValue="Elige...">
                                     <option>Elige...</option>
                                     <optgroup label="Andalucía">
@@ -144,14 +141,25 @@ function Register(){
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="formGridPostalCode">
-                                <Form.Label>Código postal</Form.Label>
+                                <Form.Label>Código postal *</Form.Label>
                                 <Form.Control />
                             </Form.Group>
-                        </Row>
 
-                        <Button variant="primary" type="submit">
-                            Regístrate
-                        </Button>
+                            <Form.Group>
+                                <Form.Text className="text-muted">
+                                <ul className={styles.list}>
+                                    <li>Debes estar registrado para poder añadir y/o apuntarte a una excursión.</li>
+                                    <li>Los campos que llevan el asterisco &#40;*&#41; son obligatorios.</li>
+                                </ul>
+                                </Form.Text>
+                            </Form.Group>
+
+                        </Row>
+                        <div className={styles.btn}>
+                            <Button variant="primary" type="submit">
+                                Regístrate
+                            </Button>
+                        </div>
                     </Form>
                 </Col>
             </Row>

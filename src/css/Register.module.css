@@ -1,4 +1,26 @@
 .register{
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+   
+}
+
+.form {
+    background: #95bd51;
+    padding: 1.5em;
+    border-radius: 1em;
     
+}
+
+.list{
+    
+    margin-top: 10px;
+}
+
+.btn{
+
+    text-align: center;
+    padding-top: 30px;
 }
