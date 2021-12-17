@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import {Col, Container, ListGroup, Row} from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
 import styles from '../css/Filters.module.css';
 
 function Filters(){
