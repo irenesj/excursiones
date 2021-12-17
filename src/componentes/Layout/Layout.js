@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
           <Col xs="12" md="7">
             <Nav>
               <Nav.Item>
-                ***
+                Viajar Juntos  
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link><Link to="register">Regístrate</Link></Nav.Link>
@@ -46,8 +46,8 @@ const Layout = ({ children }) => {
         </Row>
         <Row className={styles.footer}>
           <Col xs="12">
-            <p>Copyright © 2022 Excursiones Juntos. Todos los derechos reservados.</p>    
-            <p><a href="mailto:excursionesjuntos@gmail.com">Contacto</a></p>
+            <p>Copyright © 2022 Viajar Juntos. Todos los derechos reservados.</p>    
+            <p><a href="mailto:viajarjuntos@gmail.com">Contacto</a></p>
           </Col>
         </Row>
         </Container>
