@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
         </Row>
         <Row className={styles.footer}>
           <Col xs="12">
-            <p>Copyright © 2022 Viajar Juntos. Todos los derechos reservados.</p>    
+            <p>© Viajar Juntos 2022. Todos los derechos reservados.</p>    
             <p><a href="mailto:viajarjuntos@gmail.com">Contacto</a></p>
           </Col>
         </Row>
