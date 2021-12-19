@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
           </Col>
           <Col className={styles.searchBar} md="5">
             <div class="form-group">
-              <input placeholder="Busca el sitio al que quieres ir..." type="search"  class="form-control"/>
+              <input placeholder="Busca el sitio al que quieres ir" type="search"  class="form-control"/>
             </div>
           </Col>
         </Row>
