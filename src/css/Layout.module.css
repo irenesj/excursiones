@@ -1,6 +1,5 @@
 .nav {
 
-    border-radius: 5px;
     background-color: #95bd51;
     border-radius: 0.5em;
     color: white;
@@ -37,12 +36,12 @@
 
 .footer {
 
-    /*position: fixed;*/
+    background-color: #95bd51;
     bottom: 10px;
-    /*left: 40%;*/
     margin: 0 auto;
     padding-top: 25px;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
+    border-radius: 0.5em;
     text-align: center;
 
 }
@@ -51,6 +50,6 @@
 
     text-decoration: none;
     font-weight: bold;
-    color: #95bd51;
+    color: white;
 
 }

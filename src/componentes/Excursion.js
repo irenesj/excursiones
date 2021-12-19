@@ -1,9 +1,11 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import styles from '../css/Excursion.module.css';
 
 function Excursion(props){
 
     return(
-        <div>
+        <div className={styles.excursion}>
             <img src="" height="200px" width="400px" alt="Excursiones"/>
             {props.nombre} <br/>
             Zona: {props.zona} <br/>

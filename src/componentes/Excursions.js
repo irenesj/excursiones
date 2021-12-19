@@ -1,4 +1,5 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Excursions.module.css';
 import Excursion from "./Excursion";
 
