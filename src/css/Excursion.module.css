@@ -12,9 +12,16 @@
 
 }
 
+.title{
+
+    font-size: large;
+    font-weight: bold;
+}
+
 img{
 
     height: 300px ; 
     width: 500px; 
     margin-right: 30px;
+    margin-bottom: 30px;
 }
