@@ -14,7 +14,7 @@ function Excursion(props){
             Horas estimadas: {props.horas} <br/>
             Descripción: {props.descripcion} <br/><br/>
         </div>
-        
+
     );
 }
 
