@@ -10,7 +10,7 @@ import Excursions from "../Excursions";
 const Layout = ({ children }) => {
 
     return(
-      <Container>
+      <Container className={styles.container}>
         <Row className={styles.nav}>
           <Col xs="12" md="7">
             <Nav>

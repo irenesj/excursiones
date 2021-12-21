@@ -6,7 +6,7 @@ function Excursion(props){
 
     return(
         <div className={styles.excursion}>
-            <img src="" height="200px" width="400px" alt="Excursiones"/>
+            <img src="" alt="Excursiones" align="left"/>
             {props.nombre} <br/>
             Zona: {props.zona} <br/>
             Dificultad: {props.dificultad} <br/>

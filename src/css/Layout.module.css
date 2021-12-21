@@ -1,12 +1,21 @@
+.container{
+
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+
+}
+
 .nav {
 
     background-color: #95bd51;
-    border-radius: 0.5em;
     color: white;
     font-size: 18px;
     font-weight: bold;
     padding-top: 20px;
-
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    
 }
 
 .logo{
@@ -36,20 +45,19 @@
 
 .footer {
 
-    background-color: #95bd51;
-    bottom: 10px;
+    bottom: 30px;
     margin: 0 auto;
-    padding-top: 25px;
-    padding-bottom: 10px;
-    border-radius: 0.5em;
+    padding-top: 55px;
+    padding-bottom: 40px;
+    border-top: 0.1px solid black;
     text-align: center;
 
 }
 
 .footer a {
 
+    color: #95bd51;
     text-decoration: none;
     font-weight: bold;
-    color: white;
 
 }
