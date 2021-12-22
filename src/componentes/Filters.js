@@ -16,7 +16,6 @@ function Filters(){
         <ListGroup.Item className={styles.filters}>Río Sella</ListGroup.Item>
         <ListGroup.Item className={styles.filters}>Gijón</ListGroup.Item>
         <ListGroup.Item className={styles.filters}>Llanes</ListGroup.Item>
-        <ListGroup.Item className={styles.filters}>Parque natural de Ponga</ListGroup.Item>
         <ListGroup.Item className={styles.filters}>Lastres</ListGroup.Item>
       </ListGroup>
       </div>
