@@ -1,5 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import { Button } from "react-bootstrap";
 import styles from '../css/Excursion.module.css';
 
 function Excursion(props){
@@ -13,6 +14,7 @@ function Excursion(props){
             Dificultad: {props.dificultad} <br/>
             Horas estimadas: {props.horas} <br/>
             Descripción: {props.descripcion} <br/><br/>
+            <Button variant="success">Apuntarse</Button>
         </div>
 
     );
