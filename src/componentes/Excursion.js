@@ -9,11 +9,11 @@ function Excursion(props){
 
         <div className={styles.excursion}>
             <img src="" alt="Excursiones"/>
-            <div className={styles.title}>{props.nombre}</div> <br/>
-            Zona: {props.zona} <br/>
-            Dificultad: {props.dificultad} <br/>
-            Horas estimadas: {props.horas} <br/>
-            Descripción: {props.descripcion} <br/><br/>
+            <div className={styles.title}>{props.name}</div> <br/>
+            Zona: {props.area} <br/>
+            Dificultad: {props.dificulty} <br/>
+            Horas estimadas: {props.hours} <br/>
+            Descripción: {props.description} <br/><br/>
             <Button variant="success">Apuntarse</Button>
         </div>
 
