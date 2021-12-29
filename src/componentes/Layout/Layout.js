@@ -12,13 +12,18 @@ const Layout = ({ children }) => {
     return(
       <Container className={styles.container}>
         <Row className={styles.nav}>
-          <Col xs="12" md="7">
+          <Col xs="12">
             <Nav>
               <div className={styles.logo}>
                 <Nav.Item>
                   Viajar Juntos  
                 </Nav.Item>
               </div>
+              <Nav.Item className={styles.searchBar} md="5">
+                <div class="form-group">
+                  <input placeholder="Busca una excursión" type="search"  class="form-control"/>
+                </div>
+              </Nav.Item>
               <Nav.Item>
                 <Nav.Link><Link to="register">Regístrate</Link></Nav.Link>
               </Nav.Item>
@@ -26,12 +31,7 @@ const Layout = ({ children }) => {
                 <Nav.Link><Link to="login">Inicia sesión</Link></Nav.Link>
               </Nav.Item>
             </Nav>
-          </Col>
-          <Col className={styles.searchBar} md="5">
-            <div class="form-group">
-              <input placeholder="Busca el sitio al que quieres ir" type="search"  class="form-control"/>
-            </div>
-          </Col>
+          </Col> 
         </Row>
         <Row>
           <Col>

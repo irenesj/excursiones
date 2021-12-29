@@ -25,7 +25,8 @@
     font-weight: bolder;
     font-style: italic;
     padding-bottom: 15px;
-    padding-left: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .nav a{
@@ -33,7 +34,7 @@
     color: white;
     font-family:'Franklin Gothic Medium', Arial, sans-serif;
     padding-top: 18px;
-    padding-left: 12px;
+    text-decoration: none;
 
 }
 
