@@ -12,20 +12,20 @@ const Layout = ({ children }) => {
     return(
       <Container className={styles.container}>
         <Row className={styles.nav}>
-          <Col xs="12">
-            <Nav>
-              <div className={styles.logo}>
-                <Nav.Item>
-                  Viajar Juntos  
-                </Nav.Item>
-              </div>
+          <Col xs="4">
+            <div className={styles.logo}>
+              Viajar Juntos  
+            </div>
+          </Col>
+          <Col xs="8">
+            <Nav className="justify-content-end">
               <Nav.Item className={styles.searchBar} md="5">
                 <div class="form-group">
                   <input placeholder="Busca una excursión" type="search"  class="form-control"/>
                 </div>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link><Link to="register">Regístrate</Link></Nav.Link>
+                <Nav.Link className="ml-auto"><Link to="register">Regístrate</Link></Nav.Link>
               </Nav.Item>
               <Nav.Item>
                 <Nav.Link><Link to="login">Inicia sesión</Link></Nav.Link>

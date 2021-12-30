@@ -8,13 +8,15 @@ function Excursion(props){
     return(
 
         <div className={styles.excursion}>
+            <div className={styles.title}>{props.name}</div>
             <img src="" alt="Excursiones"/>
-            <div className={styles.title}>{props.name}</div> <br/>
-            Zona: {props.area} <br/>
-            Dificultad: {props.dificulty} <br/>
-            Horas estimadas: {props.hours} <br/>
-            Descripción: {props.description} <br/><br/>
-            <Button variant="success">Apuntarse</Button>
+            <div className={styles.bold}>Zona</div> {props.area} 
+            <div className={styles.bold}>Dificultad</div> {props.dificulty}
+            <div className={styles.bold}>Horas estimadas</div> {props.hours} 
+            <div className={styles.bold}>Descripción</div> {props.description} 
+            <div className={styles.btn}>
+                <Button variant="success">Apuntarse</Button>
+            </div>
         </div>
 
     );
