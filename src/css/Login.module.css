@@ -1,6 +1,6 @@
 .body{
 
-    background-color: #7ca339;
+    background-color: #517416;
     
 }
 
@@ -11,6 +11,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 
 }
 
