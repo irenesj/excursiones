@@ -30,6 +30,9 @@ const Layout = ({ children }) => {
               <Nav.Item>
                 <Nav.Link><Link to="login">Inicia sesión</Link></Nav.Link>
               </Nav.Item>
+              <Nav.Item>
+                <Nav.Link><Link to="user">Usuario</Link></Nav.Link>
+              </Nav.Item>
             </Nav>
           </Col> 
         </Row>
