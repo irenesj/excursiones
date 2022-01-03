@@ -1,5 +1,6 @@
 .user{
 
+    background-color: white;
     margin-top: 200px;
     padding-bottom: 200px;
 }
@@ -15,7 +16,9 @@
 
     border-left: 0.05em solid;
     margin-top: 150px;
-    text-align: center;
+    font-size: large;
+    text-transform: uppercase;
+    text-decoration: underline;
 }
 
 .title{

@@ -12,7 +12,7 @@ function Excursion(props){
             <img src="" alt="Excursiones"/>
             <div className={styles.bold}>Zona</div> {props.area} 
             <div className={styles.bold}>Dificultad</div> {props.dificulty}
-            <div className={styles.bold}>Horas estimadas</div> {props.hours} 
+            <div className={styles.bold}>Tiempo estimado</div> {props.time} 
             <div className={styles.bold}>Descripción</div> {props.description} 
         </div>
 

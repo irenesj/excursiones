@@ -6,6 +6,7 @@ import styles from '../css/User.module.css';
 function User(){
 
     return(
+
         <Container className={styles.user}>
             <Row>
                 <Col xs="4">
@@ -19,6 +20,7 @@ function User(){
                 </Col>
             </Row>
         </Container>
+
     );
 }
 
