@@ -1,11 +1,13 @@
 .userImage{
 
     margin-top: 200px;
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
 }
 
 .userInfo{
 
-    margin-top: 250px;
+    border-left: 0.05em solid;
+    margin-top: 150px;
+    text-align: center;
 }

@@ -8,13 +8,13 @@ function User(){
     return(
         <Container>
             <Row>
-                <Col xs="3">
+                <Col xs="4">
                     <Image className={styles.userImage} src="../images/user-icon.svg" roundedCircle />
-                </Col>
-                <Col className={styles.userInfo} xs="9">
                     Nombre
-                    Excursiones a las que has ido
-                    Excursiones favoritas
+                </Col>
+                <Col className={styles.userInfo} xs="8">
+                    <div>Excursiones favoritas</div>
+                    <div>Excursiones a las que has ido</div>
                     <Button variant="success">Añadir excursión</Button>
                 </Col>
             </Row>
