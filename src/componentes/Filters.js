@@ -9,7 +9,6 @@ function Filters(){
       
       <div>
         <ListGroup variant="flush">
-        <ListGroup.Item className={styles.filters}>Oviedo</ListGroup.Item>
         <ListGroup.Item className={styles.filters}>Cangas de Onís</ListGroup.Item>
         <ListGroup.Item className={styles.filters}>Picos de Europa</ListGroup.Item>
         <ListGroup.Item className={styles.filters}>Río Sella</ListGroup.Item>
