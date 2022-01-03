@@ -1,3 +1,9 @@
+.user{
+
+    margin-top: 200px;
+    padding-bottom: 200px;
+}
+
 .userImage{
 
     margin-top: 200px;
@@ -10,4 +16,9 @@
     border-left: 0.05em solid;
     margin-top: 150px;
     text-align: center;
+}
+
+.title{
+
+    font-weight: bold;
 }
