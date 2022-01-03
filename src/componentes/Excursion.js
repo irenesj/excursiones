@@ -14,9 +14,6 @@ function Excursion(props){
             <div className={styles.bold}>Dificultad</div> {props.dificulty}
             <div className={styles.bold}>Horas estimadas</div> {props.hours} 
             <div className={styles.bold}>Descripción</div> {props.description} 
-            <div className={styles.btn}>
-                <Button variant="success">Apuntarse</Button>
-            </div>
         </div>
 
     );
