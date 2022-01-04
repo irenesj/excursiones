@@ -10,6 +10,9 @@ function Excursions(){
 
     const url = 'http://localhost:3001/excursions';
 
+ 
+
+    // Side Effect
     useEffect(() => {
 
         fetch(url)
@@ -25,6 +28,7 @@ function Excursions(){
         });
 
     },[]);
+
 
     
 

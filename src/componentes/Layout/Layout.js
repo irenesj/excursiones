@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import styles from '../../css/Layout.module.css';
 import Filters from "../Filters";
 import Excursions from "../Excursions";
+import Excursion from "../Excursion";
 
 
 const Layout = ({ children }) => {
+
+    const [search, setSearch] = useState('lastres'); //useState
+
+    const url = 'http://localhost:3001/excursions?q=lastres';
+
+    useEffect(() => {
+
+        fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            console.log(data);
+            const searchs = data.map((search) => <Excursion {...search}/>);
+            setSearch(searchs);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+
+    },[]);
 
     return(
       <Container className={styles.container}>
