@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Excursion from "./Excursion";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Excursions.module.css';
-import Excursion from "./Excursion";
 
 
 function Excursions(){
@@ -35,7 +35,7 @@ function Excursions(){
     return(
 
         <div>
-            <h2>Próximas excursiones</h2>
+            <h2 className={styles.title}>Próximas excursiones</h2>
             {excursion}
         </div>
        

@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.css';
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
-import styles from '../../css/Layout.module.css';
 import Filters from "../Filters";
 import Excursions from "../Excursions";
-import Excursion from "../Excursion";
+import 'bootstrap/dist/css/bootstrap.css';
+import styles from '../../css/Layout.module.css';
 
 
 const Layout = ({ children }) => {
@@ -20,8 +19,7 @@ const Layout = ({ children }) => {
         .then((resp) => resp.json())
         .then(function(data) {
             console.log(data);
-            const searchs = data.map((search) => <Excursion {...search}/>);
-            setSearch(searchs);
+            
         })
         .catch(function(error) {
             console.log(error);
@@ -40,15 +38,15 @@ const Layout = ({ children }) => {
           <Col xs="8">
             <Nav className="justify-content-end">
               <Nav.Item className={styles.searchBar} md="5">
-                <div class="form-group">
-                  <input placeholder="Busca una excursión" type="search"  class="form-control"/>
+                <div className="form-group">
+                  <input placeholder="Busca una excursión" type="search"  className="form-control"/>
                 </div>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link className="ml-auto"><Link to="register">Regístrate</Link></Nav.Link>
+                <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link><Link to="login">Inicia sesión</Link></Nav.Link>
+                <Nav.Link as={Link} to="login">Inicia sesión</Nav.Link>
               </Nav.Item>
             </Nav>
           </Col> 
