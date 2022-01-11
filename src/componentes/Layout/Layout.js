@@ -6,10 +6,15 @@ import Excursions from "../Excursions";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
+const pressedKey = (event) => {
+
+  console.log(event);
+
+}
 
 const Layout = ({ children }) => {
 
-    const [search, setSearch] = useState('lastres'); //useState
+    const [search, setSearch] = useState(''); //useState
 
     const url = 'http://localhost:3001/excursions?q=lastres';
 
@@ -39,7 +44,7 @@ const Layout = ({ children }) => {
             <Nav className="justify-content-end">
               <Nav.Item className={styles.searchBar} md="5">
                 <div className="form-group">
-                  <input placeholder="Busca una excursión" type="search"  className="form-control"/>
+                  <input placeholder="Busca una excursión" type="search"  className="form-control" onKeyUp={pressedKey}/>
                 </div>
               </Nav.Item>
               <Nav.Item>
