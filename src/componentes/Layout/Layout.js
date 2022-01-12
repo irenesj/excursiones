@@ -7,9 +7,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
 const introKeyPressed = (event) => {
-
-  console.log(event);
-
+  
+  let search = document.getElementById("searchBar").value;  
+  console.log("Búsqueda: " + search);
+  
 }
 
 const Layout = ({ children }) => {
@@ -44,7 +45,7 @@ const Layout = ({ children }) => {
             <Nav className="justify-content-end">
               <Nav.Item className={styles.searchBar} md="5">
                 <div className="form-group">
-                  <input placeholder="Busca una excursión" type="search"  className="form-control" onKeyUp={introKeyPressed}/>
+                  <input id="searchBar" className="form-control" type="search"  placeholder="Busca una excursión" onKeyUp={introKeyPressed}/>
                 </div>
               </Nav.Item>
               <Nav.Item>

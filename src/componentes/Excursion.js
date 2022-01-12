@@ -1,6 +1,5 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Button } from "react-bootstrap";
 import styles from '../css/Excursion.module.css';
 
 function Excursion(props){
