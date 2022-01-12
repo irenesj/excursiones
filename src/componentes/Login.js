@@ -14,14 +14,14 @@ function Login(){
                         <Form className={styles.form}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Correo electrónico</Form.Label>
-                                <Form.Control type="email" placeholder="Escribe tu correo electrónico" />
+                                <Form.Control type="email"/>
                                 <Form.Text className="text-muted">
                                     Nunca compartiremos tu correo con nadie.
                                 </Form.Text>
                             </Form.Group>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Contraseña</Form.Label>
-                                <Form.Control type="password" placeholder="Escribe tu contraseña" />
+                                <Form.Control type="password"/>
                             </Form.Group>
                             <div className={styles.btn}>
                             <Button variant="primary" type="submit">

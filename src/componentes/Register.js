@@ -11,33 +11,42 @@ function Register(){
                 <Row>
                     <Col xs="12">
                         <Form className={styles.form}>
+
+                        <Row className="mb-3">
+                                <Form.Group as={Col} controlId="formGridAddress1">
+                                    <Form.Label>Nombre *</Form.Label>
+                                    <Form.Control/>
+                                </Form.Group>
+
+                                <Form.Group as={Col} controlId="formGridAddress2">
+                                    <Form.Label>Apellidos *</Form.Label>
+                                    <Form.Control/>
+                                </Form.Group>
+                            </Row>
+
                             <Row className="mb-3">
+
+                                <Form.Group as={Col} controlId="formGridPhone">
+                                    <Form.Label>Teléfono *</Form.Label>
+                                    <Form.Control type="email"/>
+                                </Form.Group>
+
                                 <Form.Group as={Col} controlId="formGridEmail">
                                     <Form.Label>Correo electrónico *</Form.Label>
-                                    <Form.Control type="email" placeholder="Escribe tu correo electrónico" />
+                                    <Form.Control type="email"/>
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridPassword">
                                     <Form.Label>Contraseña *</Form.Label>
-                                    <Form.Control type="password" placeholder="Escribe tu contraseña" />
+                                    <Form.Control type="password"/>
                                 </Form.Group>
                             </Row>
-
-                                <Form.Group className="mb-3" controlId="formGridAddress1">
-                                    <Form.Label>Calle</Form.Label>
-                                    <Form.Control/>
-                                </Form.Group>
-
-                                <Form.Group className="mb-3" controlId="formGridAddress2">
-                                    <Form.Label>Número o piso</Form.Label>
-                                    <Form.Control/>
-                                </Form.Group>
-
+                           
                             <Row className="mb-3">
 
                                 <Form.Group as={Col} controlId="formGridCity">
                                     <Form.Label>Ciudad *</Form.Label>
-                                    <Form.Control placeholder="Escribe aquí tu ciudad"/>
+                                    <Form.Control/>
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridCommunity">
@@ -143,7 +152,7 @@ function Register(){
 
                                 <Form.Group as={Col} controlId="formGridPostalCode">
                                     <Form.Label>Código postal *</Form.Label>
-                                    <Form.Control placeholder="Escribe aquí tu código postal"/>
+                                    <Form.Control/>
                                 </Form.Group>
 
                                 <Form.Group>
