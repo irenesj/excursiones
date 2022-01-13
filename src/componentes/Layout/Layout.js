@@ -15,7 +15,7 @@ const introKeyPressed = (event) => {
 
 const Layout = ({ children }) => {
 
-    const [search, setSearch] = useState(''); //useState
+    const [search, setSearch] = useState(''); 
 
     const url = 'http://localhost:3001/excursions?q=lastres';
 

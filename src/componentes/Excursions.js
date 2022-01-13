@@ -15,9 +15,8 @@ function Excursions(){
         .then((resp) => resp.json())
         .then(function(data) {
             console.log(data);
-            const excursions = data.map((excursion) => <Excursion {...excursion}/>);
+            const excursions = data.map((excursion) => <Excursion {...excursion}/>); //const excursions = data.map((excursion) => <Excursion name={excursion.name} area={excursion.area} dificulty={excursion.dificulty} hours={excursion.hours} description={excursion.description}/>);
             setExcursion(excursions);
-            //const excursions = data.map((excursion) => <Excursion name={excursion.name} area={excursion.area} dificulty={excursion.dificulty} hours={excursion.hours} description={excursion.description}/>);
         })
         .catch(function(error) {
             console.log(error);
