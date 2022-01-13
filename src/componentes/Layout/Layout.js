@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
 const introKeyPressed = (event) => {
-  
 
     let search = document.getElementById("searchBar").value; 
     console.log("Búsqueda: " + search);
