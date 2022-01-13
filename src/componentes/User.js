@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 import styles from '../css/User.module.css';
 
-function User(){
+function User(props){
 
     return(
 
@@ -11,7 +11,7 @@ function User(){
             <Row>
                 <Col xs="4">
                     <Image className={styles.userImage} src="../images/user-icon.svg" roundedCircle />
-                    Nombre y Apellidos
+                    {props.name}{props.surname}
                 </Col>
                 <Col className={styles.userInfo} xs="8">
                     <div className={styles.title}>Excursiones favoritas</div>
