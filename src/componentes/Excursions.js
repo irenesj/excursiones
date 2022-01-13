@@ -6,13 +6,9 @@ import styles from '../css/Excursions.module.css';
 
 function Excursions(){
 
-    const [excursion, setExcursion] = useState([]); //useState
-
+    const [excursion, setExcursion] = useState([]); 
     const url = 'http://localhost:3001/excursions';
 
- 
-
-    // Side Effect
     useEffect(() => {
 
         fetch(url)
@@ -28,9 +24,6 @@ function Excursions(){
         });
 
     },[]);
-
-
-    
 
     return(
 
