@@ -2,36 +2,43 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import Filters from "../Filters";
+import Excursion from "../Excursions";
 import Excursions from "../Excursions";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
-const introKeyPressed = (event) => {
-
-    let search = document.getElementById("searchBar").value; 
-    console.log("Búsqueda: " + search);
-  
-}
-
 const Layout = ({ children }) => {
 
-    const [search, setSearch] = useState(''); 
 
-    const url = 'http://localhost:3001/excursions?q=';
+  const introKeyPressed = (event) => {
+
+    let currentSearch = document.getElementById("searchBar").value; 
+    setSearch(currentSearch);
+    console.log("Búsqueda: " + currentSearch);
+
+  }
+
+  const [search, setSearch] = useState(''); 
+  const [excursionArray, setExcursionArray] = useState([]);
+
+  const url = `http://localhost:3001/excursions?q=${search}`;
 
     useEffect(() => {
 
         fetch(url)
         .then((resp) => resp.json())
         .then(function(data) {
-            console.log(data);
-            
+
+            setExcursionArray(data);
+
         })
         .catch(function(error) {
+
             console.log(error);
+
         });
 
-    },[]);
+    }, [search]);
 
     return(
       <div className={styles.body}>
@@ -68,7 +75,7 @@ const Layout = ({ children }) => {
             <Filters/>
           </Col>
           <Col xs="9">
-            <Excursions/>
+            <Excursions excursionData={ excursionArray } />
           </Col>
         </Row>
         <Row className={styles.footer}>

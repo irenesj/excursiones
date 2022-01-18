@@ -1,29 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Excursion from "./Excursion";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Excursions.module.css';
 
 
-function Excursions(){
+function Excursions(props){
 
     const [excursion, setExcursion] = useState([]); 
-    const url = 'http://localhost:3001/excursions';
 
-    useEffect(() => {
+    console.log(props);
 
-        fetch(url)
-        .then((resp) => resp.json())
-        .then(function(data) {
-            console.log(data);
-            const excursions = data.map((excursion) => <Excursion {...excursion}/>); //const excursions = data.map((excursion) => <Excursion name={excursion.name} area={excursion.area} dificulty={excursion.dificulty} hours={excursion.hours} description={excursion.description}/>);
-            setExcursion(excursions);
-        })
-        .catch(function(error) {
-            console.log(error);
-        });
-
-    },[]);
-
+    const data = Array.from(props.excursionData);
+    const excursions = data.map((excursion) => <Excursion {...excursion}/>);
+    setExcursion(excursions);
+       
     return(
 
         <div>
