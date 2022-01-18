@@ -34,6 +34,7 @@ const Layout = ({ children }) => {
     },[]);
 
     return(
+      <div className={styles.body}>
       <Container className={styles.container}>
         <Row className={styles.nav}>
           <Col xs="4">
@@ -77,6 +78,7 @@ const Layout = ({ children }) => {
           </Col>
         </Row>
         </Container>
+      </div>
      
     )
 }
