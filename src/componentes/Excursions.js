@@ -6,7 +6,7 @@ import styles from '../css/Excursions.module.css';
 
 function Excursions(props){
 
-    const excursions = props.excursionData.map((excursion) => <Excursion {...excursion}/>);
+    const excursions = props.excursionData.map((excursion) => <Excursion key={excursion.id} {...excursion}/>);
        
     return(
 
