@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import Filters from "../Filters";
-import Excursion from "../Excursions";
 import Excursions from "../Excursions";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
