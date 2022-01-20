@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Excursion from "./Excursion";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Excursions.module.css';
@@ -6,19 +6,13 @@ import styles from '../css/Excursions.module.css';
 
 function Excursions(props){
 
-    const [excursion, setExcursion] = useState([]); 
-
-    console.log(props);
-
-    const data = Array.from(props.excursionData);
-    const excursions = data.map((excursion) => <Excursion {...excursion}/>);
-    setExcursion(excursions);
+    const excursions = props.excursionData.map((excursion) => <Excursion {...excursion}/>);
        
     return(
 
         <div>
             <h2 className={styles.title}>Próximas excursiones</h2>
-            {excursion}
+            {excursions}
         </div>
        
     );
