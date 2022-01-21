@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
 
     let currentSearch = document.getElementById("searchBar").value; 
     setSearch(currentSearch);
-    console.log("Búsqueda: " + currentSearch);
 
   }
 
