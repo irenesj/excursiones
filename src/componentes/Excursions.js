@@ -7,15 +7,15 @@ import styles from '../css/Excursions.module.css';
 function Excursions(props){
 
     const excursions = props.excursionData.map((excursion) => <Excursion key={excursion.id} {...excursion}/>);
-    const encontrado = excursions.length > 0;
-    const noEncontrado = <p>No tenemos ninguna excursión a ese sitio</p>;
+    const found = excursions.length > 0;
+    const notFound = <div className={styles.alertNotFound}>Lo sentimos, pero no tenemos ninguna excursión a ese sitio.</div>;
 
     return(
 
         <div>
             <h2 className={styles.title}>Próximas excursiones</h2>
-            {encontrado && excursions}
-            {!encontrado && noEncontrado}
+            {found && excursions}
+            {!found && notFound}
         </div>
        
     );
