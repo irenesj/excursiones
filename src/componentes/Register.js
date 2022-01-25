@@ -1,8 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from '../css/Register.module.css';
 
 function Register(){
+
+    const nameChange = (event) => {
+
+       if(event.target.value !== "")
+        setDisabled(false); 
+    
+    }
+
+    const surnameChange = (event) => {
+
+
+    }
+
+    const phoneChange = (event) => {
+
+
+    }
+
+    const [disabled, setDisabled] = useState(true);
+
+    useEffect(() => {
+
+
+
+    }, [disabled]);
 
     return(
 
@@ -15,12 +41,12 @@ function Register(){
                         <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridAddress1">
                                     <Form.Label>Nombre *</Form.Label>
-                                    <Form.Control/>
+                                    <Form.Control onKeyUp={nameChange}/>
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridAddress2">
                                     <Form.Label>Apellidos *</Form.Label>
-                                    <Form.Control/>
+                                    <Form.Control onKeyUp={surnameChange}/>
                                 </Form.Group>
                             </Row>
 
@@ -28,7 +54,7 @@ function Register(){
 
                                 <Form.Group as={Col} controlId="formGridPhone">
                                     <Form.Label>Teléfono *</Form.Label>
-                                    <Form.Control type="email"/>
+                                    <Form.Control type="email" onKeyUp={phoneChange}/>
                                 </Form.Group>
 
                                 <Form.Group as={Col} controlId="formGridEmail">
@@ -166,7 +192,7 @@ function Register(){
 
                             </Row>
                             <div className={styles.btn}>
-                                <Button variant="primary" type="submit">
+                                <Button variant="primary" type="submit" disabled={disabled}>
                                     Regístrate
                                 </Button>
                             </div>
