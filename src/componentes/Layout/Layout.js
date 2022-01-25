@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
 
   const introKeyPressed = (event) => {
 
-    let currentSearch = document.getElementById("searchBar").value; 
+    let currentSearch = event.target.value; 
     setSearch(currentSearch);
 
   }
