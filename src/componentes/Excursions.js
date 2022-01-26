@@ -8,7 +8,7 @@ function Excursions(props){
 
     const excursions = props.excursionData.map((excursion) => <Excursion key={excursion.id} {...excursion}/>);
     const found = excursions.length > 0;
-    const notFound = <div className={styles.messageNotFound}>Lo sentimos, pero no tenemos ninguna excursión al sitio que has buscado.</div>;
+    const notFound = <div className={styles.messageNotFound}>Lo sentimos, pero no tenemos ninguna excursión al sitio que estás buscando.</div>;
 
     return(
 

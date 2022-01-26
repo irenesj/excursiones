@@ -48,17 +48,20 @@
 
 .footer {
 
+    background-color: #557027;
     bottom: 30px;
-    margin: 0 auto;
     padding-top: 55px;
     padding-bottom: 40px;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+    color: white;
     text-align: center;
 
 }
 
 .footer a {
 
-    color: #557027;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 
