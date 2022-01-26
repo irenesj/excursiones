@@ -6,29 +6,45 @@ import styles from '../css/Register.module.css';
 function Register(){
 
     const nameChange = (event) => {
-
-       if(event.target.value !== "")
-        setDisabled(false); 
+ 
+       if(event.target.value !== ""){
+       
+       }
     
     }
 
     const surnameChange = (event) => {
 
+        if(event.target.value !== ""){
+        }
 
     }
 
     const phoneChange = (event) => {
 
+        const validPhoneNumber = / /;
+
+        if(validPhoneNumber.test(event.target.value)){
+
+        }
 
     }
 
     const mailChange = (event) => {
 
+        const validMail = / /;
 
+        if(validMail.test(event.target.value)){
+
+        }
+        
     }
 
     const passwordChange = (event) => {
 
+        if(event.target.value.length >= 8){
+            
+        }
 
     }
 
