@@ -5,56 +5,73 @@ import styles from '../css/Register.module.css';
 
 function Register(){
 
+    // Single Responsibility Principle
+
     const nameChange = (event) => {
  
-       if(event.target.value !== ""){
-       
-       }
-    
+        setName(event.target.value);
+           
+    }
+
+    const validateName = (name) => {
+        return name.trim() !== "";
     }
 
     const surnameChange = (event) => {
 
-        if(event.target.value !== ""){
-        }
+       setSurname(event.target.value);
 
+    }
+
+    const validateSurname = (surname) => {
+
+        return surname.trim() !== "";
     }
 
     const phoneChange = (event) => {
 
-        const validPhoneNumber = / /;
+        setPhone(event.target.value);
 
-        if(validPhoneNumber.test(event.target.value)){
+    }
 
-        }
+    const validatePhone = (phone) => {
+
+        const validPhoneNumber = /^([(][+]?34[)])?\s?(?:6\d|7[1-9])\d(-|\s)?\d{3}(-|\s)?\d{3}$/;
+
+        return validPhoneNumber.test(phone);
 
     }
 
     const mailChange = (event) => {
 
-        const validMail = / /;
-
-        if(validMail.test(event.target.value)){
-
-        }
+       
         
     }
 
     const passwordChange = (event) => {
 
-        if(event.target.value.length >= 8){
-            
-        }
+        
 
     }
 
     const [disabled, setDisabled] = useState(true);
+    const [name, setName] = useState("");
+    const [surname, setSurname] = useState("");
+    const [phone, setPhone] = useState("");
+    
+
+    
 
     useEffect(() => {
+        
+        if(validateName(name) && validateSurname(surname) && validatePhone(phone)){
+            setDisabled(false);
+        }
+        else{
+            setDisabled(true);
+        }
 
-
-
-    }, [disabled]);
+    }, [name, surname, phone]);
 
     return(
 
