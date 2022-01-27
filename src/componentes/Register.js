@@ -36,31 +36,44 @@ function Register(){
 
     const validatePhone = (phone) => {
 
-        const validPhoneNumber = /^([(][+]?34[)])?\s?(?:6\d|7[1-9])\d(-|\s)?\d{3}(-|\s)?\d{3}$/;
+        const validPhone = /^([(][+]?34[)])?\s?(?:6\d|7[1-9])\d(-|\s)?\d{3}(-|\s)?\d{3}$/;
 
-        return validPhoneNumber.test(phone);
+        return validPhone.test(phone);
 
     }
 
     const mailChange = (event) => {
 
-       
+       setMail(event.target.value);
         
+    }
+
+    const validateMail = (mail) => {
+
+        const validMail = / /;
+
+        return validMail.test(mail);
     }
 
     const passwordChange = (event) => {
 
-        
+        setPassword(event.target.value);
 
+    }
+
+    const validatePassword = (password) => {
+
+        const validPassword = / /;
+
+        return validPassword.test(password);
     }
 
     const [disabled, setDisabled] = useState(true);
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [phone, setPhone] = useState("");
-    
-
-    
+    const [mail, setMail] = useState("");
+    const [password, setPassword] = useState("");
 
     useEffect(() => {
         
@@ -71,7 +84,7 @@ function Register(){
             setDisabled(true);
         }
 
-    }, [name, surname, phone]);
+    }, [name, surname, phone, mail, password]);
 
     return(
 
