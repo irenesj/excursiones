@@ -2,6 +2,7 @@ import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from '../css/Login.module.css';
+import {validateMail, validatePassword} from '../validation/validations.js'
 
 function Login(){
 

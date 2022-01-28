@@ -2,70 +2,28 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from '../css/Register.module.css';
+import {validateName, validateSurname, validatePhone, validateMail, validatePassword} from '../validation/validations.js'
 
 function Register(){
 
-    // Single Responsibility Principle
-
     const nameChange = (event) => {
- 
         setName(event.target.value);
-           
-    }
-
-    const validateName = (name) => {
-        return name.trim() !== "";
     }
 
     const surnameChange = (event) => {
-
        setSurname(event.target.value);
-
-    }
-
-    const validateSurname = (surname) => {
-
-        return surname.trim() !== "";
     }
 
     const phoneChange = (event) => {
-
         setPhone(event.target.value);
-
-    }
-
-    const validatePhone = (phone) => {
-
-        const validPhone = /^([(][+]?34[)])?\s?(?:6\d|7[1-9])\d(-|\s)?\d{3}(-|\s)?\d{3}$/;
-
-        return validPhone.test(phone);
-
     }
 
     const mailChange = (event) => {
-
        setMail(event.target.value);
-        
-    }
-
-    const validateMail = (mail) => {
-
-        const validMail = / /;
-
-        return validMail.test(mail);
     }
 
     const passwordChange = (event) => {
-
         setPassword(event.target.value);
-
-    }
-
-    const validatePassword = (password) => {
-
-        const validPassword = / /;
-
-        return validPassword.test(password);
     }
 
     const [disabled, setDisabled] = useState(true);
@@ -77,7 +35,7 @@ function Register(){
 
     useEffect(() => {
         
-        if(validateName(name) && validateSurname(surname) && validatePhone(phone)){
+        if(validateName(name) && validateSurname(surname) && validatePhone(phone) && validateMail(mail) && validatePassword(password)){
             setDisabled(false);
         }
         else{
