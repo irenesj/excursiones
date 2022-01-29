@@ -30,6 +30,17 @@ function Register(){
         setSamePassword(event.target.value);
     }
 
+    const url = `http://localhost:3001/users`;
+
+    const submit = (event) => {
+
+        fetch(url, {
+
+        })
+        .then(res => res.json())
+        .then();
+    }
+
     const [disabled, setDisabled] = useState(true);
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
@@ -40,7 +51,9 @@ function Register(){
 
     useEffect(() => {
         
-        if(validateName(name) && validateSurname(surname) && validatePhone(phone) && validateMail(mail) && validatePassword(password) && validSamePassword(password, samePassword)){
+        if(validateName(name) && validateSurname(surname) && validatePhone(phone) 
+        && validateMail(mail) && validatePassword(password) 
+        && validSamePassword(password, samePassword)){
             setDisabled(false);
         }
         else{
@@ -55,7 +68,7 @@ function Register(){
             <Container className={styles.register}>
                 <Row>
                     <Col xs="12">
-                        <Form className={styles.form}>
+                        <Form className={styles.form} onSubmit={submit}>
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridAddress1">
                                     <Form.Label>Nombre *</Form.Label>
