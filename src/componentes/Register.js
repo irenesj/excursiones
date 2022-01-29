@@ -38,7 +38,12 @@ function Register(){
 
         })
         .then(res => res.json())
-        .then();
+        .then()
+        .catch(function(error) {
+
+            console.log(error);
+
+        });
     }
 
     const [disabled, setDisabled] = useState(true);
@@ -52,8 +57,7 @@ function Register(){
     useEffect(() => {
         
         if(validateName(name) && validateSurname(surname) && validatePhone(phone) 
-        && validateMail(mail) && validatePassword(password) 
-        && validSamePassword(password, samePassword)){
+        && validateMail(mail) && validatePassword(password) && validSamePassword(password, samePassword)){
             setDisabled(false);
         }
         else{
