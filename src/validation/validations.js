@@ -18,8 +18,16 @@ export function validateMail(mail){
     return validMail.test(mail);
 }
 
+/* Password with at least eight characters, one number and one letter*/
 export function validatePassword(password){
-    const validPassword = / /;
+    const validPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     return validPassword.test(password);
+}
+
+export function validSamePassword(password, samePassword){
+
+    const validPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
+    return validPassword.test(samePassword) && password === samePassword;
 }

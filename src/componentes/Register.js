@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from '../css/Register.module.css';
-import {validateName, validateSurname, validatePhone, validateMail, validatePassword} from '../validation/validations.js'
+import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
 
 function Register(){
 
@@ -26,23 +26,28 @@ function Register(){
         setPassword(event.target.value);
     }
 
+    const samePasswordChange = (event) => {
+        setSamePassword(event.target.value);
+    }
+
     const [disabled, setDisabled] = useState(true);
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [phone, setPhone] = useState("");
     const [mail, setMail] = useState("");
     const [password, setPassword] = useState("");
+    const [samePassword, setSamePassword] = useState("");
 
     useEffect(() => {
         
-        if(validateName(name) && validateSurname(surname) && validatePhone(phone) && validateMail(mail) && validatePassword(password)){
+        if(validateName(name) && validateSurname(surname) && validatePhone(phone) && validateMail(mail) && validatePassword(password) && validSamePassword(password, samePassword)){
             setDisabled(false);
         }
         else{
             setDisabled(true);
         }
 
-    }, [name, surname, phone, mail, password]);
+    }, [name, surname, phone, mail, password, samePassword]);
 
     return(
 
@@ -64,15 +69,21 @@ function Register(){
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridPhone">
                                     <Form.Label>Teléfono *</Form.Label>
-                                    <Form.Control type="email" onKeyUp={phoneChange}/>
+                                    <Form.Control onKeyUp={phoneChange}/>
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="formGridEmail">
                                     <Form.Label>Correo electrónico *</Form.Label>
                                     <Form.Control type="email" onKeyUp={mailChange}/>
                                 </Form.Group>
+                            </Row>
+                            <Row>
                                 <Form.Group as={Col} controlId="formGridPassword">
                                     <Form.Label>Contraseña *</Form.Label>
                                     <Form.Control type="password" onKeyUp={passwordChange}/>
+                                </Form.Group>
+                                <Form.Group as={Col} controlId="formGridPassword">
+                                    <Form.Label>Repite la contraseña *</Form.Label>
+                                    <Form.Control type="password" onKeyUp={samePasswordChange}/>
                                 </Form.Group>
                             </Row>
                             <Row>
