@@ -80,6 +80,9 @@ function Register(){
                                 <Form.Group as={Col} controlId="formGridPassword">
                                     <Form.Label>Contraseña *</Form.Label>
                                     <Form.Control type="password" onKeyUp={passwordChange}/>
+                                    <Form.Text className="text-muted">
+                                        Tu contraseña debe tener al menos 8 caracteres y llevar una letra y un número.
+                                    </Form.Text>
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="formGridPassword">
                                     <Form.Label>Repite la contraseña *</Form.Label>
