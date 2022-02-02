@@ -30,21 +30,6 @@ function Register(){
         setSamePassword(event.target.value);
     }
 
-    const url = `http://localhost:3001/users`;
-
-    const submit = (event) => {
-
-        fetch(url, {
-
-        })
-        .then(res => res.json())
-        .then()
-        .catch(function(error) {
-
-            console.log(error);
-
-        });
-    }
 
     const [disabled, setDisabled] = useState(true);
     const [name, setName] = useState("");
@@ -72,7 +57,7 @@ function Register(){
             <Container className={styles.register}>
                 <Row>
                     <Col xs="12">
-                        <Form className={styles.form} onSubmit={submit}>
+                        <Form className={styles.form}>
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridAddress1">
                                     <Form.Label>Nombre *</Form.Label>
@@ -127,6 +112,6 @@ function Register(){
             </Container>
         </div>
     );
-}
+    }
 
 export default Register;
