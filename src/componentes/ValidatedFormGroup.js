@@ -5,7 +5,7 @@ import { Col, Form } from "react-bootstrap";
 function ValidatedFormGroup(props){
 
     const nameChange = (event) => {
-        props.inputTochange(event.target.value);
+        props.inputToChange(event.target.value);
     }
 
     return(
