@@ -6,28 +6,6 @@ import ValidatedFormGroup from "./ValidatedFormGroup";
 
 function Register(){
 
- 
-
-    const surnameChange = (event) => {
-       setSurname(event.target.value);
-    }
-
-    const phoneChange = (event) => {
-        setPhone(event.target.value);
-    }
-
-    const mailChange = (event) => {
-       setMail(event.target.value);
-    }
-
-    const passwordChange = (event) => {
-        setPassword(event.target.value);
-    }
-
-    const samePasswordChange = (event) => {
-        setSamePassword(event.target.value);
-    }
-
 
     const [disabled, setDisabled] = useState(true);
     const [name, setName] = useState("");
@@ -37,7 +15,6 @@ function Register(){
     const [password, setPassword] = useState("");
     const [samePassword, setSamePassword] = useState("");
 
-    const [telefonoEsValido, setTelefonoEsValido] = useState(true);
 
     useEffect(() => {
         
@@ -46,13 +23,6 @@ function Register(){
             setDisabled(false);
         }
         else{
-            if(!validatePhone(phone) && phone !== ""){
-                setTelefonoEsValido(false);
-                console.log("Paso por la validacion del telefono :)");
-            }
-            else{
-                setTelefonoEsValido(true);
-            }
 
             setDisabled(true);
         }
@@ -72,28 +42,12 @@ function Register(){
                                 <ValidatedFormGroup control="formGridAddress2" name="Apellidos * " inpuToChange={setSurname}/>
                             </Row>
                             <Row className="mb-3">
-                                <Form.Group as={Col} controlId="formGridPhone">
-                                    <Form.Label>Teléfono *</Form.Label>
-                                    <Form.Control onChange={phoneChange} value={phone}/>
-                                    { !telefonoEsValido && <p>El teléfono no es valido</p>}
-                                </Form.Group>
-                                <Form.Group as={Col} controlId="formGridEmail">
-                                    <Form.Label>Correo electrónico *</Form.Label>
-                                    <Form.Control type="email" onKeyUp={mailChange}/>
-                                </Form.Group>
+                                <ValidatedFormGroup control="formGridPhone" name="Teléfono * " inputToChange={setPhone}/>
+                                <ValidatedFormGroup control="formGridEmail" name="Correo electrónico * " inputToChange={setMail}/>
                             </Row>
                             <Row>
-                                <Form.Group as={Col} controlId="formGridPassword">
-                                    <Form.Label>Contraseña *</Form.Label>
-                                    <Form.Control type="password" onKeyUp={passwordChange}/>
-                                    <Form.Text className="text-muted">
-                                        Tu contraseña debe tener al menos 8 caracteres y llevar una letra y un número.
-                                    </Form.Text>
-                                </Form.Group>
-                                <Form.Group as={Col} controlId="formGridPassword">
-                                    <Form.Label>Repite la contraseña *</Form.Label>
-                                    <Form.Control type="password" onKeyUp={samePasswordChange}/>
-                                </Form.Group>
+                                <ValidatedFormGroup control="formGridPassword" name="Contraseña * " inputToChange={setPassword}/>
+                                <ValidatedFormGroup control="formGridPassword" name="Repite la contraseña * " inputToChange={setSamePassword}/>
                             </Row>
                             <Row>
                                 <Form.Group>
