@@ -1,14 +1,12 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from '../css/Register.module.css';
 import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
+import ValidatedFormGroup from "./ValidatedFormGroup";
 
 function Register(){
 
-    const nameChange = (event) => {
-        setName(event.target.value);
-    }
+ 
 
     const surnameChange = (event) => {
        setSurname(event.target.value);
@@ -39,6 +37,8 @@ function Register(){
     const [password, setPassword] = useState("");
     const [samePassword, setSamePassword] = useState("");
 
+    const [telefonoEsValido, setTelefonoEsValido] = useState(true);
+
     useEffect(() => {
         
         if(validateName(name) && validateSurname(surname) && validatePhone(phone) 
@@ -46,10 +46,19 @@ function Register(){
             setDisabled(false);
         }
         else{
+            if(!validatePhone(phone) && phone !== ""){
+                setTelefonoEsValido(false);
+                console.log("Paso por la validacion del telefono :)");
+            }
+            else{
+                setTelefonoEsValido(true);
+            }
+
             setDisabled(true);
         }
 
     }, [name, surname, phone, mail, password, samePassword]);
+    // Two ways binding
 
     return(
 
@@ -59,19 +68,14 @@ function Register(){
                     <Col xs="12">
                         <Form className={styles.form}>
                             <Row className="mb-3">
-                                <Form.Group as={Col} controlId="formGridAddress1">
-                                    <Form.Label>Nombre *</Form.Label>
-                                    <Form.Control onKeyUp={nameChange}/>
-                                </Form.Group>
-                                <Form.Group as={Col} controlId="formGridAddress2">
-                                    <Form.Label>Apellidos *</Form.Label>
-                                    <Form.Control onKeyUp={surnameChange}/>
-                                </Form.Group>
+                                <ValidatedFormGroup control="formGridAddress1" name="Nombre * " inputToChange={setName}/>
+                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos * " inpuToChange={setSurname}/>
                             </Row>
                             <Row className="mb-3">
                                 <Form.Group as={Col} controlId="formGridPhone">
                                     <Form.Label>Teléfono *</Form.Label>
-                                    <Form.Control onKeyUp={phoneChange}/>
+                                    <Form.Control onChange={phoneChange} value={phone}/>
+                                    { !telefonoEsValido && <p>El teléfono no es valido</p>}
                                 </Form.Group>
                                 <Form.Group as={Col} controlId="formGridEmail">
                                     <Form.Label>Correo electrónico *</Form.Label>
