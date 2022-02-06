@@ -24,7 +24,13 @@
     
 }
 
+.paragraph{
+    color: rgb(124, 122, 122);
+}
+
 .btn{
 
+    padding-top: 30px;
     text-align: center;
 }
+

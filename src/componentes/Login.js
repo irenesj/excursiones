@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from '../css/Login.module.css';
 import {validateMail, validatePassword} from '../validation/validations.js'
+import ValidatedFormGroup from "./ValidatedFormGroup";
 
 function Login(){
 
@@ -37,17 +38,9 @@ function Login(){
                 <Row>
                     <Col xs="12">
                         <Form className={styles.form}>
-                            <Form.Group className="mb-3" controlId="formBasicEmail">
-                                <Form.Label>Correo electrónico</Form.Label>
-                                <Form.Control type="email" onKeyUp={mailChange}/>
-                                <Form.Text className="text-muted">
-                                    Nunca compartiremos tu correo con nadie.
-                                </Form.Text>
-                            </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Label>Contraseña</Form.Label>
-                                <Form.Control type="password" onKeyUp={passwordChange}/>
-                            </Form.Group>
+                            <ValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail}/>
+                            <p className={styles.paragraph}>Nunca compartiremos tus datos con nadie</p>
+                            <ValidatedFormGroup control="formBasicPassword" name="Contraseña" inputToChange={setPassword}/>
                             <div className={styles.btn}>
                             <Button variant="primary" type="submit" disabled={disabled}>
                                 Inicia sesión

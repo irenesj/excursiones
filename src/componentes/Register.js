@@ -28,7 +28,6 @@ function Register(){
         }
 
     }, [name, surname, phone, mail, password, samePassword]);
-    // Two ways binding
 
     return(
 
@@ -38,23 +37,23 @@ function Register(){
                     <Col xs="12">
                         <Form className={styles.form}>
                             <Row className="mb-3">
-                                <ValidatedFormGroup control="formGridAddress1" name="Nombre * " inputToChange={setName}/>
-                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos * " inpuToChange={setSurname}/>
+                                <ValidatedFormGroup control="formGridAddress1" name="Nombre *" inputToChange={setName}/>
+                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos *" inpuToChange={setSurname}/>
                             </Row>
                             <Row className="mb-3">
-                                <ValidatedFormGroup control="formGridPhone" name="Teléfono * " inputToChange={setPhone}/>
-                                <ValidatedFormGroup control="formGridEmail" name="Correo electrónico * " inputToChange={setMail}/>
+                                <ValidatedFormGroup control="formGridPhone" name="Teléfono *" inputToChange={setPhone}/>
+                                <ValidatedFormGroup control="formGridEmail" name="Correo electrónico *" inputToChange={setMail}/>
                             </Row>
                             <Row>
-                                <ValidatedFormGroup control="formGridPassword" name="Contraseña * " inputToChange={setPassword}/>
-                                <ValidatedFormGroup control="formGridPassword" name="Repite la contraseña * " inputToChange={setSamePassword}/>
+                                <ValidatedFormGroup control="formGridPassword" name="Contraseña *" inputToChange={setPassword}/>
+                                <ValidatedFormGroup control="formGridPassword" name="Repite la contraseña *" inputToChange={setSamePassword}/>
                             </Row>
                             <Row>
                                 <Form.Group>
                                     <Form.Text className="text-muted">
                                     <ul className={styles.list}>
-                                        <li>Debes estar registrado para poder añadir y/o apuntarte a una excursión.</li>
-                                        <li>Los campos que llevan el asterisco &#40;*&#41; son obligatorios.</li>
+                                        <li>Debes estar registrado para poder añadir y/o apuntarte a una excursión</li>
+                                        <li>Los campos que llevan el asterisco &#40;*&#41; son obligatorios</li>
                                     </ul>
                                     </Form.Text>
                                 </Form.Group>
@@ -70,6 +69,6 @@ function Register(){
             </Container>
         </div>
     );
-    }
+}
 
 export default Register;

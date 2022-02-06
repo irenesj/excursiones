@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Form } from "react-bootstrap";
+import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
 
 
 function ValidatedFormGroup(props){
