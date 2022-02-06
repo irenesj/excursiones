@@ -49,10 +49,8 @@ function Register(){
                                 <ValidatedFormGroup control="formGridPassword" name="Repite la contraseña *" inputToChange={setSamePassword}/>
                             </Row>
                             <Row>
-                                <ul className={styles.list}>
-                                    <li>Debes estar registrado para poder añadir y/o apuntarte a una excursión</li>
-                                    <li>Los campos que llevan el asterisco &#40;*&#41; son obligatorios</li>
-                                </ul>   
+                                <p className={styles.list}>Debes estar registrado para poder añadir y/o apuntarte a una excursión<br/>
+                                Los campos que llevan el asterisco &#40;*&#41; son obligatorios</p>
                             </Row>
                             <div className={styles.btn}>
                                 <Button variant="primary" type="submit" disabled={disabled}>
