@@ -12,7 +12,7 @@ function ValidatedFormGroup(props){
     return(
         <Form.Group as={Col} controlId={props.control}>
             <Form.Label>{props.name}</Form.Label>
-            <Form.Control onChange={nameChange}/>
+            <Form.Control type={props.inputType} onChange={nameChange}/>
         </Form.Group>
     );
 }

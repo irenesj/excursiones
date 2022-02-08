@@ -38,15 +38,15 @@ function Register(){
                         <Form className={styles.form}>
                             <Row className="mb-3">
                                 <ValidatedFormGroup control="formGridAddress1" name="Nombre *" inputToChange={setName}/>
-                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos *" inpuToChange={setSurname}/>
+                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos *" inputToChange={setSurname}/>
                             </Row>
                             <Row className="mb-3">
-                                <ValidatedFormGroup control="formGridPhone" name="Teléfono *" inputToChange={setPhone}/>
-                                <ValidatedFormGroup control="formGridEmail" name="Correo electrónico *" inputToChange={setMail}/>
+                                <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono *" inputToChange={setPhone}/>
+                                <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico *" inputToChange={setMail}/>
                             </Row>
                             <Row>
-                                <ValidatedFormGroup control="formGridPassword" name="Contraseña *" inputToChange={setPassword}/>
-                                <ValidatedFormGroup control="formGridPassword" name="Repite la contraseña *" inputToChange={setSamePassword}/>
+                                <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña *" inputToChange={setPassword}/>
+                                <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña *" inputToChange={setSamePassword}/>
                             </Row>
                             <Row>
                                 <p className={styles.list}>Debes estar registrado para poder añadir y/o apuntarte a una excursión<br/> Los campos que llevan el asterisco &#40;*&#41; son obligatorios</p>
