@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Form } from "react-bootstrap";
-import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
 
 
 function ValidatedFormGroup(props){
 
+   const [notValid, setNotValid] = useState(false);
+
     const nameChange = (event) => {
-        props.inputToChange(event.target.value);
+        const value = event.target.value;
+        props.inputToChange(value);
+        setNotValid(!props.validationFunction(value));
+ 
     }
 
     return(
         <Form.Group as={Col} controlId={props.control}>
             <Form.Label>{props.name}</Form.Label>
-            <Form.Control type={props.inputType} onChange={nameChange}/>
+            <Form.Control type={props.inputType} onChange={nameChange} value={props.value}/>
+            { notValid && <p>Datos Erróneos</p> }
         </Form.Group>
     );
 }

@@ -7,14 +7,6 @@ import ValidatedFormGroup from "./ValidatedFormGroup";
 
 function Login(){
 
-    const mailChange = (event) => {
-        setMail(event.target.value);
-     }
- 
-     const passwordChange = (event) => {
-         setPassword(event.target.value);
-     }
-
      const [disabled, setDisabled] = useState(true);
      const [mail, setMail] = useState("");
      const [password, setPassword] = useState("");

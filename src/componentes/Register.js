@@ -15,6 +15,23 @@ function Register(){
     const [password, setPassword] = useState("");
     const [samePassword, setSamePassword] = useState("");
 
+    const url = `http://localhost:3001/users`;
+    const options = {
+
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: 
+
+    }
+
+    const submit = () => {
+        
+        fetch(url, options )
+            .then(response => response.json())
+            .then(data => this.setState({ postId: data.id }));
+
+        }
+    }
 
     useEffect(() => {
         
@@ -35,18 +52,18 @@ function Register(){
             <Container className={styles.register}>
                 <Row>
                     <Col xs="12">
-                        <Form className={styles.form}>
+                        <Form className={styles.form} onSubmit={submit}>
                             <Row className="mb-3">
-                                <ValidatedFormGroup control="formGridAddress1" name="Nombre *" inputToChange={setName}/>
-                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos *" inputToChange={setSurname}/>
+                                <ValidatedFormGroup control="formGridAddress1" name="Nombre *" inputToChange={setName} validationFunction={validateName} value={name} />
+                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos *" inputToChange={setSurname} validationFunction={validateSurname} value={surname}/>
                             </Row>
                             <Row className="mb-3">
-                                <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono *" inputToChange={setPhone}/>
-                                <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico *" inputToChange={setMail}/>
+                                <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono *" inputToChange={setPhone} validationFunction={validatePhone} value={phone} />
+                                <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico *" inputToChange={setMail} validationFunction={validateMail} value={mail}/>
                             </Row>
                             <Row>
-                                <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña *" inputToChange={setPassword}/>
-                                <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña *" inputToChange={setSamePassword}/>
+                                <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña *" inputToChange={setPassword} validationFunction={validatePassword} value={password}/>
+                                <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña *" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword}/>
                             </Row>
                             <Row>
                                 <p className={styles.list}>Debes estar registrado para poder añadir y/o apuntarte a una excursión<br/> Los campos que llevan el asterisco &#40;*&#41; son obligatorios</p>
