@@ -30,9 +30,9 @@ function Login(){
                 <Row>
                     <Col xs="12">
                         <Form className={styles.form}>
-                            <ValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail}/>
+                            <ValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail}/>
                             <p className={styles.paragraph}>Nunca compartiremos tus datos con nadie</p>
-                            <ValidatedFormGroup control="formBasicPassword" name="Contraseña" inputToChange={setPassword}/>
+                            <ValidatedFormGroup control="formBasicPassword" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password}/>
                             <div className={styles.btn}>
                             <Button variant="primary" type="submit" disabled={disabled}>
                                 Inicia sesión

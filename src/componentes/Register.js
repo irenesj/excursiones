@@ -19,8 +19,7 @@ function Register(){
     const options = {
 
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: 
+        headers: { 'Content-Type': 'application/json' }
 
     }
 
@@ -29,8 +28,6 @@ function Register(){
         fetch(url, options )
             .then(response => response.json())
             .then(data => this.setState({ postId: data.id }));
-
-        }
     }
 
     useEffect(() => {
@@ -66,7 +63,7 @@ function Register(){
                                 <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña *" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword}/>
                             </Row>
                             <Row>
-                                <p className={styles.list}>Debes estar registrado para poder añadir y/o apuntarte a una excursión<br/> Los campos que llevan el asterisco &#40;*&#41; son obligatorios</p>
+                                <p className={styles.list}>Tu contraseña debe tener al menos 8 caracteres, una letra y un número<br/>Debes estar registrado/a para poder añadir/apuntarte a excursiones<br/> Los campos con el asterisco &#40;*&#41; son obligatorios</p>
                             </Row>
                             <div className={styles.btn}>
                                 <Button variant="primary" type="submit" disabled={disabled}>
