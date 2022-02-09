@@ -9,6 +9,7 @@ import styles from '../../css/Layout.module.css';
 const Layout = ({ children }) => {
 
 
+  // Variable that saves the information from the search input 
   const introKeyPressed = (event) => {
 
     let currentSearch = event.target.value; 
@@ -38,6 +39,7 @@ const Layout = ({ children }) => {
 
     }, [search]);
 
+    
     return(
       <div className={styles.body}>
       <Container className={styles.container}>

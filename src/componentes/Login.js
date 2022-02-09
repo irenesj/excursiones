@@ -7,11 +7,14 @@ import ValidatedFormGroup from "./ValidatedFormGroup";
 
 function Login(){
 
+
+    // Variables that receive and change the information that we received from the login form inputs
      const [disabled, setDisabled] = useState(true);
      const [mail, setMail] = useState("");
      const [password, setPassword] = useState("");
 
-    
+
+    // This useEffect disables the button to log until all the information in the login inputs is correct
      useEffect(() => {
 
         if(validateMail(mail) && validatePassword(password)){
@@ -23,6 +26,7 @@ function Login(){
 
      }, [mail, password]);
 
+     
     return(
 
         <div className={styles.body}>

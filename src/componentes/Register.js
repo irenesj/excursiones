@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from '../css/Register.module.css';
-import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
 import ValidatedFormGroup from "./ValidatedFormGroup";
+import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
+
 
 function Register(){
 
 
+    // Variables that receive and change the information that we received from the register form inputs
     const [disabled, setDisabled] = useState(true);
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
@@ -15,6 +17,8 @@ function Register(){
     const [password, setPassword] = useState("");
     const [samePassword, setSamePassword] = useState("");
 
+
+    // Function that allows register an user sending the POST request
     const url = `http://localhost:3001/users`;
     const options = {
 
@@ -30,6 +34,8 @@ function Register(){
             .then(data => this.setState({ postId: data.id }));
     }
 
+
+    // This useEffect disables the button to log until all the information in the login inputs is correct
     useEffect(() => {
         
         if(validateName(name) && validateSurname(surname) && validatePhone(phone) 
@@ -43,6 +49,7 @@ function Register(){
 
     }, [name, surname, phone, mail, password, samePassword]);
 
+    
     return(
 
         <div className={styles.body}>
