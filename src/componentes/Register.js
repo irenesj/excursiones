@@ -20,18 +20,30 @@ function Register(){
 
     // Function that allows register an user sending the POST request
     const url = `http://localhost:3001/users`;
+
+    const user = {
+
+        name: name,
+        surname: surname,
+        phone: phone,
+        mail: mail,
+        password: password
+    }
+
     const options = {
 
         method: 'POST',
+        mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(name, surname, phone, mail, password)
+        body: JSON.stringify(user)
     };
 
     const submit = () => {
         
         fetch(url, options )
             .then(response => response.json())
-            .then(data => this.setState({ postId: data.id }));
+            .then(data => console.log(data));
+
     }
 
 
@@ -56,7 +68,7 @@ function Register(){
             <Container className={styles.register}>
                 <Row>
                     <Col xs="12">
-                        <Form className={styles.form} onSubmit={submit}>
+                        <Form className={styles.form}>
                             <Row className="mb-3">
                                 <ValidatedFormGroup control="formGridAddress1" name="Nombre *" inputToChange={setName} validationFunction={validateName} value={name} />
                                 <ValidatedFormGroup control="formGridAddress2" name="Apellidos *" inputToChange={setSurname} validationFunction={validateSurname} value={surname}/>
@@ -73,7 +85,7 @@ function Register(){
                                 <p className={styles.list}>Tu contraseña debe tener al menos 8 caracteres, una letra y un número<br/>Debes estar registrado/a para poder añadir/apuntarte a excursiones<br/> Los campos con el asterisco &#40;*&#41; son obligatorios</p>
                             </Row>
                             <div className={styles.btn}>
-                                <Button variant="primary" type="submit" disabled={disabled}>
+                                <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
                                     Regístrate
                                 </Button>
                             </div>

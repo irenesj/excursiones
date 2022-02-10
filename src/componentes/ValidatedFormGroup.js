@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Col, Form } from "react-bootstrap";
+import styles from '../css/ValidatedFormGroup.module.css';
 
 
 function ValidatedFormGroup(props){
@@ -17,7 +18,7 @@ function ValidatedFormGroup(props){
         <Form.Group as={Col} controlId={props.control}>
             <Form.Label>{props.name}</Form.Label>
             <Form.Control type={props.inputType} onChange={nameChange} value={props.value}/>
-            { notValid && <p>Datos erróneos: No puedes dejar nada vacío o en un formato incorrecto</p> }
+            { notValid && <p className={styles.errorMessage}>Datos erróneos: No puedes dejar nada vacío o en un formato incorrecto</p> }
         </Form.Group>
     );
 }
