@@ -18,7 +18,7 @@ function ValidatedFormGroup(props){
         <Form.Group as={Col} controlId={props.control}>
             <Form.Label>{props.name}</Form.Label>
             <Form.Control type={props.inputType} onChange={nameChange} value={props.value}/>
-            { notValid && <p className={styles.errorMessage}>Datos erróneos: No puedes dejar nada vacío o en un formato incorrecto</p> }
+            { notValid && <p className={styles.errorMessage}>No puedes dejar nada vacío o en un formato incorrecto</p> }
         </Form.Group>
     );
 }

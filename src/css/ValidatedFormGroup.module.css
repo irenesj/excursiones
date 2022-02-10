@@ -1,4 +1,6 @@
 .errorMessage{
 
-    color: rgb(124, 122, 122);
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(207, 110, 110);
 }
