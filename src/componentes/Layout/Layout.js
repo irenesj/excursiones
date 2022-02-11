@@ -44,10 +44,8 @@ const Layout = ({ children }) => {
       <div className={styles.body}>
       <Container className={styles.container}>
         <Row className={styles.nav}>
-          <Col xs="4">
-            <div className={styles.logo}>
-              Excursiones Juntos  
-            </div>
+          <Col className={styles.logo} xs="4">
+             Excursiones Juntos 
           </Col>
           <Col xs="8">
             <Nav className="justify-content-end">

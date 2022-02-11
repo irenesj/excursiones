@@ -82,7 +82,11 @@ function Register(){
                                 <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña *" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword}/>
                             </Row>
                             <Row>
-                                <p className={styles.list}>Tu contraseña debe tener al menos 8 caracteres, una letra y un número<br/>Debes estar registrado/a para poder añadir/apuntarte a excursiones<br/> Los campos con el asterisco &#40;*&#41; son obligatorios</p>
+                                <ul className={styles.list}>
+                                    <li>Tu contraseña debe tener al menos 8 caracteres, una letra y un número</li>
+                                    <li>Debes estar registrado/a para poder añadir/apuntarte a excursiones</li>
+                                    <li>Los campos con el asterisco &#40;*&#41; son obligatorios</li>
+                                </ul>
                             </Row>
                             <div className={styles.btn}>
                                 <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
