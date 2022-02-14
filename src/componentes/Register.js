@@ -41,13 +41,13 @@ function Register(){
     const submit = () => {
         
         fetch(url, options )
-            .then(response => response.json())
-            .then(data => console.log(data));
-
+        .then(response => response.json())
+        .then(data => console.log(data))
+    
     }
 
 
-    // This useEffect disables the button to log until all the information in the login inputs is correct
+    // This useEffect disables the button to register until all the information in the register inputs is correct
     useEffect(() => {
         
         if(validateName(name) && validateSurname(surname) && validatePhone(phone) 
