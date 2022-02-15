@@ -41,8 +41,14 @@ function Register(){
     const submit = () => {
         
         fetch(url, options )
-        .then(response => response.json())
-        .then(data => console.log(data))
+        .then(response => {
+            if (response.status === 409){
+                throw new Error("Tu nombre de usuario ya se está utilizando");
+            }
+            return response.json();
+        })
+        .then(data => console.log(`He recibido del servidor los siguiente: ${data}`))
+        .catch(error => alert(error))
     
     }
 
