@@ -34,6 +34,7 @@ function Login(){
         fetch(url, options)
         .then(response => response.json())
         .then(console.log)
+        .catch(console.error)
     }
 
     // This useEffect disables the button to log until all the information in the login inputs is correct
@@ -58,7 +59,7 @@ function Login(){
                         <Form className={styles.form}>
                             <ValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail}/>
                             <p className={styles.paragraph}>Nunca compartiremos tus datos con nadie</p>
-                            <ValidatedFormGroup control="formBasicPassword" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password}/>
+                            <ValidatedFormGroup control="formBasicPassword" inputType="password" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password}/>
                             <div className={styles.btn}>
                             <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
                                 Inicia sesión
