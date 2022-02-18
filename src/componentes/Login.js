@@ -32,9 +32,15 @@ function Login(){
     const submit = () => {
 
         fetch(url, options)
-        .then(response => response.json())
-        .then(console.log)
-        .catch(console.error)
+        .then(response => {
+            if (response.status === 401){
+                throw new Error("Datos incorrectos. Inténtalo de nuevo.");
+            }
+            return response.json();
+        })
+        .then(data => console.log(`He recibido del servidor los siguiente: ${data}`))
+        .catch(error => alert(error))
+    
     }
 
     // This useEffect disables the button to log until all the information in the login inputs is correct
