@@ -47,7 +47,7 @@ function Register(){
             }
             return response.json();
         })
-        .then(data => console.log(`He recibido del servidor los siguiente: ${data}`))
+        .then(data => console.log(data))
         .catch(error => alert(error))
     
     }
