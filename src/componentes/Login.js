@@ -36,7 +36,10 @@ function Login(){
             if (response.status === 401){
                 throw new Error("Datos incorrectos. Inténtalo de nuevo.");
             }
-            return response.json();
+            else{
+                return response.json();
+            }
+            
         })
         .then(data => console.log(data))
         .catch(error => alert(error))

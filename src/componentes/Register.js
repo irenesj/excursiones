@@ -45,7 +45,10 @@ function Register(){
             if (response.status === 409){
                 throw new Error("Tu nombre de usuario ya se está utilizando");
             }
-            return response.json();
+            else{
+                return response.json();
+            }
+            
         })
         .then(data => console.log(data))
         .catch(error => alert(error))
