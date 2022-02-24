@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import styles from '../css/Login.module.css';
 import {validateMail, validatePassword} from '../validation/validations.js'
 import NoMessageValidatedFormGroup from "./NoMessageValidatedFormGroup";
+import LoginContext from "../contexts/LoginContext";
 
 function Login(){
 
@@ -29,6 +30,9 @@ function Login(){
 
     };
 
+
+    const loginContext = useContext(LoginContext);
+
     const submit = () => {
 
         fetch(url, options)
@@ -41,7 +45,11 @@ function Login(){
             }
             
         })
-        .then(data => console.log(data))
+        .then(data => {
+            
+            loginContext.setLogin(true);
+
+        })
         .catch(error => alert(error))
     
     }
@@ -65,6 +73,8 @@ function Login(){
             <Container className={styles.login}>
                 <Row>
                     <Col xs="12">
+                        {loginContext.login && <p>Estás logueado</p>}
+                        {!loginContext.login && <p>No has conseguido loguearte</p>}
                         <Form className={styles.form}>
                             <NoMessageValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} value={mail}/>
                             <p className={styles.paragraph}>Nunca compartiremos tus datos con nadie</p>
