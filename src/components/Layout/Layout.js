@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import Filters from "../Filters";
+import Login from "../Login";
 import Excursions from "../Excursions";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
@@ -45,10 +46,10 @@ const Layout = ({ children }) => {
       <div className={styles.body}>
       <Container className={styles.container}>
         <Row className={styles.nav}>
-          <Col className={styles.logo} xs="4">
+          <Col className={styles.logo} xs="3">
              Excursiones Juntos 
           </Col>
-          <Col xs="8">
+          <Col xs="9">
             <Nav className="justify-content-end">
               <Nav.Item className={styles.searchBar} md="5">
                 <div className="form-group">
@@ -59,7 +60,7 @@ const Layout = ({ children }) => {
                 <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link as={Link} to="login">Inicia sesión</Nav.Link>
+                <Login/>
               </Nav.Item>
             </Nav>
           </Col> 
