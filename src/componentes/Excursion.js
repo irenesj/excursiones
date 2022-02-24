@@ -8,7 +8,7 @@ function Excursion(props){
 
         <div className={styles.excursion}>
             <div className={styles.title}>{props.name}</div>
-            <img src="" alt="Lista de excursiones disponibles"/>
+            <img src="" alt="Lista de excursiones disponibles"/><br/> 
             <div className={styles.bold}>Zona:</div> {props.area}<br/> 
             <div className={styles.bold}>Dificultad:</div> {props.dificulty}<br/> 
             <div className={styles.bold}>Tiempo estimado:</div> {props.time}<br/> 

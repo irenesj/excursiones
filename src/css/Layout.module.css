@@ -42,8 +42,10 @@
 
 .searchBar {
 
+    width: 500px;
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: px;
+    
 }
 
 .footer {

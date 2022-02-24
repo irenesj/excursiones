@@ -9,8 +9,9 @@ function Filters(){
       
       <div>
         <ListGroup variant="flush">
-        <ListGroup.Item className={styles.filters}>Cangas de Onís</ListGroup.Item>
-          <ListGroup.Item className={styles.filters}>Picos de Europa</ListGroup.Item>
+          <ListGroup.Item className={styles.filters}>Zona</ListGroup.Item>
+          <ListGroup.Item className={styles.filters}>Dificultad</ListGroup.Item>
+          <ListGroup.Item className={styles.filters}>Tiempo estimado</ListGroup.Item>
       </ListGroup>
       </div>
     

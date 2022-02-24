@@ -51,7 +51,7 @@ const Layout = ({ children }) => {
             <Nav className="justify-content-end">
               <Nav.Item className={styles.searchBar} md="5">
                 <div className="form-group">
-                  <input id="searchBar" className="form-control" type="search"  placeholder="Busca una excursión" onKeyUp={introKeyPressed}/>
+                  <input id="searchBar" className="form-control" type="search"  placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed}/>
                 </div>
               </Nav.Item>
               <Nav.Item>
