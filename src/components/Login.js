@@ -70,7 +70,7 @@ function Login(){
      
     return(
 
-        <DropdownButton title="Login" variant="success" autoClose={false}>
+        <DropdownButton className={styles.loginDropdownButton} title="Inicia sesión" variant="success" autoClose={false}>
             <Dropdown.Item>
                 <div className={styles.formText}>
                     <NoMessageValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} value={mail}/>
@@ -82,9 +82,9 @@ function Login(){
                     <NoMessageValidatedFormGroup control="formBasicPassword" inputType="password" name="Contraseña" inputToChange={setPassword} value={password}/>  
                 </div>
             </Dropdown.Item>
-            <Dropdown.Item>
+            <Dropdown.Item >
                 <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
-                    Inicia sesión
+                    Enviar
                 </Button>
             </Dropdown.Item>
       </DropdownButton>

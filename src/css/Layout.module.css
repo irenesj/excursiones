@@ -11,8 +11,7 @@
 
     background-color: #557027;
     color: white;
-    font-size: 18px;
-    font-weight: bold;
+    font-size: 16px;
     padding-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     border-top-left-radius: 0.8em;
@@ -26,7 +25,7 @@
     font-size: 30px;
     font-weight: bolder;
     font-style: italic;
-    padding-bottom: 15px;
+    padding-top: 15px;
     padding-left: 20px;
     padding-right: 15px;
 }
@@ -35,16 +34,16 @@
 
     color: white;
     font-family:'Franklin Gothic Medium', Arial, sans-serif;
-    padding-top: 18px;
+    padding-top: 23px;
     text-decoration: none;
 
 }
 
 .searchBar {
 
-    width: 450px;
-    padding-top: 10px;
-    padding-bottom: px;
+    width: 400px;
+    padding-top: 15px;
+    padding-bottom: 25px;
     
 }
 

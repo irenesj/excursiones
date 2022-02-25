@@ -98,7 +98,7 @@ function Register(){
                             </Row>
                             <div className={styles.btn}>
                                 <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
-                                    Regístrate
+                                    Enviar
                                 </Button>
                             </div>
                         </Form>
