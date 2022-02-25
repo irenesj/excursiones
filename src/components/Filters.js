@@ -35,9 +35,10 @@ function Filters(){
             <Accordion.Header>Tiempo estimado</Accordion.Header>
             <Accordion.Body>
               <ul className={styles.listInfo}>
-                <li>4 horas</li>
                 <li>5 horas</li>
-                <li>1 día</li>
+                <li>6 horas</li>
+                <li>7 horas</li>
+                <li>8 horas</li>
               </ul>
             </Accordion.Body>
           </Accordion.Item>
