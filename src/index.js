@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import  Login from './componentes/Login';
-import  Register from './componentes/Register';
+import  Register from './components/Register';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -14,7 +13,6 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}/>
         <Route path="register" element={<Register />}/>   
-        <Route path="login" element={<Login />}/> 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

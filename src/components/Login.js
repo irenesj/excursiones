@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Row, Col, Button, Dropdown } from "react-bootstrap";
+import { Button, Dropdown, DropdownButton } from "react-bootstrap";
 import styles from '../css/Login.module.css';
 import {validateMail, validatePassword} from '../validation/validations.js'
 import NoMessageValidatedFormGroup from "./NoMessageValidatedFormGroup";
@@ -41,6 +41,7 @@ function Login(){
                 throw new Error("Datos incorrectos. Inténtalo de nuevo.");
             }
             else{
+                alert("Logueado correctamente");
                 return response.json();
             }
             
@@ -69,33 +70,24 @@ function Login(){
      
     return(
 
-        <Dropdown>
-            <Dropdown.Toggle variant="success" id="login">
-                Login
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-                <Dropdown.Item>
+        <DropdownButton title="Login" variant="success" autoClose={false}>
+            <Dropdown.Item>
+                <div className={styles.formText}>
                     <NoMessageValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} value={mail}/>
                     <p className={styles.paragraph}>Nunca compartiremos tus datos con nadie</p>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    <NoMessageValidatedFormGroup control="formBasicPassword" inputType="password" name="Contraseña" inputToChange={setPassword} value={password}/>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
-                        Inicia sesión
-                    </Button>
-                </Dropdown.Item>
-            </Dropdown.Menu>
-           
-                <Row>
-                    <Col xs="12">
-                        {loginContext.login && <p>Estás logueado</p>}
-                        {!loginContext.login && <p>No has conseguido loguearte</p>}
-                       
-                    </Col>
-                </Row>
-      </Dropdown>
+                </div>
+            </Dropdown.Item>
+            <Dropdown.Item>
+                <div className={styles.formText}>
+                    <NoMessageValidatedFormGroup control="formBasicPassword" inputType="password" name="Contraseña" inputToChange={setPassword} value={password}/>  
+                </div>
+            </Dropdown.Item>
+            <Dropdown.Item>
+                <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
+                    Inicia sesión
+                </Button>
+            </Dropdown.Item>
+      </DropdownButton>
     );
 }
 
