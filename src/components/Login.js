@@ -71,22 +71,22 @@ function Login(){
     return(
 
         <DropdownButton className={styles.loginDropdownButton} title="Inicia sesión" variant="success" autoClose={false}>
-            <Dropdown.Item>
+            <Dropdown.ItemText className={styles.loginDropdownButtonText}>
                 <div className={styles.formText}>
                     <NoMessageValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} value={mail}/>
-                    <p className={styles.paragraph}>Nunca compartiremos tus datos con nadie</p>
+                    <p>Nunca compartiremos tus datos con nadie</p>
                 </div>
-            </Dropdown.Item>
-            <Dropdown.Item>
+            </Dropdown.ItemText>
+            <Dropdown.ItemText>
                 <div className={styles.formText}>
                     <NoMessageValidatedFormGroup control="formBasicPassword" inputType="password" name="Contraseña" inputToChange={setPassword} value={password}/>  
                 </div>
-            </Dropdown.Item>
-            <Dropdown.Item >
+            </Dropdown.ItemText>
+            <Dropdown.ItemText>
                 <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
                     Enviar
                 </Button>
-            </Dropdown.Item>
+            </Dropdown.ItemText>
       </DropdownButton>
     );
 }
