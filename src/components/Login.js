@@ -83,7 +83,7 @@ function Login(){
                 </div>
             </Dropdown.ItemText>
             <Dropdown.ItemText>
-                <Button variant="primary" type="button" onClick={submit} disabled={disabled}>
+                <Button className={styles.sendBtn} variant="primary" type="button" onClick={submit} disabled={disabled}>
                     Enviar
                 </Button>
             </Dropdown.ItemText>

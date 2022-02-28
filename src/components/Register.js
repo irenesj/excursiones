@@ -93,7 +93,7 @@ function Register(){
                             <Row>
                                 <ul className={styles.list}>
                                     <li>Tu contraseña debe tener al menos 8 caracteres, una letra y un número</li>
-                                    <li>Debes estar registrado/a para poder añadir y/o apuntarte a excursiones</li>
+                                    <li>Debes estar registrado/a para poder añadir apuntarte a excursiones</li>
                                 </ul>
                             </Row>
                             <div className={styles.btn}>

@@ -1,5 +1,8 @@
 .loginDropdownButton{
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-top: 15px;
 }
 
@@ -13,4 +16,9 @@
     color: black;
     margin-bottom: 10px;
 
+}
+
+.sendBtn{
+
+    margin-left: 38%;
 }
