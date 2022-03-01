@@ -67,10 +67,10 @@ const Layout = ({ children }) => {
               </Nav.Item>
               { !context.login &&  itemsNoLogados}
               {context.login && 
-              <Nav.Item>
-                <p>Bienvenido, </p>
-              </Nav.Item>
-            }
+                <Nav.Item>
+                  <p>Bienvenido/a, </p>
+                </Nav.Item>
+              }
             </Nav>
           </Col> 
         </Row>

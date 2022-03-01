@@ -41,12 +41,14 @@ function Login(){
                 throw new Error("Datos incorrectos. Inténtalo de nuevo.");
             }
             else{
+                
                 return response.json();
+
             }
             
         })
         .then(data => {
-            
+           
             loginContext.setLogin(true);
 
         })
