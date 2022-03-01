@@ -41,7 +41,6 @@ function Login(){
                 throw new Error("Datos incorrectos. Inténtalo de nuevo.");
             }
             else{
-                alert("Logueado correctamente");
                 return response.json();
             }
             

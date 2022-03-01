@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import Filters from "../Filters";
@@ -6,11 +6,12 @@ import Login from "../Login";
 import Excursions from "../Excursions";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
+import LoginContext from "../../contexts/LoginContext";
 
 
 const Layout = ({ children }) => {
 
-
+  const context = useContext(LoginContext);
   // Variable that saves the information from the search input 
   const introKeyPressed = (event) => {
 
@@ -41,6 +42,14 @@ const Layout = ({ children }) => {
 
     }, [search]);
 
+    const itemsNoLogados = <>
+      <Nav.Item>
+        <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
+      </Nav.Item> 
+      <Nav.Item>
+        <Login/>
+      </Nav.Item>
+    </>
     
     return(
       <div className={styles.body}>
@@ -53,15 +62,15 @@ const Layout = ({ children }) => {
             <Nav className="justify-content-end">
               <Nav.Item className={styles.searchBar} md="5">
                 <div className="form-group">
-                  <input id="searchBar" className="form-control" type="search"  placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed}/>
+                  <input id="searchBar" className="form-control" type="search" placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed}/>
                 </div>
               </Nav.Item>
+              { !context.login &&  itemsNoLogados}
+              {context.login && 
               <Nav.Item>
-                <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
+                <p>Bienvenido, </p>
               </Nav.Item>
-              <Nav.Item>
-                <Login/>
-              </Nav.Item>
+            }
             </Nav>
           </Col> 
         </Row>
