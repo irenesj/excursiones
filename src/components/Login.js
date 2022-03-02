@@ -71,7 +71,7 @@ function Login(){
      
     return(
 
-        <DropdownButton className={styles.loginDropdownButton} title="Inicia sesión" variant="success" autoClose={false}>
+        <DropdownButton className={styles.loginDropdownButton} title="Inicia sesión" autoClose={false}>
             <Dropdown.ItemText className={styles.loginDropdownButtonText}>
                 <div className={styles.formText}>
                     <NoMessageValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} value={mail}/>
