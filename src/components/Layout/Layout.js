@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
 
     }, [search]);
 
-    const itemsNoLogados = <>
+    const NoLoggedItems = <>
       <Nav.Item>
         <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
       </Nav.Item> 
@@ -65,7 +65,7 @@ const Layout = ({ children }) => {
                   <input id="searchBar" className="form-control" type="search" placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed}/>
                 </div>
               </Nav.Item>
-              { !context.login &&  itemsNoLogados}
+              { !context.login &&  NoLoggedItems}
               {context.login && 
                 <Nav.Item>
                   <p>Bienvenido/a, </p>
