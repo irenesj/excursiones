@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Nav, } from "react-bootstrap";
+import { Container, Row, Col, Nav, Button } from "react-bootstrap";
 import Filters from "../Filters";
 import Login from "../Login";
 import Excursions from "../Excursions";
@@ -50,6 +50,13 @@ const Layout = ({ children }) => {
         <Login/>
       </Nav.Item>
     </>
+
+    const LoggedItems = <>
+    
+    <Nav.Item className={styles.userProfile}>
+      Bienvenido/a,
+    </Nav.Item>
+    </>
     
     return(
       <div className={styles.body}>
@@ -66,11 +73,7 @@ const Layout = ({ children }) => {
                 </div>
               </Nav.Item>
               { !context.login &&  NoLoggedItems}
-              {context.login && 
-                <Nav.Item className={styles.userProfile} >
-                  Bienvenido/a, 
-                </Nav.Item>
-              }
+              {context.login && LoggedItems}
             </Nav>
           </Col> 
         </Row>
