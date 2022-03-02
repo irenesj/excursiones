@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Nav, Button } from "react-bootstrap";
+import { Container, Row, Col, Nav } from "react-bootstrap";
 import Filters from "../Filters";
 import Login from "../Login";
 import Excursions from "../Excursions";
 import LoginContext from "../../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
+import LandingPageUserProfile from "../LandingPageUserProfile";
 
 
 const Layout = ({ children }) => {
@@ -53,8 +54,8 @@ const Layout = ({ children }) => {
 
     const LoggedItems = <>
     
-    <Nav.Item className={styles.userProfile}>
-      Bienvenido/a,
+    <Nav.Item>
+      <LandingPageUserProfile name=""/>
     </Nav.Item>
     </>
     
@@ -73,7 +74,7 @@ const Layout = ({ children }) => {
                 </div>
               </Nav.Item>
               { !context.login &&  NoLoggedItems}
-              {context.login && LoggedItems}
+              { context.login && LoggedItems }
             </Nav>
           </Col> 
         </Row>
