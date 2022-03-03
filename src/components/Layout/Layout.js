@@ -8,6 +8,7 @@ import LoginContext from "../../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 import LandingPageUserProfile from "../LandingPageUserProfile";
+import Footer from "../Footer";
 
 
 const Layout = ({ children }) => {
@@ -90,11 +91,8 @@ const Layout = ({ children }) => {
             <Excursions excursionData={ excursionArray } />
           </Col>
         </Row>
-        <Row className={styles.footer}>
-          <Col xs="12">
-            <p>© Excursiones Juntos 2022. Todos los derechos reservados.</p>    
-            <p><a href="mailto:excursionesjuntos@gmail.com">Contacto</a></p>
-          </Col>
+        <Row >
+            <Footer/>
         </Row>
         </Container>
       </div>

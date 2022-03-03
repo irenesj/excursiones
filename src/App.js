@@ -9,12 +9,20 @@ function App() {
   const [user, setUser] = useState({});
   const [token, setToken] = useState('');
 
-  const setLog = (data) =>{
+  const setLogIn = (data) =>{
 
     setLogin(true);
     setUser(data.user);
     setToken(data.token);
-    
+
+  }
+
+  const setLogOut = (data) =>{
+
+    setLogin(false);
+    setUser({});
+    setToken('');
+
   }
 
   const contextValue = {
@@ -22,7 +30,8 @@ function App() {
     "login": login,
     "user": user,
     "token": token,
-    "setLog": setLog
+    "setLogIn": setLogIn,
+    "setLogOut": setLogOut
     
   }
 

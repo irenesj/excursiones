@@ -49,7 +49,7 @@ function Login(){
         })
         .then(data => {
 
-            loginContext.setLog(data);
+            loginContext.setLogIn(data);
 
         })
         .catch(error => alert(error))

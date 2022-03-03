@@ -14,8 +14,7 @@ function LandingPageUserProfile(props){
 
         method: 'DELETE',
         mode: 'cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify()
+        headers: { 'Content-Type': 'application/json' }
 
     };
 
@@ -26,7 +25,7 @@ function LandingPageUserProfile(props){
         .then((resp) => resp.json())
         .then(function(data) {
 
-            context.setLog(data);
+            context.setLogOut(data);
 
         })
         .catch(function(error) {
@@ -34,13 +33,13 @@ function LandingPageUserProfile(props){
             console.log(error);
 
         });
-        
+
     }
 
     return (
 
         <div className={styles.userProfile}>
-            Bienvenido/a, {props.name}
+            Bienvenido/a, {props.name} 
             <Button onClick={logOut}>Cerrar sesión</Button>
         </div>
     );
