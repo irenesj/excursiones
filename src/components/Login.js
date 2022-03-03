@@ -48,8 +48,15 @@ function Login(){
             
         })
         .then(data => {
-           
+
+            const user = {
+
+                ...data.user
+
+            };
+
             loginContext.setLogin(true);
+            loginContext.setUser(user);
 
         })
         .catch(error => alert(error))

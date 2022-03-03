@@ -6,12 +6,15 @@ import LoginContext from './contexts/LoginContext';
 function App() {
 
   const [login, setLogin] = useState(false);
+  const [user, setUser] = useState({});
 
   const contextValue = {
 
     "login": login,
-    "setLogin": setLogin
-
+    "setLogin": setLogin,
+    "user": user,
+    "setUser": setUser
+    
   }
 
   return (

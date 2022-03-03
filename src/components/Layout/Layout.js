@@ -53,9 +53,8 @@ const Layout = ({ children }) => {
     </>
 
     const LoggedItems = <>
-    
     <Nav.Item>
-      <LandingPageUserProfile name=""/>
+      <LandingPageUserProfile name={context.user.name}/>
     </Nav.Item>
     </>
     
