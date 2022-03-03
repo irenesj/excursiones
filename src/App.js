@@ -7,13 +7,22 @@ function App() {
 
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState({});
+  const [token, setToken] = useState('');
+
+  const setLog = (data) =>{
+
+    setLogin(true);
+    setUser(data.user);
+    setToken(data.token);
+    
+  }
 
   const contextValue = {
 
     "login": login,
-    "setLogin": setLogin,
     "user": user,
-    "setUser": setUser
+    "token": token,
+    "setLog": setLog
     
   }
 

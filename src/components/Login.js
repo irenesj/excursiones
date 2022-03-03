@@ -49,14 +49,7 @@ function Login(){
         })
         .then(data => {
 
-            const user = {
-
-                ...data.user
-
-            };
-
-            loginContext.setLogin(true);
-            loginContext.setUser(user);
+            loginContext.setLog(data);
 
         })
         .catch(error => alert(error))

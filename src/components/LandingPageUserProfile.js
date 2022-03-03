@@ -9,11 +9,32 @@ function LandingPageUserProfile(props){
 
     const context = useContext(LoginContext);
 
+    const url = 'http://localhost:3001/login';
+    const options = {
+
+        method: 'DELETE',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify()
+
+    };
+
     const logOut = () => {
 
-            context.setLogin(false);
-            context.setUser({});
 
+        fetch(url, options)
+        .then((resp) => resp.json())
+        .then(function(data) {
+
+            context.setLog(data);
+
+        })
+        .catch(function(error) {
+
+            console.log(error);
+
+        });
+        
     }
 
     return (
