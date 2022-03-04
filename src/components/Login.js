@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import 'bootstrap/dist/css/bootstrap.css';
 import { Button, Dropdown, DropdownButton } from "react-bootstrap";
-import styles from '../css/Login.module.css';
 import {validateMail, validatePassword} from '../validation/validations.js'
 import NoMessageValidatedFormGroup from "./NoMessageValidatedFormGroup";
 import LoginContext from "../contexts/LoginContext";
+import 'bootstrap/dist/css/bootstrap.css';
+import styles from '../css/Login.module.css';
 
 function Login(){
 

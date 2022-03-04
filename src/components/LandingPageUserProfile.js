@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
-import { Button } from "react-bootstrap";
+import { Button, SplitButton, Dropdown } from "react-bootstrap";
+import LoginContext from "../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/LandingPageUserProfile.module.css';
-import LoginContext from "../contexts/LoginContext";
 
 
 function LandingPageUserProfile(props){
 
     const context = useContext(LoginContext);
+    const text = <div>Bienvenido/a, {props.name}</div>
 
     const url = 'http://localhost:3001/login';
     const options = {
@@ -38,10 +39,14 @@ function LandingPageUserProfile(props){
 
     return (
 
-        <div className={styles.userProfile}>
-            Bienvenido/a, {props.name} 
-            <Button onClick={logOut}>Cerrar sesión</Button>
-        </div>
+        <SplitButton className={styles.userProfile} variant="success" title={text} >
+            <Dropdown.ItemText className={styles.dropdownText}>Perfil</Dropdown.ItemText>
+            <Dropdown.Divider />
+            <Dropdown.ItemText className={styles.dropdownText}>
+                <Button className={styles.logoutBtn} onClick={logOut}>Cerrar sesión</Button>
+            </Dropdown.ItemText>
+        </SplitButton>
+     
     );
 }
 

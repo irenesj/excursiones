@@ -1,6 +1,17 @@
 .userProfile{
 
-    margin-top: 18px;
+    margin-top: 15px;
     margin-left: 15px;
     
+}
+
+.dropdownText{
+
+    width: 200px;
+}
+
+.logoutBtn{
+
+    margin-left: 13%;
+
 }

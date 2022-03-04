@@ -1,4 +1,5 @@
 import React from "react";
+import { Col } from "react-bootstrap";
 import Excursion from "./Excursion";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Excursions.module.css';
@@ -12,11 +13,11 @@ function Excursions(props){
 
     return(
 
-        <div>
+        <Col xs="9">
             <h2 className={styles.title}>Próximas excursiones</h2>
             {found && excursions}
             {!found && notFound}
-        </div>
+        </Col>
        
     );
 

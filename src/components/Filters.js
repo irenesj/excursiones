@@ -1,13 +1,13 @@
 import React from "react";
+import { Col, Accordion } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Accordion } from 'react-bootstrap';
 import styles from '../css/Filters.module.css';
 
 function Filters(){
 
     return(
       
-      <div>
+      <Col xs="3">
         <Accordion flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Zona</Accordion.Header>
@@ -43,7 +43,7 @@ function Filters(){
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-      </div>
+      </Col>
     
     );
 

@@ -4,11 +4,11 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 import Filters from "../Filters";
 import Login from "../Login";
 import Excursions from "../Excursions";
+import LandingPageUserProfile from "../LandingPageUserProfile";
+import Footer from "../Footer";
 import LoginContext from "../../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
-import LandingPageUserProfile from "../LandingPageUserProfile";
-import Footer from "../Footer";
 
 
 const Layout = ({ children }) => {
@@ -84,15 +84,11 @@ const Layout = ({ children }) => {
           </Col>
         </Row>
         <Row>
-          <Col xs="3">
-            <Filters/>
-          </Col>
-          <Col xs="9">
-            <Excursions excursionData={ excursionArray } />
-          </Col>
+          <Filters/>
+          <Excursions excursionData={ excursionArray } />
         </Row>
         <Row >
-            <Footer/>
+          <Footer/>
         </Row>
         </Container>
       </div>
