@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Button, Dropdown, DropdownButton } from "react-bootstrap";
-import {validateMail, validatePassword} from '../validation/validations.js'
-import NoMessageValidatedFormGroup from "./NoMessageValidatedFormGroup";
+import {validateMail, validatePassword} from '../validation/validations.js';
+import ValidatedFormGroup from "./ValidatedFormGroup";
 import LoginContext from "../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Login.module.css';
@@ -74,13 +74,13 @@ function Login(){
         <DropdownButton className={styles.loginDropdownButton} title="Inicia sesión" autoClose={false}>
             <Dropdown.ItemText className={styles.loginDropdownButtonText}>
                 <div className={styles.formText}>
-                    <NoMessageValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} value={mail}/>
+                    <ValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail}/>
                     <p>Nunca compartiremos tus datos con nadie</p>
                 </div>
             </Dropdown.ItemText>
             <Dropdown.ItemText>
                 <div className={styles.formText}>
-                    <NoMessageValidatedFormGroup control="formBasicPassword" inputType="password" name="Contraseña" inputToChange={setPassword} value={password}/>  
+                    <ValidatedFormGroup control="formBasicPassword" inputType="password" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password}/>  
                 </div>
             </Dropdown.ItemText>
             <Dropdown.ItemText>

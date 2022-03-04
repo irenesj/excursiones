@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import styles from '../css/Register.module.css';
 import ValidatedFormGroup from "./ValidatedFormGroup";
 import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
-
+import 'bootstrap/dist/css/bootstrap.css';
+import styles from '../css/Register.module.css';
 
 function Register(){
 

@@ -13,6 +13,9 @@ import styles from '../../css/Layout.module.css';
 
 const Layout = ({ children }) => {
 
+  const [search, setSearch] = useState(''); 
+  const [excursionArray, setExcursionArray] = useState([]);
+
   const context = useContext(LoginContext);
   // Variable that saves the information from the search input 
   const introKeyPressed = (event) => {
@@ -21,9 +24,6 @@ const Layout = ({ children }) => {
     setSearch(currentSearch);
 
   }
-
-  const [search, setSearch] = useState(''); 
-  const [excursionArray, setExcursionArray] = useState([]);
 
   const url = `http://localhost:3001/excursions?q=${search}`;
 
