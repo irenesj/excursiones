@@ -26,7 +26,7 @@ function LandingPageUserProfile(props){
         .then((resp) => resp.json())
         .then(function(data) {
 
-            context.setLogOut(data);
+            console.log(data)
 
         })
         .catch(function(error) {
