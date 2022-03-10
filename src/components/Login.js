@@ -50,6 +50,8 @@ function Login(){
         .then(data => {
 
             loginContext.setLogIn(data);
+            window.localStorage["token"] = data.token;
+            console.log(localStorage);
 
         })
         .catch(error => alert(error))
