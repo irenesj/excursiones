@@ -10,14 +10,33 @@ import LoginContext from "../../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
-
+/** This, the layout, here goes the web structure  */
 const Layout = ({ children }) => {
 
+  // Variable that saves the search that the user writes in the search bar 
   const [search, setSearch] = useState(''); 
+  // Array that has the excursions that are needed in that moment
   const [excursionArray, setExcursionArray] = useState([]);
-
+  // Variable that saves the login context to know when we need to display some information and when we need to display other information
   const context = useContext(LoginContext);
-  // Variable that saves the information from the search input 
+   // Items that are displayed in the nav bar when no user is logged
+   const NoLoggedItems = <>
+    <Nav.Item>
+      <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
+    </Nav.Item> 
+    <Nav.Item>
+      <Login/>
+    </Nav.Item>
+  </>
+  // Items that are displayed in the nav bar when a user is logged
+  const LoggedItems = <>
+    <Nav.Item>
+      <LandingPageUserProfile name={context.user.name}/>
+    </Nav.Item>
+    </>
+ 
+
+  // Function that saves the information from the search input and updates its state
   const introKeyPressed = (event) => {
 
     let currentSearch = event.target.value; 
@@ -25,6 +44,7 @@ const Layout = ({ children }) => {
 
   }
 
+  // Variable that has the result of the search bar to know what excursion the user is looking for
   const url = `http://localhost:3001/excursions?q=${search}`;
 
     useEffect(() => {
@@ -44,20 +64,8 @@ const Layout = ({ children }) => {
 
     }, [search]);
 
-    const NoLoggedItems = <>
-      <Nav.Item>
-        <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
-      </Nav.Item> 
-      <Nav.Item>
-        <Login/>
-      </Nav.Item>
-    </>
+   
 
-    const LoggedItems = <>
-    <Nav.Item>
-      <LandingPageUserProfile name={context.user.name}/>
-    </Nav.Item>
-    </>
     
     return(
       <div className={styles.body}>
