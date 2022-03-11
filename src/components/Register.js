@@ -7,20 +7,23 @@ import styles from '../css/Register.module.css';
 
 function Register(){
 
-
-    // Variables that receive and change the information that we received from the register form inputs
+    // Variable that saves if the register button is disabled or not
     const [disabled, setDisabled] = useState(true);
+    // Variable that receive and change the name that we received from the login form inputs
     const [name, setName] = useState("");
+    // Variable that receive and change the surname that we received from the login form inputs
     const [surname, setSurname] = useState("");
+    // Variable that receive and change the phone that we received from the login form inputs
     const [phone, setPhone] = useState("");
+    // Variable that receive and change the mail that we received from the login form inputs
     const [mail, setMail] = useState("");
+    // Variable that receive and change the password that we received from the login form inputs
     const [password, setPassword] = useState("");
+    // Variable that receive and change the password that we received from the login form inputs
     const [samePassword, setSamePassword] = useState("");
-
-
-    // Function that allows register an user sending the POST request
+    // Variable that has the url that is needed for the fetch
     const url = `http://localhost:3001/users`;
-
+    // Variable that has a user with the information we have received from the register form, then this is sent to the server to add the user
     const user = {
 
         name: name,
@@ -29,7 +32,7 @@ function Register(){
         mail: mail,
         password: password
     }
-
+    // Variable that saves the options that the fetch needs
     const options = {
 
         method: 'POST',
@@ -38,6 +41,7 @@ function Register(){
         body: JSON.stringify(user)
     };
 
+    // Function that allows register an user sending the POST request
     const submit = () => {
         
         fetch(url, options )
@@ -54,7 +58,6 @@ function Register(){
         .catch(error => alert(error))
     
     }
-
 
     // This useEffect disables the button to register until all the information in the register inputs is correct
     useEffect(() => {
@@ -106,7 +109,9 @@ function Register(){
                 </Row>
             </Container>
         </div>
+
     );
+
 }
 
 export default Register;

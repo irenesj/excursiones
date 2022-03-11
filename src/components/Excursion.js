@@ -1,12 +1,14 @@
 import React, {useContext} from "react";
 import { Button } from "react-bootstrap";
+import LoginContext from "../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Excursion.module.css';
-import LoginContext from "../contexts/LoginContext";
 
 function Excursion(props){
 
+     // Variable that saves the login context to know when we need to display some information and when we need to display other information
     const context = useContext(LoginContext);
+
 
     return(
 
@@ -24,6 +26,7 @@ function Excursion(props){
         </div>
 
     );
+    
 }
 
 export default Excursion;
