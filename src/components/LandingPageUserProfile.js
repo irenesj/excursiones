@@ -7,10 +7,13 @@ import styles from '../css/LandingPageUserProfile.module.css';
 
 function LandingPageUserProfile(props){
 
+    // Variable that saves the login context to know when we need to display some information and when we need to display other information
     const context = useContext(LoginContext);
+    // Variable that saves the text that says welcome to the user that just had log in
     const text = <div>Bienvenido/a, {props.name}</div>
-
+    // Variable that has the url that is needed for the fetch
     const url = 'http://localhost:3001/login';
+    // Variable that saves the options that the fetch needs
     const options = {
 
         method: 'DELETE',
@@ -19,8 +22,8 @@ function LandingPageUserProfile(props){
 
     };
 
+    // Function for logging out
     const logOut = () => {
-
 
         fetch(url, options)
         .then((resp) => resp.json())
@@ -38,6 +41,7 @@ function LandingPageUserProfile(props){
 
     }
 
+    
     return (
 
         <SplitButton className={styles.userProfile} variant="success" title={text} >

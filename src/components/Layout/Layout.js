@@ -10,7 +10,7 @@ import LoginContext from "../../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
-/** This, the layout, here goes the web structure  */
+/** This is the layout, here goes the web structure  */
 const Layout = ({ children }) => {
 
   // Variable that saves the search that the user writes in the search bar 
@@ -64,10 +64,9 @@ const Layout = ({ children }) => {
 
     }, [search]);
 
-   
 
-    
     return(
+
       <div className={styles.body}>
       <Container className={styles.container}>
         <Row className={styles.nav}>
@@ -102,6 +101,7 @@ const Layout = ({ children }) => {
       </div>
      
     )
+    
 }
 
 export default Layout;
