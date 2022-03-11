@@ -8,19 +8,21 @@ import styles from '../css/Login.module.css';
 
 function Login(){
 
-    // Variables that receive and change the information that we received from the login form inputs
-     const [disabled, setDisabled] = useState(true);
-     const [mail, setMail] = useState("");
-     const [password, setPassword] = useState("");
-
+    // Variable that saves if the login button is disabled or not
+    const [disabled, setDisabled] = useState(true);
+    // Variable that receive and change the mail that we received from the login form inputs
+    const [mail, setMail] = useState("");
+    // Variable that receive and change the password that we received from the login form inputs
+    const [password, setPassword] = useState("");
+    // Variable that has the url that is needed for the fetch
     const url = 'http://localhost:3001/login';
-
+    // Login object that we pass to the server for it to authenticate the user
     const login = {
 
         mail: mail,
         password: password
     }
-
+    // Variable that saves the options that the fetch needs
     const options = {
 
         method: 'POST',
@@ -29,10 +31,10 @@ function Login(){
         body: JSON.stringify(login)
 
     };
-
-
+     // Variable that saves the login context to know when we need to display some information and when we need to display other information
     const loginContext = useContext(LoginContext);
 
+    // Function that submits the information for the login form
     const submit = () => {
 
         fetch(url, options)
@@ -59,7 +61,7 @@ function Login(){
     }
 
     // This useEffect disables the button to log until all the information in the login inputs is correct
-     useEffect(() => {
+    useEffect(() => {
 
         if(validateMail(mail) && validatePassword(password)){
             setDisabled(false);
@@ -68,7 +70,7 @@ function Login(){
             setDisabled(true);
         }
 
-     }, [mail, password]);
+    }, [mail, password]);
 
      
     return(
@@ -91,7 +93,9 @@ function Login(){
                 </Button>
             </Dropdown.ItemText>
       </DropdownButton>
+
     );
+
 }
 
 export default Login;
