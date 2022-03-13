@@ -22,6 +22,7 @@ function App() {
     setLogin(false);
     setUser({});
     setToken('');
+    localStorage.clear();
 
   }
 
