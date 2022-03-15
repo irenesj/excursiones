@@ -18,7 +18,9 @@ function LandingPageUserProfile(props){
 
         method: 'DELETE',
         mode: 'cors',
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json',
+                    'Authorization': `Bearer  ${context.token}` }
+
 
     };
 
@@ -30,7 +32,7 @@ function LandingPageUserProfile(props){
         .then(function(data) {
 
             console.log(data)
-            context.logOut();
+            context.setLogOut();
 
         })
         .catch(function(error) {
