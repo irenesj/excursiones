@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Layout from './components/Layout/Layout';
 import LoginContext from './contexts/LoginContext';
@@ -8,6 +8,15 @@ function App() {
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState({});
   const [token, setToken] = useState('');
+  const url = 'http://localhost:3001/login';
+
+  const options = {
+
+    method: 'GET',
+    mode: 'cors',
+    headers: { 'Content-Type': 'application/json' }
+
+  };
 
   const setLogIn = (data) =>{
 
@@ -35,6 +44,31 @@ function App() {
     "setLogOut": setLogOut
     
   }
+
+  // Comprobamos si existen token
+  const loadToken = () => {
+
+    const localToken = localStorage["token"];
+
+    if(localToken){
+
+      setLogin(true);
+      
+      fetch(url, options)
+      .then(){
+
+      }
+
+    }
+
+  }
+
+  useEffect(() => {
+
+    loadToken();
+
+  }, []);
+  
 
   return (
 
