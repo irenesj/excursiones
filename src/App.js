@@ -55,9 +55,16 @@ function App() {
       setLogin(true);
       
       fetch(url, options)
-      .then(){
+      .then(response => {
+       
+        
+      })
+      .then(data => {
 
-      }
+        
+
+      })
+      .catch(error => alert(error))
 
     }
 
