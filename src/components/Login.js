@@ -75,7 +75,7 @@ function Login(){
      
     return(
 
-        <DropdownButton className={styles.loginDropdownButton} title="Inicia sesión" autoClose={false}>
+        <DropdownButton className={styles.loginDropdownButton} variant="success" title="Inicia sesión" autoClose={false}>
             <Dropdown.ItemText className={styles.loginDropdownButtonText}>
                 <div className={styles.formText}>
                     <ValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail}/>
@@ -88,7 +88,7 @@ function Login(){
                 </div>
             </Dropdown.ItemText>
             <Dropdown.ItemText>
-                <Button className={styles.sendBtn} variant="primary" type="button" onClick={submit} disabled={disabled}>
+                <Button className={styles.sendBtn} variant="success" type="button" onClick={submit} disabled={disabled}>
                     Enviar
                 </Button>
             </Dropdown.ItemText>

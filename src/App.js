@@ -8,7 +8,7 @@ function App() {
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState({});
   const [token, setToken] = useState('');
-  const url = 'http://localhost:3001/login';
+  const url = 'http://localhost:3001/token';
 
   const options = {
 
@@ -55,19 +55,20 @@ function App() {
       setLogin(true);
       
       fetch(url, options)
-      .then(response => {
-       
-        
-      })
-      .then(data => {
+      .then((resp) => resp.json())
+      .then(function(data) {
 
-        
+          console.log(data)
+          setUser(data);
 
       })
-      .catch(error => alert(error))
+      .catch(function(error) {
+
+          console.log(error);
+
+      });
 
     }
-
   }
 
   useEffect(() => {

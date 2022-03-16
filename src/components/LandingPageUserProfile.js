@@ -50,7 +50,7 @@ function LandingPageUserProfile(props){
             <Dropdown.ItemText className={styles.dropdownText}>Perfil</Dropdown.ItemText>
             <Dropdown.Divider />
             <Dropdown.ItemText className={styles.dropdownText}>
-                <Button className={styles.logoutBtn} onClick={logOut}>Cerrar sesión</Button>
+                <Button className={styles.logoutBtn} variant="success" onClick={logOut}>Cerrar sesión</Button>
             </Dropdown.ItemText>
         </SplitButton>
      

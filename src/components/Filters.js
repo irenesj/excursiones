@@ -13,11 +13,7 @@ function Filters(){
             <Accordion.Header>Zona</Accordion.Header>
             <Accordion.Body>
               <ul className={styles.listInfo}>
-                <li>Oeste</li>
-                <li>Centro-Oeste</li>
-                <li>Centro</li>
-                <li>Centro-Este</li>
-                <li>Este</li>
+                
               </ul>
             </Accordion.Body>
           </Accordion.Item>
@@ -25,9 +21,7 @@ function Filters(){
             <Accordion.Header>Dificultad</Accordion.Header>
             <Accordion.Body>
               <ul className={styles.listInfo}>
-                <li>Baja</li>
-                <li>Media</li>
-                <li>Alta</li>
+               
               </ul>
             </Accordion.Body>
           </Accordion.Item>
@@ -35,10 +29,7 @@ function Filters(){
             <Accordion.Header>Tiempo estimado</Accordion.Header>
             <Accordion.Body>
               <ul className={styles.listInfo}>
-                <li>5 horas</li>
-                <li>6 horas</li>
-                <li>7 horas</li>
-                <li>8 horas</li>
+                
               </ul>
             </Accordion.Body>
           </Accordion.Item>

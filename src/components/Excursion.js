@@ -19,7 +19,7 @@ function Excursion(props){
             <div className={styles.bold}>Tiempo estimado:</div> {props.time}<br/> 
             <div className={styles.bold}>Descripción:</div> {props.description}<br/> 
             {context.login && 
-                <Button className={styles.btn} variant="primary" type="button" >
+                <Button className={styles.btn} variant="success" type="button" >
                     Apuntarse
                 </Button>
             }
