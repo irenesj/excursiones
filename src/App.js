@@ -8,7 +8,7 @@ function App() {
   const [login, setLogin] = useState(false);
   const [user, setUser] = useState({});
   const [token, setToken] = useState('');
-  const url = 'http://localhost:3001/token';
+  
 
   const options = {
 
@@ -49,22 +49,32 @@ function App() {
   const loadToken = () => {
 
     const localToken = localStorage["token"];
+    const url = `http://localhost:3001/token/${localToken}`;
 
     if(localToken){
 
       setLogin(true);
       
       fetch(url, options)
-      .then((resp) => resp.json())
-      .then(function(data) {
+      .then((resp) => {
 
-          console.log(data)
-          setUser(data);
+        if (resp.status === 404){
+          throw new Error();
+        }
+        return resp.json();
+
+      })
+      .then(function(data){
+
+        console.log(data)
+        setUser(data.user);
 
       })
       .catch(function(error) {
 
           console.log(error);
+          setLogin(false);
+          delete localStorage["token"];
 
       });
 
