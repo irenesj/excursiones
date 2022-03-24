@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Layout from './components/Layout/Layout';
-import LoginContext from './contexts/LoginContext';
+//import LoginContext from './contexts/LoginContext';
+import store from './app/store'
+import { Provider } from 'react-redux'
 
 function App() {
 
@@ -90,12 +92,12 @@ function App() {
 
   return (
 
-    <LoginContext.Provider value={contextValue}>
+    <Provider store={store}>
       <div>
         <Layout>
         </Layout>
       </div>
-    </LoginContext.Provider>
+    </Provider>
     
   );
 }
