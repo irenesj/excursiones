@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import Store from './components/Store'
+import { Provider } from 'react-redux'
 import Layout from './components/Layout/Layout';
 //import LoginContext from './contexts/LoginContext';
-import store from './app/store'
-import { Provider } from 'react-redux'
+
 
 function App() {
 
-  const [login, setLogin] = useState(false);
+  /*const [login, setLogin] = useState(false);
   const [user, setUser] = useState({});
   const [token, setToken] = useState('');
-  
+  */
 
   const options = {
 
@@ -20,7 +21,7 @@ function App() {
 
   };
 
-  const setLogIn = (data) =>{
+  /*const setLogIn = (data) =>{
 
     setLogin(true);
     setUser(data.user);
@@ -45,9 +46,9 @@ function App() {
     "setLogIn": setLogIn,
     "setLogOut": setLogOut
     
-  }
+  }*/
 
-  // Comprobamos si existen token
+  
   const loadToken = () => {
 
     const localToken = localStorage["token"];
@@ -92,7 +93,7 @@ function App() {
 
   return (
 
-    <Provider store={store}>
+    <Provider store={Store}>
       <div>
         <Layout>
         </Layout>
