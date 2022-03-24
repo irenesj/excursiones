@@ -1,13 +1,16 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Dropdown, DropdownButton } from "react-bootstrap";
-import {validateMail, validatePassword} from '../validation/validations.js';
+import { validateMail, validatePassword } from '../validation/validations.js';
 import ValidatedFormGroup from "./ValidatedFormGroup";
-import LoginContext from "../contexts/LoginContext";
+import { login } from "../slicers/loginSlice";
+import { useDispatch } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Login.module.css';
 
 function Login(){
 
+
+    const loginDispatch = useDispatch();  
     // Variable that saves if the login button is disabled or not
     const [disabled, setDisabled] = useState(true);
     // Variable that receive and change the mail that we received from the login form inputs
@@ -32,7 +35,7 @@ function Login(){
 
     };
      // Variable that saves the login context to know when we need to display some information and when we need to display other information
-    const loginContext = useContext(LoginContext);
+    //const loginContext = useContext(LoginContext);
 
     // Function that submits the information for the login form
     const submit = () => {
@@ -51,7 +54,7 @@ function Login(){
         })
         .then(data => {
 
-            loginContext.setLogIn(data);
+            loginDispatch(login());
             window.localStorage["token"] = data.token;
             console.log(localStorage);
 

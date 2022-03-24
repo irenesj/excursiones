@@ -1,5 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
+import loginSlice from '../slicers/loginSlice';
 
 export default configureStore({
-  reducer: {},
-})
+
+  reducer: {
+
+    loginReducer: loginSlice
+
+  }
+  
+});
