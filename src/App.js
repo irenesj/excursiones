@@ -6,7 +6,6 @@ import Layout from './components/Layout/Layout';
 
 function App() {
 
-
   return (
 
     <Provider store={Store}>

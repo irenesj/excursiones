@@ -1,28 +1,31 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Button, SplitButton, Dropdown } from "react-bootstrap";
-import LoginContext from "../contexts/LoginContext";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/LandingPageUserProfile.module.css';
 
 
 function LandingPageUserProfile(props){
 
-    // Variable that saves the login context to know when we need to display some information and when we need to display other information
-    const context = useContext(LoginContext);
+    /*************************** VARIABLES ***************************/
+
     // Variable that saves the text that says welcome to the user that just had log in
     const text = <div>Bienvenido/a, {props.name}</div>
+
     // Variable that has the url that is needed for the fetch
     const url = 'http://localhost:3001/login';
+
     // Variable that saves the options that the fetch needs
     const options = {
 
         method: 'DELETE',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json',
-                    'Authorization': `Bearer  ${context.token}` }
+                    /*'Authorization': `Bearer  ${context.token}`*/ }
 
 
     };
+
+    /*************************** FUNCTIONS ***************************/
 
     // Function for logging out
     const logOut = () => {
@@ -32,7 +35,7 @@ function LandingPageUserProfile(props){
         .then(function(data) {
 
             console.log(data)
-            context.setLogOut();
+            //context.setLogOut();
 
         })
         .catch(function(error) {

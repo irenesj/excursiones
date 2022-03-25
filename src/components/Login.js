@@ -9,22 +9,30 @@ import styles from '../css/Login.module.css';
 
 function Login(){
 
+    /*************************** VARIABLES ***************************/
 
+    // Variable that we nedd to be able to use dispatchers
     const loginDispatch = useDispatch();  
+
     // Variable that saves if the login button is disabled or not
     const [disabled, setDisabled] = useState(true);
+
     // Variable that receive and change the mail that we received from the login form inputs
     const [mail, setMail] = useState("");
+
     // Variable that receive and change the password that we received from the login form inputs
     const [password, setPassword] = useState("");
+
     // Variable that has the url that is needed for the fetch
     const url = 'http://localhost:3001/login';
+
     // Login object that we pass to the server for it to authenticate the user
     const login = {
 
         mail: mail,
         password: password
     }
+    
     // Variable that saves the options that the fetch needs
     const options = {
 
@@ -34,8 +42,9 @@ function Login(){
         body: JSON.stringify(login)
 
     };
-     // Variable that saves the login context to know when we need to display some information and when we need to display other information
-    //const loginContext = useContext(LoginContext);
+    
+
+    /*************************** FUNCTIONS AND HOOKS ***************************/
 
     // Function that submits the information for the login form
     const submit = () => {

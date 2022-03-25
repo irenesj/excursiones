@@ -15,7 +15,9 @@ import styles from '../../css/Layout.module.css';
 /** This is the layout, here goes the web structure  */
 const Layout = ({ children }) => {
 
-  // Variable that saves the search that the user writes in the search bar 
+  /*************************** VARIABLES ***************************/
+
+  // Variable we need to be able to use dispatchers
   const loginDispatch = useDispatch();
 
   // Variable that saves the search that the user writes in the search bar 
@@ -50,8 +52,13 @@ const Layout = ({ children }) => {
     </Nav.Item>
     </>
  
-  // Variable that saves the search that the user writes in the search bar 
+  // Variable that says if some user is logged in or not
   const isLoggedIn = useSelector( (state) => state.loginSlice.login );
+
+  // Variable that has the result of the search bar to know what excursion the user is looking for
+  const url = `http://localhost:3001/excursions?q=${search}`;
+
+  /*************************** FUNCTIONS AND HOOKS ***************************/
 
   // Function that saves the information from the search input and updates its state
   const introKeyPressed = (event) => {
@@ -60,9 +67,6 @@ const Layout = ({ children }) => {
     setSearch(currentSearch);
 
   }
-
-  // Variable that has the result of the search bar to know what excursion the user is looking for
-  const url = `http://localhost:3001/excursions?q=${search}`;
 
     useEffect(() => {
 
