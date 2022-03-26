@@ -9,7 +9,6 @@ import styles from '../css/Login.module.css';
 
 function Login(){
 
-    /*************************** VARIABLES ***************************/
 
     // Variable that we nedd to be able to use dispatchers
     const loginDispatch = useDispatch();  
@@ -44,7 +43,6 @@ function Login(){
     };
     
 
-    /*************************** FUNCTIONS AND HOOKS ***************************/
 
     // Function that submits the information for the login form
     const submit = () => {

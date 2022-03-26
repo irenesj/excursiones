@@ -1,13 +1,15 @@
 import React from "react";
 import { Button, SplitButton, Dropdown } from "react-bootstrap";
+import { useDispatch } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/LandingPageUserProfile.module.css';
+import { logout } from "../slicers/loginSlice";
 
 
 function LandingPageUserProfile(props){
 
-    /*************************** VARIABLES ***************************/
-
+    
+    const logoutDispatch = useDispatch();
     // Variable that saves the text that says welcome to the user that just had log in
     const text = <div>Bienvenido/a, {props.name}</div>
 
@@ -20,12 +22,11 @@ function LandingPageUserProfile(props){
         method: 'DELETE',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json',
-                    /*'Authorization': `Bearer  ${context.token}`*/ }
+                    'Authorization': `Bearer  TODO poner el token` }
 
 
     };
 
-    /*************************** FUNCTIONS ***************************/
 
     // Function for logging out
     const logOut = () => {
@@ -35,7 +36,7 @@ function LandingPageUserProfile(props){
         .then(function(data) {
 
             console.log(data)
-            //context.setLogOut();
+            logoutDispatch(logout());
 
         })
         .catch(function(error) {
