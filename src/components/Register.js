@@ -82,16 +82,16 @@ function Register(){
                     <Col xs="12">
                         <Form className={styles.form}>
                             <Row className="mb-3">
-                                <ValidatedFormGroup control="formGridAddress1" name="Nombre" inputToChange={setName} validationFunction={validateName} value={name} />
-                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos" inputToChange={setSurname} validationFunction={validateSurname} value={surname}/>
+                                <ValidatedFormGroup control="formGridAddress1" name="Nombre" inputToChange={setName} validationFunction={validateName} value={name} message={true}/>
+                                <ValidatedFormGroup control="formGridAddress2" name="Apellidos" inputToChange={setSurname} validationFunction={validateSurname} value={surname} message={true}/>
                             </Row>
                             <Row className="mb-3">
-                                <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono" inputToChange={setPhone} validationFunction={validatePhone} value={phone} />
-                                <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail}/>
+                                <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono" inputToChange={setPhone} validationFunction={validatePhone} value={phone} message={true}/>
+                                <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail} message={true}/>
                             </Row>
                             <Row>
-                                <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password}/>
-                                <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword}/>
+                                <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password} message={true}/>
+                                <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword} message={true}/>
                             </Row>
                             <Row>
                                 <ul className={styles.list}>
