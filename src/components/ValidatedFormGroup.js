@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Col, Form } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Col, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/ValidatedFormGroup.module.css';
 

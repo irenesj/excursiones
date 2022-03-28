@@ -1,9 +1,9 @@
-import React from "react";
-import { Button, SplitButton, Dropdown } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { Button, SplitButton, Dropdown } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/LandingPageUserProfile.module.css';
-import { logout } from "../slicers/loginSlice";
+import { logout } from '../slicers/loginSlice';
 
 
 function LandingPageUserProfile(props){
