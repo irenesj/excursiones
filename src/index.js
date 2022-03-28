@@ -3,18 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Store from './components/Store';
+import { Provider } from 'react-redux';
 import  Register from './components/Register';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}/>
-        <Route path="register" element={<Register />}/>   
-      </Routes>
-    </BrowserRouter>
+    <Provider store={Store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}/>
+          <Route path="register" element={<Register />}/>   
+        </Routes>
+      </BrowserRouter>
+    </Provider>,  
   </React.StrictMode>,
   document.getElementById('root')
 );

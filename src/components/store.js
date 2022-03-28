@@ -5,8 +5,8 @@ export default configureStore({
 
   reducer: {
 
-    loginReducer: loginSlice
+    loginReducer: loginSlice,
 
-  }
+  },
   
 });

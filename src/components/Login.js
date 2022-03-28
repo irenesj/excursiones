@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { Button, Dropdown, DropdownButton } from "react-bootstrap";
+import React, { useEffect, useState } from 'react';
+import { Button, Dropdown, DropdownButton } from 'react-bootstrap';
 import { validateMail, validatePassword } from '../validation/validations.js';
-import ValidatedFormGroup from "./ValidatedFormGroup";
-import { login } from "../slicers/loginSlice";
-import { useDispatch } from "react-redux";
+import ValidatedFormGroup from './ValidatedFormGroup';
+import { login } from '../slicers/loginSlice';
+import { useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Login.module.css';
 
-function Login(){
+export function Login(){
 
 
     // Variable that we nedd to be able to use dispatchers

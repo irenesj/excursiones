@@ -13,7 +13,7 @@ import styles from '../../css/Layout.module.css';
 
 
 /** This is the layout, here goes the web structure  */
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
 
 
   // Variable we need to be able to use dispatchers
