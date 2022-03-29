@@ -26,7 +26,7 @@ export function Login(){
     const url = 'http://localhost:3001/login';
 
     // Login object that we pass to the server for it to authenticate the user
-    const login = {
+    const credentials = {
 
         mail: mail,
         password: password
@@ -38,7 +38,7 @@ export function Login(){
         method: 'POST',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(login)
+        body: JSON.stringify(credentials)
 
     };
     

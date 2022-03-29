@@ -52,7 +52,7 @@ export const Layout = ({ children }) => {
     </>
  
   // Variable that says if some user is logged in or not
-  const isLoggedIn = useSelector( (state) => state.loginSlice.login );
+  const isLoggedIn = useSelector( (state) => state.loginReducer.login);
 
   // Variable that has the result of the search bar to know what excursion the user is looking for
   const url = `http://localhost:3001/excursions?q=${search}`;
