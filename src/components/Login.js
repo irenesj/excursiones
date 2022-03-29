@@ -61,7 +61,12 @@ export function Login(){
         })
         .then(data => {
 
-            loginDispatch(login());
+            loginDispatch(login({
+
+                userName: data.user.name,
+                token: data.token
+
+            }));
             window.localStorage["token"] = data.token;
             console.log(localStorage);
 

@@ -47,7 +47,7 @@ export const Layout = ({ children }) => {
   // Items that are displayed in the nav bar when a user is logged
   const LoggedItems = <>
     <Nav.Item>
-      <LandingPageUserProfile name={ "TODO Poner el nombre del usuario" }/>
+      <LandingPageUserProfile name={" "}/>
     </Nav.Item>
     </>
  
@@ -91,7 +91,6 @@ export const Layout = ({ children }) => {
   
       if(localToken){
   
-        loginDispatch(login());
         fetch(url, options)
         .then((resp) => {
   
@@ -104,8 +103,12 @@ export const Layout = ({ children }) => {
         .then(function(data){
   
           console.log(data)
-          //setUser(data.user);
-  
+          loginDispatch(login({
+
+            userName: data.user.name,
+            token: data.token
+
+        }))
         })
         .catch(function(error) {
   
