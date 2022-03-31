@@ -15,6 +15,7 @@ import styles from '../../css/Layout.module.css';
 /** This is the layout, here goes the web structure  */
 export const Layout = ({ children }) => {
 
+  "TODO Problema: Se puede hacer login refrescando la página y sin loguearse si ya se había logueado alguien"
 
   // Variable we need to be able to use dispatchers
   const loginDispatch = useDispatch();
@@ -33,6 +34,9 @@ export const Layout = ({ children }) => {
     headers: { 'Content-Type': 'application/json' }
 
   };
+ 
+  // Variable that says if some user is logged in or not
+  const {login: isLoggedIn, userName} = useSelector( (state) => state.loginReducer);
 
   // Items that are displayed in the nav bar when no user is logged
   const NoLoggedItems = <>
@@ -47,12 +51,9 @@ export const Layout = ({ children }) => {
   // Items that are displayed in the nav bar when a user is logged
   const LoggedItems = <>
     <Nav.Item>
-      <LandingPageUserProfile name={" "}/>
+      <LandingPageUserProfile name={userName}/>
     </Nav.Item>
     </>
- 
-  // Variable that says if some user is logged in or not
-  const isLoggedIn = useSelector( (state) => state.loginReducer.login);
 
   // Variable that has the result of the search bar to know what excursion the user is looking for
   const url = `http://localhost:3001/excursions?q=${search}`;
