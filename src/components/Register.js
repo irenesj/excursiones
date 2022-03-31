@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { Navigate } from 'react-router-dom';
 import ValidatedFormGroup from "./ValidatedFormGroup";
 import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Register.module.css';
 
+
 function Register(){
 
+    const isLoggedIn = useSelector(state => state.loginReducer.login )
     // Variable that saves if the register button is disabled or not
     const [disabled, setDisabled] = useState(true);
     // Variable that receive and change the name that we received from the login form inputs
@@ -73,6 +77,9 @@ function Register(){
 
     }, [name, surname, phone, mail, password, samePassword]);
 
+    if(isLoggedIn) {
+        return <Navigate replace to="/"/>;
+    }
     
     return(
 

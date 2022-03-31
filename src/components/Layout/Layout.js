@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
+import { login, logout} from '../../slicers/loginSlice';
+import { Routes, Route } from 'react-router-dom';
+import Register from '../Register';
 import Filters from '../Filters';
 import Login from '../Login';
 import Excursions from '../Excursions';
 import LandingPageUserProfile from '../LandingPageUserProfile';
 import Footer from '../Footer';
-import { useSelector, useDispatch } from 'react-redux';
-import { login, logout} from '../../slicers/loginSlice';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
@@ -155,7 +157,10 @@ export const Layout = ({ children }) => {
         </Row>
         <Row>
           <Filters/>
-          <Excursions excursionData={ excursionArray } />
+          <Routes>
+            <Route path="/" element={ <Excursions excursionData={ excursionArray } />} />
+            <Route path="register" element={<Register />}/>   
+          </Routes>
         </Row>
         <Row >
           <Footer/>
