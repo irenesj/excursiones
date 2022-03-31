@@ -15,8 +15,6 @@ import styles from '../../css/Layout.module.css';
 /** This is the layout, here goes the web structure  */
 export const Layout = ({ children }) => {
 
-  "TODO Problema: Se puede hacer login refrescando la página y sin loguearse si ya se había logueado alguien"
-
   // Variable we need to be able to use dispatchers
   const loginDispatch = useDispatch();
 
@@ -142,7 +140,7 @@ export const Layout = ({ children }) => {
             <Nav className="justify-content-end">
               <Nav.Item className={styles.searchBar} md="5">
                 <div className="form-group">
-                  <input id="searchBar" className="form-control" type="search" placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed}/>
+                  <input id="searchBar" className="form-control" type="search" placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed} ref={element=>(element||{}).onsearch=introKeyPressed}/>
                 </div>
               </Nav.Item>
               { !isLoggedIn &&  NoLoggedItems}
