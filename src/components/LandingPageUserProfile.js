@@ -37,6 +37,7 @@ function LandingPageUserProfile(props){
 
             console.log(data)
             logoutDispatch(logout());
+            delete localStorage['token'];
 
         })
         .catch(function(error) {
