@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, SplitButton, Dropdown } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/LandingPageUserProfile.module.css';
 import { logout } from '../slicers/loginSlice';
@@ -10,6 +10,7 @@ function LandingPageUserProfile(props){
 
     
     const logoutDispatch = useDispatch();
+    const { token } = useSelector( (state) => state.loginReducer);
     // Variable that saves the text that says welcome to the user that just had log in
     const text = <div>Bienvenido/a, {props.name}</div>
 
@@ -22,8 +23,7 @@ function LandingPageUserProfile(props){
         method: 'DELETE',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json',
-                    'Authorization': `Bearer  TODO poner el token` }
-
+                    'Authorization': `Bearer ${token}` }
 
     };
 
