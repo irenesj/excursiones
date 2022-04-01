@@ -1,6 +1,6 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import styles from '../css/User.module.css';
 
 function User(props){
@@ -10,13 +10,11 @@ function User(props){
         <Container className={styles.user}>
             <Row>
                 <Col xs="4">
-                    <Image className={styles.userImage} src="../images/user-icon.svg" roundedCircle />
                     {props.name}{props.surname}
                 </Col>
                 <Col className={styles.userInfo} xs="8">
-                    <div className={styles.title}>Excursiones favoritas</div>
-                    <div className={styles.title}>Excursiones a las que has ido</div>
-                    <Button variant="success">Añadir excursión</Button>
+                    Correo electrónico: {props.mail}
+                    Teléfono: {props.phone}
                 </Col>
             </Row>
         </Container>
