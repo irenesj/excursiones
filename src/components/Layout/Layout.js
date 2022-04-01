@@ -68,92 +68,94 @@ export const Layout = ({ children }) => {
 
   }
 
-    useEffect(() => {
+  // This useEffect ...
+  useEffect(() => {
 
-        fetch(url)
-        .then((resp) => resp.json())
-        .then(function(data) {
+      fetch(url)
+      .then((resp) => resp.json())
+      .then(function(data) {
 
-            setExcursionArray(data);
+        setExcursionArray(data);
 
-        })
-        .catch(function(error) {
+      })
+      .catch(function(error) {
 
-            console.log(error);
+        console.log(error);
 
-        });
+    });
 
-    }, [search]);
+  }, [search]);
 
-    const loadToken = () => {
+  // This function ..
+  const loadToken = () => {
   
-      const localToken = localStorage["token"];
-      const url = `http://localhost:3001/token/${localToken}`;
+    const localToken = localStorage["token"];
+    const url = `http://localhost:3001/token/${localToken}`;
   
-      if(localToken){
+    if(localToken){
   
-        fetch(url, options)
-        .then((resp) => {
+      fetch(url, options)
+      .then((resp) => {
   
-          if (resp.status === 404){
-            throw new Error();
-          }
-          return resp.json();
-  
-        })
-        .then(function(data){
-  
-          console.log(data)
-          loginDispatch(login({
-
-            userName: data.user.name,
-            token: data.token
-
-        }))
-        })
-        .catch(function(error) {
-  
-            console.log(error);
-            loginDispatch(logout());
-            delete localStorage["token"];
-  
-        });
-  
+      if (resp.status === 404){
+        throw new Error();
       }
+        return resp.json();
+  
+      })
+      .then(function(data){
+  
+        loginDispatch(login({
 
+          userName: data.user.name,
+          token: data.token
+
+      }))
+      })
+      .catch(function(error) {
+  
+        console.log(error);
+        loginDispatch(logout());
+        delete localStorage["token"];
+  
+      });
+  
     }
+
+  }
   
-    useEffect(() => {
-  
-      loadToken();
-  
-    }, []);
+  // This useEffect
+  useEffect(() => {
+    
+    loadToken();
+    
+  }, []);
 
 
-    return(
+  return(
 
-      <div className={styles.body}>
-      <Container className={styles.container}>
-        <Row className={styles.nav}>
-          <Col className={styles.logo} xs="3">
-             Excursiones Juntos 
-          </Col>
-          <Col xs="9">
-            <Nav className="justify-content-end">
-              <Nav.Item className={styles.searchBar} md="5">
-                <div className="form-group">
-                  <input id="searchBar" className="form-control" type="search" placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed} ref={element=>(element||{}).onsearch=introKeyPressed}/>
-                </div>
-              </Nav.Item>
+    <div className={styles.body}>
+    <Container className={styles.container}>
+      <Row className={styles.nav}>
+        <Col className={styles.logo} xs="3">
+          <Link to="/">Excursiones Juntos</Link> 
+        </Col>
+        <Col xs="9">
+          <Nav className="justify-content-end">
+            <Nav.Item className={styles.searchBar} md="5">
+            <div className="form-group">
+              <input id="searchBar" className="form-control" type="search" placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed} ref={element=>(element||{}).onsearch=introKeyPressed}/>
+            </div>
+            </Nav.Item>
               { !isLoggedIn &&  NoLoggedItems}
               { isLoggedIn && LoggedItems }
             </Nav>
-          </Col> 
-        </Row>
-        <Row>
-          <Col>
+        </Col> 
+      </Row>
+      <Row>
+        <Col>
           <main>{children}</main>
-          </Col>
+        </Col>
         </Row>
         <Row>
           <Filters/>
@@ -165,11 +167,11 @@ export const Layout = ({ children }) => {
         <Row >
           <Footer/>
         </Row>
-        </Container>
-      </div>
-     
-    )
-    
+      </Container>
+    </div>
+      
+  )
+      
 }
 
 export default Layout;
