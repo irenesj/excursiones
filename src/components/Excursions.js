@@ -13,7 +13,7 @@ function Excursions(props){
     // Variable that saves if the user has search for an excursion we already had in the database or not
     const found = excursions.length > 0;
     // Variable that has the message that has to be displayed if we don´t find the excursion the user wants
-    const notFound = <div className={styles.messageNotFound}>Lo sentimos, pero no tenemos ninguna excursión al sitio que estás buscando.</div>;
+    const notFound = <div className={styles.messageNotFound}>Lo sentimos, pero no tenemos ninguna excursión al sitio que estás buscando</div>;
 
     return(
 

@@ -1,7 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import styles from '../css/User.module.css';
+import styles from '../css/UserPage.module.css';
 
 function User(props){
 

@@ -155,18 +155,18 @@ export const Layout = ({ children }) => {
         <Col>
           <main>{children}</main>
         </Col>
-        </Row>
-        <Row>
-          <Filters/>
-          <Routes>
-            <Route path="/" element={ <Excursions excursionData={ excursionArray } />} />
-            <Route path="register" element={<Register />}/>   
-          </Routes>
-        </Row>
-        <Row >
-          <Footer/>
-        </Row>
-      </Container>
+      </Row>
+      <Row>
+        <Filters/>
+        <Routes>
+          <Route path="/" element={ <Excursions excursionData={ excursionArray } />} />
+          <Route path="register" element={<Register />}/>   
+        </Routes>
+      </Row>
+      <Row >
+        <Footer/>
+      </Row>
+    </Container>
       
   )
       
