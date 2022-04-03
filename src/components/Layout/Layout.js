@@ -134,7 +134,6 @@ export const Layout = ({ children }) => {
 
   return(
 
-    <div className={styles.body}>
     <Container className={styles.container}>
       <Row className={styles.nav}>
         <Col className={styles.logo} xs="3">
@@ -168,7 +167,6 @@ export const Layout = ({ children }) => {
           <Footer/>
         </Row>
       </Container>
-    </div>
       
   )
       
