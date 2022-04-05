@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, SplitButton, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; 
 import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/LandingPageUserProfile.module.css';
 import { logout } from '../slicers/loginSlice';
