@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import styles from '../css/UserPage.module.css';
 
-function User(props){
+function UserPage(props){
 
     return(
 
@@ -15,6 +15,7 @@ function User(props){
                 <Col className={styles.userInfo} xs="8">
                     Correo electrónico: {props.mail}
                     Teléfono: {props.phone}
+                    <Button variant="success">Editar</Button>
                 </Col>
             </Row>
         </Container>
@@ -22,4 +23,4 @@ function User(props){
     );
 }
 
-export default User;
+export default UserPage;

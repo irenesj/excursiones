@@ -9,6 +9,7 @@ import Filters from '../Filters';
 import Login from '../Login';
 import Excursions from '../Excursions';
 import LandingPageUserProfile from '../LandingPageUserProfile';
+import UserPage from '../UserPage';
 import Footer from '../Footer';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
@@ -137,7 +138,7 @@ export const Layout = ({ children }) => {
     <Container className={styles.container}>
       <Row className={styles.nav}>
         <Col className={styles.logo} xs="3">
-          <Link to="/">Excursiones Juntos</Link> 
+          <Link to='/'>Excursiones Juntos</Link> 
         </Col>
         <Col xs="9">
           <Nav className="justify-content-end">
@@ -159,8 +160,9 @@ export const Layout = ({ children }) => {
       <Row>
         <Filters/>
         <Routes>
-          <Route path="/" element={ <Excursions excursionData={ excursionArray } />} />
-          <Route path="register" element={<Register />}/>   
+          <Route path='/' element={ <Excursions excursionData={ excursionArray } />} />
+          <Route path='register' element={<Register />}/> 
+          <Route path='userPage' element={<UserPage /> } />  
         </Routes>
       </Row>
       <Row >

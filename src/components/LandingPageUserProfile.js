@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, SplitButton, Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; 
 import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/LandingPageUserProfile.module.css';
@@ -52,7 +53,7 @@ function LandingPageUserProfile(props){
     return (
 
         <SplitButton className={styles.userProfile} variant="success" title={text} >
-            <Dropdown.ItemText className={styles.dropdownText}>Perfil</Dropdown.ItemText>
+            <Dropdown.ItemText className={styles.dropdownText}><Link to='UserPage' className={styles.userProfile + " " + styles.black}>Perfil</Link></Dropdown.ItemText>
             <Dropdown.Divider />
             <Dropdown.ItemText className={styles.dropdownText}>
                 <Button className={styles.logoutBtn} variant="success" onClick={logOut}>Cerrar sesión</Button>
