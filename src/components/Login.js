@@ -63,7 +63,7 @@ export function Login(){
 
             loginDispatch(login({
 
-                userName: data.user.name,
+                user: data.user,
                 token: data.token
 
             }));

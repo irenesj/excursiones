@@ -37,7 +37,7 @@ export const Layout = ({ children }) => {
   };
  
   // Variable that says if some user is logged in or not
-  const {login: isLoggedIn, userName} = useSelector( (state) => state.loginReducer);
+  const {login: isLoggedIn, user} = useSelector( (state) => state.loginReducer);
 
   // Items that are displayed in the nav bar when no user is logged
   const NoLoggedItems = <>
@@ -52,7 +52,7 @@ export const Layout = ({ children }) => {
   // Items that are displayed in the nav bar when a user is logged
   const LoggedItems = <>
     <Nav.Item>
-      <LandingPageUserProfile name={userName}/>
+      <LandingPageUserProfile name={user && user.name}/>
     </Nav.Item>
     </>
 
@@ -108,7 +108,7 @@ export const Layout = ({ children }) => {
   
         loginDispatch(login({
 
-          userName: data.user.name,
+          user: data.user,
           token: data.token
 
       }))
