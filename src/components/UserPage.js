@@ -12,11 +12,15 @@ function UserPage(){
     return(
 
      <Col xs="8">
-        <div>{user && user.name}</div>
-        <div>{user && user.surname}</div>
-        <div>Correo electrónico: {user && user.mail}</div>
-        <div>Teléfono: {user && user.phone}</div>
-        <Button variant="success">Editar</Button>
+
+        <div className={styles.title}>Tu perfil</div>
+        <div className={styles.userInfo}>
+            <div className={styles.nameSurname}>{user && user.name} {user && user.surname}</div>
+            <div>Correo electrónico: {user && user.mail}</div>
+            <div>Teléfono: {user && user.phone}</div>
+        </div>
+        <Button className={styles.editBtn} variant="success">Editar</Button>
+
     </Col>
 
     );
