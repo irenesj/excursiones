@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Button } from 'react-bootstrap';
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router";
+import UserPageInputEdit from "./UserPageInputEdit";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/UserPage.module.css';
 
@@ -9,22 +10,45 @@ import styles from '../css/UserPage.module.css';
 function UserPage(){
 
     const { login: isLoggedIn, user } = useSelector((state) => state.loginReducer);
+    const [ isEditing, setIsEditing ] = useState(false);
+    const [ name, setName ] = useState(user && user.name);
 
     if(!isLoggedIn) {
         return <Navigate replace to='/'/>;
     }
 
+    const startEditing = () => {
+
+        setIsEditing(true);
+
+    }
+
+    const saveEdit = () => {
+
+        setIsEditing(false);
+
+    }
+
     return(
 
-     <Col xs="8">
+    <Col xs="8">
 
         <div className={styles.title}>Tu perfil</div>
         <div className={styles.userInfo}>
-            <div className={styles.nameSurname}>{user && user.name} {user && user.surname}</div>
             <div>Correo electrónico: {user && user.mail}</div>
-            <div>Teléfono: {user && user.phone}</div>
+            <div>
+                <UserPageInputEdit info="Nombre" field={user && user.name} isEditing={isEditing}/>
+            </div>                
+            <div>
+                <UserPageInputEdit info="Apellidos" field={user && user.surname} isEditing={isEditing}/>
+            </div>  
+            <div>
+                <UserPageInputEdit info="Teléfono" field={user && user.phone} isEditing={isEditing}/>
+            </div>  
         </div>
-        <Button className={styles.editBtn} variant="success">Editar</Button>
+        {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEditing}>Editar</Button>}
+        {isEditing && <Button className={styles.editBtn} variant="success" onClick={saveEdit}>Cancelar</Button>}
+        {isEditing && <Button className={styles.editBtn} variant="success" onClick={saveEdit}>Guardar</Button>}
 
     </Col>
 
