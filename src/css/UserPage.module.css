@@ -15,19 +15,18 @@
 
 }
 
-
-.nameSurname{
-
-    font-weight: bold;
-    font-size: 25px;
-    margin-bottom: 50px;
-
-}
-
 .editBtn{
 
   margin-top: 50px;
   margin-bottom: 100px;
-  margin-left: 45%;
+  margin-left: 60px;
 
 }
+
+.cancelSaveBtns{
+
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 15px;
+  
+  }

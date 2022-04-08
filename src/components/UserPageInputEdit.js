@@ -1,4 +1,6 @@
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.css';
+import styles from '../css/UserPageInputEdit.module.css';
 
 
 function UserPageInputEdit(props){

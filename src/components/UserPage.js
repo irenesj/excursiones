@@ -17,7 +17,7 @@ function UserPage(){
         return <Navigate replace to='/'/>;
     }
 
-    const startEditing = () => {
+    const startEdit = () => {
 
         setIsEditing(true);
 
@@ -27,6 +27,11 @@ function UserPage(){
 
         setIsEditing(false);
 
+    }
+
+    const cancelEdit = () => {
+
+        setIsEditing(false);
     }
 
     return(
@@ -46,9 +51,9 @@ function UserPage(){
                 <UserPageInputEdit info="Teléfono" field={user && user.phone} isEditing={isEditing}/>
             </div>  
         </div>
-        {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEditing}>Editar</Button>}
-        {isEditing && <Button className={styles.editBtn} variant="success" onClick={saveEdit}>Cancelar</Button>}
-        {isEditing && <Button className={styles.editBtn} variant="success" onClick={saveEdit}>Guardar</Button>}
+        {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEdit}>Editar</Button>}
+        {isEditing && <Button className={styles.cancelSaveBtns} variant="success" onClick={cancelEdit}>Cancelar</Button>}
+        {isEditing && <Button className={styles.cancelSaveBtns} variant="success" onClick={saveEdit}>Guardar</Button>}
 
     </Col>
 
