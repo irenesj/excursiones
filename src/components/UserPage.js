@@ -40,7 +40,8 @@ function UserPage(){
 
         <div className={styles.title}>Tu perfil</div>
         <div className={styles.userInfo}>
-            <div>Correo electrónico: {user && user.mail}</div>
+            <label className={styles.userInputLabel}>Correo electrónico</label> 
+            {user && user.mail}
             <div>
                 <UserPageInputEdit info="Nombre" field={user && user.name} isEditing={isEditing}/>
             </div>                
@@ -52,8 +53,8 @@ function UserPage(){
             </div>  
         </div>
         {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEdit}>Editar</Button>}
-        {isEditing && <Button className={styles.cancelSaveBtns} variant="success" onClick={cancelEdit}>Cancelar</Button>}
-        {isEditing && <Button className={styles.cancelSaveBtns} variant="success" onClick={saveEdit}>Guardar</Button>}
+        {isEditing && <Button className={styles.cancelBtn} variant="success" onClick={cancelEdit}>Cancelar</Button>}
+        {isEditing && <Button className={styles.saveBtn} variant="success" onClick={saveEdit}>Guardar</Button>}
 
     </Col>
 

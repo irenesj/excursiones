@@ -1,0 +1,12 @@
+.userInputLabel {
+
+    font-size: large;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+    text-decoration: underline;
+}
+ 

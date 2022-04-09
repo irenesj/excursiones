@@ -9,7 +9,6 @@ function UserPageInputEdit(props){
     const inputChange = (event) => {
 
         const value = event.target.value;
-        props.field(value);
 
     }
 
@@ -18,7 +17,7 @@ function UserPageInputEdit(props){
     return (
 
         <div>
-                {props.info}: {!props.isEditing && props.field} 
+                <label className={styles.userInputLabel}>{props.info}</label> {!props.isEditing && props.field} 
                               {props.isEditing && editingInput}
         </div>     
 
