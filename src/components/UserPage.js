@@ -12,6 +12,8 @@ function UserPage(){
     const { login: isLoggedIn, user } = useSelector((state) => state.loginReducer);
     const [ isEditing, setIsEditing ] = useState(false);
     const [ name, setName ] = useState(user && user.name);
+    const [ surname, setSurname ] = useState(user && user.surname);
+    const [ phone, setPhone ] = useState(user && user.phone);
 
     if(!isLoggedIn) {
         return <Navigate replace to='/'/>;
@@ -46,10 +48,10 @@ function UserPage(){
                 <UserPageInputEdit info="Nombre" isEditing={isEditing} inputToChange={setName} value={name}/>
             </div>                
             <div>
-                <UserPageInputEdit info="Apellidos" field={user && user.surname} isEditing={isEditing}/>
+                <UserPageInputEdit info="Apellidos" isEditing={isEditing} inputToChange={setSurname} value={surname}/>
             </div>  
             <div>
-                <UserPageInputEdit info="Teléfono" field={user && user.phone} isEditing={isEditing}/>
+                <UserPageInputEdit info="Teléfono" isEditing={isEditing} inputToChange={setPhone} value={phone}/>
             </div>  
         </div>
         {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEdit}>Editar</Button>}
