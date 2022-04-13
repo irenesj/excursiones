@@ -43,7 +43,7 @@ function UserPage(){
             <label className={styles.userInputLabel}>Correo electrónico</label> 
             {user && user.mail}
             <div>
-                <UserPageInputEdit info="Nombre" field={user && user.name} isEditing={isEditing}/>
+                <UserPageInputEdit info="Nombre" isEditing={isEditing} inputToChange={setName} value={name}/>
             </div>                
             <div>
                 <UserPageInputEdit info="Apellidos" field={user && user.surname} isEditing={isEditing}/>

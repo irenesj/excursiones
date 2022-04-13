@@ -9,15 +9,16 @@ function UserPageInputEdit(props){
     const inputChange = (event) => {
 
         const value = event.target.value;
+        props.inputToChange(value);
 
     }
 
-    const editingInput = <input type="text" onChange={inputChange} value={props.field} />;
+    const editingInput = <input type="text" onChange={inputChange} value={props.value} />;
 
     return (
 
         <div>
-                <label className={styles.userInputLabel}>{props.info}</label> {!props.isEditing && props.field} 
+                <label className={styles.userInputLabel}>{props.info}</label> {!props.isEditing && props.value} 
                               {props.isEditing && editingInput}
         </div>     
 
