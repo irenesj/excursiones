@@ -14,6 +14,17 @@ function UserPage(){
     const [ name, setName ] = useState(user && user.name);
     const [ surname, setSurname ] = useState(user && user.surname);
     const [ phone, setPhone ] = useState(user && user.phone);
+    
+    const url = `http://localhost:3001/users`;
+    const options = {
+  
+        method: 'PATCH',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' }
+    
+      };
+     
+
 
     if(!isLoggedIn) {
         return <Navigate replace to='/'/>;
@@ -25,15 +36,19 @@ function UserPage(){
 
     }
 
-    const saveEdit = () => {
-
-        setIsEditing(false);
-
-    }
-
     const cancelEdit = () => {
 
         setIsEditing(false);
+    }
+
+    const saveEdit = () => {
+
+        fetch(url, options){
+
+        }
+        .then
+        setIsEditing(false);
+
     }
 
     return(
