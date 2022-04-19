@@ -10,6 +10,11 @@ function Excursion(props){
    // Variable that says if some user is logged in or not
   const isLoggedIn = useSelector( (state) => state.loginReducer.login);
 
+  const joinExcursion = () => {
+
+
+  }
+
     return(
 
         <div className={styles.excursion}>
@@ -19,7 +24,7 @@ function Excursion(props){
             <div className={styles.bold}>Tiempo estimado:</div> {props.time}<br/> 
             <div className={styles.bold}>Descripción:</div> {props.description}<br/> 
             {isLoggedIn &&  
-                <Button className={styles.btn} variant="success" type="button" >
+                <Button className={styles.btn} variant="success" type="button" onClick={joinExcursion}>
                     Apuntarse
                 </Button>
             }
