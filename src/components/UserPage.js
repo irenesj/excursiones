@@ -18,11 +18,11 @@ function UserPage(){
     const url = `http://localhost:3001/users`;
     const options = {
   
-        method: 'PATCH',
+        method: 'PUT',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json' }
     
-      };
+    };
      
 
 
@@ -43,11 +43,18 @@ function UserPage(){
 
     const saveEdit = () => {
 
-        fetch(url, options){
-
-        }
-        .then
-        setIsEditing(false);
+        fetch(url, options)
+        .then(function(data){
+  
+            setIsEditing(false);
+        
+        })
+        .catch(function(error) {
+  
+            console.log(error);
+  
+        });
+        
 
     }
 
