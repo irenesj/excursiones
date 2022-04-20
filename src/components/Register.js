@@ -51,7 +51,7 @@ function Register(){
         fetch(url, options )
         .then(response => {
             if (response.status === 409){
-                throw new Error("Tu nombre de usuario ya se está utilizando");
+                throw new Error("No puedes registrarte con ese correo");
             }
             else{
                 return response.json();
