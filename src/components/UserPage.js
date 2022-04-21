@@ -15,16 +15,23 @@ function UserPage(){
     const [ surname, setSurname ] = useState(user && user.surname);
     const [ phone, setPhone ] = useState(user && user.phone);
     
-    const url = `http://localhost:3001/users`;
+    const currentUser = {
+
+        name: name,
+        surname: surname,
+        mail: user && user.mail,
+        phone: phone,
+        
+    }
+    const url = `http://localhost:3001/users/${currentUser.mail}`;
     const options = {
   
         method: 'PUT',
         mode: 'cors',
-        headers: { 'Content-Type': 'application/json' }
-    
+        headers: { 'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + window.localStorage["token"]},
+        body: JSON.stringify(currentUser)
     };
-     
-
 
     if(!isLoggedIn) {
         return <Navigate replace to='/'/>;
@@ -44,16 +51,27 @@ function UserPage(){
     const saveEdit = () => {
 
         fetch(url, options)
-        .then(function(data){
-  
-            setIsEditing(false);
+        .then(response => {
+
+            if (response.status === 401){
+                throw new Error("No estás autorizado para hacer esa operación");
+            }
+            else{
+                return response.json();
+            }
         
         })
+        .then(data => console.log(data))
         .catch(function(error) {
   
             console.log(error);
   
-        });
+        }).finally(()=> {
+
+            setIsEditing(false);
+
+        })
+        
         
 
     }
