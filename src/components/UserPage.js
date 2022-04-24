@@ -20,7 +20,7 @@ function UserPage(){
         name: name,
         surname: surname,
         mail: user && user.mail,
-        phone: phone,
+        phone: phone
         
     }
     const url = `http://localhost:3001/users/${currentUser.mail}`;
