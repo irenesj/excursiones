@@ -12,6 +12,7 @@ function Excursion(props){
 
   const joinExcursion = () => {
 
+    
 
   }
 
