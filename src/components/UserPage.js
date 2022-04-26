@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Col, Button } from 'react-bootstrap';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router";
 import UserPageInputEdit from "./UserPageInputEdit";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/UserPage.module.css';
+import { updateUser } from "../slicers/loginSlice";
 
 
 function UserPage(){
+
+    // Variable that we nedd to be able to use dispatchers
+    const loginDispatch = useDispatch();  
 
     const { login: isLoggedIn, user } = useSelector((state) => state.loginReducer);
     const [ isEditing, setIsEditing ] = useState(false);
@@ -61,7 +65,15 @@ function UserPage(){
             }
         
         })
-        .then(data => console.log(data))
+        .then(data => {
+
+            loginDispatch(updateUser({
+
+                user: data
+
+            }));
+
+        })
         .catch(function(error) {
   
             console.log(error);
