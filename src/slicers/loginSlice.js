@@ -12,7 +12,7 @@ export const loginSlice = createSlice({
     },
     reducers: {
 
-        // {payload: {userName, token}}
+        // {payload: {user, token}}
         login: (state, action) => {
             
             const { user, token } = action.payload;
@@ -24,7 +24,7 @@ export const loginSlice = createSlice({
         logout: (state) => {
 
             state.login = false;
-            state.userName = null;
+            state.user = null;
             state.token = null;
 
         },
