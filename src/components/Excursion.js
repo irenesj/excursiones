@@ -63,7 +63,7 @@ function Excursion(props){
 
     const BtnAlreadyJoined = <>
     
-        <p>Apuntado/a</p>
+        <p className={styles.joinExcursionParagraph}>Apuntado/a</p>
 
     </>
 
