@@ -15,32 +15,30 @@
 .title{
 
     padding-bottom: 15px;
-    font-size: 30px;
-    font-weight: bold;
+    font: 30px bold;
     text-transform: uppercase;
 }
 
 .bold{
 
     display: inline-block;
-    font-weight: bold;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    font-size: large;
+    padding: 15px 0px;
+    font: large bold;
 
 }
 
 .btn {
 
-    margin-top: 15px;
-    margin-left: 40%;
+    margin: 15px 0 0 40%;
+
 }
 
 .joinExcursionParagraph {
 
-    margin-top: 15px;
-    margin-left: 40%;
-    text-transform: uppercase;
-    font-weight: bold;
+    margin: 15px 0 0 40%;
     color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+   
+    
 }
