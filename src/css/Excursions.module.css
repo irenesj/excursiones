@@ -1,18 +1,19 @@
 .title{
 
+    margin-top: 60px;
+    padding-bottom: 30px;
     color: #557027;
     font-weight: bold;
-    margin-top: 60px;
     text-align: center;
     text-transform: uppercase;
-    padding-bottom: 30px;
+    
 
 }
 
 .messageNotFound{
 
-    font-size: 25px;
-    font-weight: bold;
-    color: rgb(100, 98, 98);
     padding-bottom: 30px;
+    font: 25px bold;
+    color: #595c55;
+    
 }

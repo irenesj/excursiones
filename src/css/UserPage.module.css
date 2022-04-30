@@ -2,11 +2,11 @@
 
     color: #557027;
     margin-top: 60px;
-    font-weight: bold;
-    font-size: 30px;
+    padding-bottom: 30px;
+    font: 30px bold;
     text-align: center;
     text-transform: uppercase;
-    padding-bottom: 30px;
+    
 }
 
 .userInfo{
@@ -17,36 +17,28 @@
 
 .userInputLabel {
 
-  font-size: large;
-  font-weight: bold;
-  margin-top: 10px;
-  margin-bottom: 10px;
   display: block;
+  margin: 10px 0;
   padding-left: 15px;
   text-indent: -15px;
+  font: large bold;
   text-decoration: underline;
 }
 
 .editBtn{
 
-  margin-top: 50px;
-  margin-bottom: 100px;
-  margin-left: 45%;
+  margin: 50px 0 100px 45%;
 
 }
 
 .cancelBtn{
 
-    margin-top: 50px;
-    margin-bottom: 100px;
-    margin-left: 38%;
+  margin: 50px 0 100px 38%;
   
 }
 
 .saveBtn{
 
-  margin-top: 50px;
-  margin-bottom: 100px;
-  margin-left: 15px;
+  margin: 50px 0 100px 15px;
 
 }
