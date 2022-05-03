@@ -15,7 +15,8 @@
 .title{
 
     padding-bottom: 15px;
-    font: 30px bold;
+    font-size: 30px;
+    font-weight: bolder;
     text-transform: uppercase;
 }
 
@@ -23,7 +24,8 @@
 
     display: inline-block;
     padding: 15px 0px;
-    font: large bold;
+    font-size: large;
+    font-weight: bold;
 
 }
 
