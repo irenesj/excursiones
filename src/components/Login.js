@@ -6,6 +6,7 @@ import { login } from '../slicers/loginSlice';
 import { useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Login.module.css';
+import { userLogin } from '../helpers/helpers.js';
 
 export function Login(){
 
@@ -22,43 +23,11 @@ export function Login(){
     // Variable that receive and change the password that we received from the login form inputs
     const [password, setPassword] = useState("");
 
-    // Variable that has the url that is needed for the fetch
-    const url = 'http://localhost:3001/login';
-
-    // Login object that we pass to the server for it to authenticate the user
-    const credentials = {
-
-        mail: mail,
-        password: password
-    }
     
-    // Variable that saves the options that the fetch needs
-    const options = {
-
-        method: 'POST',
-        mode: 'cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(credentials)
-
-    };
-    
-
-
     // Function that submits the information for the login form
     const submit = () => {
 
-        fetch(url, options)
-        .then(response => {
-            if (response.status === 401){
-                throw new Error("Datos incorrectos. Inténtalo de nuevo.");
-            }
-            else{
-                
-                return response.json();
-
-            }
-            
-        })
+        userLogin(mail, password)
         .then(data => {
 
             loginDispatch(login({

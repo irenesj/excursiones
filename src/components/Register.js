@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { login } from '../slicers/loginSlice';
 import { Navigate } from 'react-router-dom';
+import { login } from '../slicers/loginSlice';
 import ValidatedFormGroup from "./ValidatedFormGroup";
 import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Register.module.css';
+import { userLogin, registerUser } from "../helpers/helpers";
 
 
 function Register(){
 
     const isLoggedIn = useSelector(state => state.loginReducer.login )
-    // Variable that saves if the register button is disabled or not
     // Variable that we nedd to be able to use dispatchers
     const loginDispatch = useDispatch();  
+    // Variable that saves if the register button is disabled or not
     const [disabled, setDisabled] = useState(true);
     // Variable that receive and change the name that we received from the login form inputs
     const [name, setName] = useState("");
@@ -28,76 +29,15 @@ function Register(){
     const [password, setPassword] = useState("");
     // Variable that receive and change the password that we received from the login form inputs
     const [samePassword, setSamePassword] = useState("");
-    // Variable that has the url that is needed for the fetch
-    const url = `http://localhost:3001/users`;
-    // Variable that has a user with the information we have received from the register form, then this is sent to the server to add the user
-    const user = {
-
-        name: name,
-        surname: surname,
-        phone: phone,
-        mail: mail,
-        password: password
-    }
-    // Variable that saves the options that the fetch needs
-    const options = {
-
-        method: 'POST',
-        mode: 'cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(user)
-    };
 
     // Function that allows register an user sending the POST request
     const submit = () => {
         
-        fetch(url, options )
-        .then(response => {
-            if (response.status === 409){
-                throw new Error("No puedes registrarte con ese correo");
-            }
-            else{
-                return response.json();
-            }
-            
-        })
+       registerUser(name, surname, phone, mail, password)
         .then(data => {
 
-             // Variable that has the url that is needed for the fetch
-            const urlLogin = 'http://localhost:3001/login';
-
-            // Login object that we pass to the server for it to authenticate the user
-            const credentials = {
-
-                mail: mail,
-                password: password
-            }
-    
-            // Variable that saves the options that the fetch needs
-            const optionsLogin = {
-
-                method: 'POST',
-                mode: 'cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(credentials)
-
-            };
-
-            return fetch(urlLogin, optionsLogin);
-
-
+            return userLogin(mail, password);
            
-        })
-        .then(response => {
-            if (response.status === 401){
-                throw new Error("Datos incorrectos. Inténtalo de nuevo.");
-            }
-            else{
-                
-                return response.json();
-
-            }
-            
         })
         .then(data => {
 
