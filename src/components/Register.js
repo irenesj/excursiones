@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Form, Button } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from '../slicers/loginSlice';
 import { Navigate } from 'react-router-dom';
 import ValidatedFormGroup from "./ValidatedFormGroup";
 import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
@@ -12,6 +13,8 @@ function Register(){
 
     const isLoggedIn = useSelector(state => state.loginReducer.login )
     // Variable that saves if the register button is disabled or not
+    // Variable that we nedd to be able to use dispatchers
+    const loginDispatch = useDispatch();  
     const [disabled, setDisabled] = useState(true);
     // Variable that receive and change the name that we received from the login form inputs
     const [name, setName] = useState("");
@@ -58,8 +61,57 @@ function Register(){
             }
             
         })
-        .then(data => console.log(data))
+        .then(data => {
+
+             // Variable that has the url that is needed for the fetch
+            const urlLogin = 'http://localhost:3001/login';
+
+            // Login object that we pass to the server for it to authenticate the user
+            const credentials = {
+
+                mail: mail,
+                password: password
+            }
+    
+            // Variable that saves the options that the fetch needs
+            const optionsLogin = {
+
+                method: 'POST',
+                mode: 'cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(credentials)
+
+            };
+
+            return fetch(urlLogin, optionsLogin);
+
+
+           
+        })
+        .then(response => {
+            if (response.status === 401){
+                throw new Error("Datos incorrectos. Inténtalo de nuevo.");
+            }
+            else{
+                
+                return response.json();
+
+            }
+            
+        })
+        .then(data => {
+
+            loginDispatch(login({
+
+                user: data.user,
+                token: data.token
+
+            }));
+            window.localStorage["token"] = data.token;
+
+        })
         .catch(error => alert(error))
+        
     
     }
 
