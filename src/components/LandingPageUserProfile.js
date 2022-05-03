@@ -36,7 +36,6 @@ function LandingPageUserProfile(props){
         .then((resp) => resp.json())
         .then(function(data) {
 
-            console.log(data)
             logoutDispatch(logout());
             delete localStorage['token'];
 

@@ -68,7 +68,6 @@ export function Login(){
 
             }));
             window.localStorage["token"] = data.token;
-            console.log(localStorage);
 
         })
         .catch(error => alert(error))
