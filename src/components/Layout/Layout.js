@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { Container, Row, Col, Nav } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { login, logout} from '../../slicers/loginSlice';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import Register from '../Register';
 import Filters from '../Filters';
 import Login from '../Login';

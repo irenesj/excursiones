@@ -2,7 +2,6 @@ import React from "react";
 import { Col, Accordion } from 'react-bootstrap';
 import FiltersList from './FiltersList';
 import 'bootstrap/dist/css/bootstrap.css';
-import styles from '../css/Filters.module.css';
 
 function Filters(){
 
