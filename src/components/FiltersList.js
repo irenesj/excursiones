@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/FiltersList.module.css';
 
-function FiltersList(){
+function FiltersList(props){
 
   
     const [ arrayFilters, setArrayFilters ] = useState([]);
 
-    const url = `http://localhost:3001/filters?type=area`;
+    const url = `http://localhost:3001/filters?type=${props.filter}`;
     
     const options = {
     
@@ -37,8 +37,11 @@ function FiltersList(){
     return (
 
         <ul className={styles.listInfo}>
+
             <li>{arrayFilters[0]}</li> 
-            <li>{arrayFilters[1]}</li>      
+            <li>{arrayFilters[1]}</li>   
+            <li>{arrayFilters[2]}</li> 
+              
         </ul>
 
     );
