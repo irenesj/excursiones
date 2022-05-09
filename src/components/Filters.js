@@ -10,7 +10,7 @@ function Filters(){
       <Col xs="3">
         <Accordion flush>
           <Accordion.Item eventKey="0">
-            <Accordion.Header>Zona</Accordion.Header>
+            <Accordion.Header >Zona</Accordion.Header>
             <Accordion.Body>
               <FiltersList />
             </Accordion.Body>
