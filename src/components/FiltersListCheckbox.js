@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-function FiltersListCheckbox(){
+function FiltersListCheckbox(props){
+
+    const [ selected, setSelected ] = useState(false);
+
+    const checkbox = () => {
+
+    }
+
 
     return(
 
-        <li key={i}><input type="checkbox" checked={true}/> {i}</li>
+        <li key={props.index}><input type="checkbox" onChange={checkbox}/> {props.index}</li>
 
     );
 }

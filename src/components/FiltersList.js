@@ -7,7 +7,6 @@ function FiltersList(props){
 
   
     const [ arrayFilters, setArrayFilters ] = useState([]);
-    const [ selected, setSelected ] = useState(false);
     
     useEffect(()=> {
 
@@ -39,7 +38,7 @@ function FiltersList(props){
 
         <ul className={styles.listInfo}>
 
-            {arrayFilters.map(i => <FiltersListCheckbox/>)}
+            {arrayFilters.map(i => <FiltersListCheckbox index={i}/>)}
               
         </ul>
 
