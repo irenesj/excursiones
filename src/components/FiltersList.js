@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/FiltersList.module.css';
+import FiltersListCheckbox from "./FiltersListCheckbox";
 
 function FiltersList(props){
 
   
     const [ arrayFilters, setArrayFilters ] = useState([]);
+    const [ selected, setSelected ] = useState(false);
     
     useEffect(()=> {
 
@@ -37,7 +39,7 @@ function FiltersList(props){
 
         <ul className={styles.listInfo}>
 
-            {arrayFilters.map(i => <li key={i}><input type="checkbox" /> {i}</li>)}
+            {arrayFilters.map(i => <FiltersListCheckbox/>)}
               
         </ul>
 
