@@ -38,9 +38,7 @@ function FiltersList(props){
 
         <ul className={styles.listInfo}>
 
-            <li>{arrayFilters[0]}</li> 
-            <li>{arrayFilters[1]}</li>   
-            <li>{arrayFilters[2]}</li> 
+            {arrayFilters.map(i => <li key={i}>{i}</li>)}
               
         </ul>
 
