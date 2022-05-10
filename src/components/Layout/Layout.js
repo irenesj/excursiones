@@ -25,15 +25,6 @@ export const Layout = ({ children }) => {
 
   // Array that has the excursions that are needed in that moment
   const [excursionArray, setExcursionArray] = useState([]);
-
-  // Variable that saves the search that the user writes in the search bar 
-  const options = {
-  
-    method: 'GET',
-    mode: 'cors',
-    headers: { 'Content-Type': 'application/json' }
-
-  };
  
   // Variable that says if some user is logged in or not
   const {login: isLoggedIn, user} = useSelector( (state) => state.loginReducer);
@@ -56,7 +47,7 @@ export const Layout = ({ children }) => {
     </>
 
   // Variable that has the result of the search bar to know what excursion the user is looking for
-  const url = `http://localhost:3001/excursions?q=${search}`;
+  
 
 
 
@@ -70,6 +61,8 @@ export const Layout = ({ children }) => {
 
   // This useEffect ...
   useEffect(() => {
+
+    const url = `http://localhost:3001/excursions?q=${search}`;
 
       fetch(url)
       .then((resp) => resp.json())
@@ -86,11 +79,25 @@ export const Layout = ({ children }) => {
 
   }, [search]);
 
+  
+  
+  // This useEffect
+  useEffect(() => {
+
+
   // This function ..
   const loadToken = () => {
   
     const localToken = localStorage["token"];
     const url = `http://localhost:3001/token/${localToken}`;
+    // Variable that saves the search that the user writes in the search bar 
+    const options = {
+  
+      method: 'GET',
+      mode: 'cors',
+      headers: { 'Content-Type': 'application/json' }
+
+    };
   
     if(localToken){
   
@@ -123,13 +130,10 @@ export const Layout = ({ children }) => {
     }
 
   }
-  
-  // This useEffect
-  useEffect(() => {
     
     loadToken();
     
-  }, []);
+  }, [loginDispatch]);
 
 
   return(

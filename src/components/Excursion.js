@@ -73,7 +73,7 @@ function Excursion(props){
 
             <div className={styles.title}>{props.name}</div>
             <div className={styles.bold}>Zona:</div> {props.area}<br/> 
-            <div className={styles.bold}>Dificultad:</div> {props.dificulty}<br/> 
+            <div className={styles.bold}>Dificultad:</div> {props.difficulty}<br/> 
             <div className={styles.bold}>Tiempo estimado:</div> {props.time}<br/> 
             <div className={styles.bold}>Descripción:</div> {props.description}<br/> 
 
