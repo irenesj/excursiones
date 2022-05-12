@@ -46,11 +46,6 @@ export const Layout = ({ children }) => {
     </Nav.Item>
     </>
 
-  // Variable that has the result of the search bar to know what excursion the user is looking for
-  
-
-
-
   // Function that saves the information from the search input and updates its state
   const introKeyPressed = (event) => {
 
@@ -62,7 +57,9 @@ export const Layout = ({ children }) => {
   // This useEffect ...
   useEffect(() => {
 
-    const url = `http://localhost:3001/excursions?q=${search}`;
+    // zona=oeste,centro
+
+    const url = `http://localhost:3001/excursions?q=${search}&area=Centro-Este&time=2%20days,time=3%20days`;
 
       fetch(url)
       .then((resp) => resp.json())

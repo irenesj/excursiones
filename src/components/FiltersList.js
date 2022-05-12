@@ -38,7 +38,7 @@ function FiltersList(props){
 
         <ul className={styles.listInfo}>
 
-            {arrayFilters.map(i => <FiltersListCheckbox index={i}/>)}
+            {arrayFilters.map(i => <FiltersListCheckbox key={i} index={i}/>)}
               
         </ul>
 
