@@ -10,7 +10,7 @@ function FiltersList(props){
     
     useEffect(()=> {
 
-        const url = `http://localhost:3001/filters?type=${props.filter}`;
+        const url = `http://localhost:3001/filters?type=${props.filterName}`;
         const options = {
     
             method: 'GET',
@@ -38,7 +38,7 @@ function FiltersList(props){
 
         <ul className={styles.listInfo}>
 
-            {arrayFilters.map(i => <FiltersListCheckbox key={i} index={i}/>)}
+            {arrayFilters.map(i => <FiltersListCheckbox key={i} filter={i}/>)}
               
         </ul>
 

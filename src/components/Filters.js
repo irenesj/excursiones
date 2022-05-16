@@ -13,19 +13,19 @@ function Filters(){
           <Accordion.Item eventKey="0" >
             <Accordion.Header>Zona</Accordion.Header>
             <Accordion.Body>
-              <FiltersList filter="area"/>
+              <FiltersList filterName="area"/>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1" >
             <Accordion.Header>Dificultad</Accordion.Header>
             <Accordion.Body>
-              <FiltersList filter="difficulty"/>
+              <FiltersList filterName="difficulty"/>
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="2" >
             <Accordion.Header>Tiempo estimado</Accordion.Header>
             <Accordion.Body>
-              <FiltersList filter="time"/>
+              <FiltersList filterName="time"/>
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>

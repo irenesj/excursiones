@@ -18,8 +18,8 @@ function FiltersListCheckbox(props){
 
                 filterDispatch(unselectFilter({
 
-                    key: '',
-                    value: ''
+                    filterName: props.filterName,
+                    filter: props.filter
 
                 }));
             }
@@ -35,7 +35,7 @@ function FiltersListCheckbox(props){
 
     return(
 
-        <li key={props.index}><input type="checkbox" onChange={selectedCheckbox}/> {props.index}</li>
+        <li key={props.index}><input type="checkbox" onChange={selectedCheckbox}/> {props.filter}</li>
 
     );
 }
