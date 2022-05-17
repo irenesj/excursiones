@@ -14,18 +14,18 @@ export const filterSlice = createSlice({
 
         selectFilter: (state, action) => {
         
-           const { key, value} = action.payload; 
+           const { filterName, filter} = action.payload; 
 
-           switch(key){
+           switch(filterName){
 
                 case 'area': 
-                    state.area.push(value);
+                    state.area.push(filter);
                     break;
                 case 'difficulty':
-                    state.difficulty.push(value);
+                    state.difficulty.push(filter);
                     break;
                 case 'time':
-                    state.time.push(value);
+                    state.time.push(filter);
                     break;
                 default:
                     return;
@@ -35,18 +35,18 @@ export const filterSlice = createSlice({
         },
         unselectFilter: (state, action) => {
        
-            const { key, value} = action.payload;
+            const { filterName, filter} = action.payload;
 
-            switch(key){
+            switch(filterName){
 
                 case 'area': 
-                    state.area = state.area.filter(item => item !== value )
+                    state.area = state.area.filter(item => item !== filter )
                     break;
                 case 'difficulty':
-                    state.difficulty = state.difficulty.filter(item => item !== value )
+                    state.difficulty = state.difficulty.filter(item => item !== filter )
                     break;
                 case 'time':
-                    state.time = state.time.filter(item => item !== value );
+                    state.time = state.time.filter(item => item !== filter );
                     break;
                 default:
                     return;

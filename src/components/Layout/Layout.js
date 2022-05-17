@@ -29,6 +29,9 @@ export const Layout = ({ children }) => {
   // Variable that says if some user is logged in or not
   const {login: isLoggedIn, user} = useSelector( (state) => state.loginReducer);
 
+  // Variable that saves the filters
+  const {area, difficulty, time} = useSelector( (state) => state.filterReducer);
+
   // Items that are displayed in the nav bar when no user is logged
   const NoLoggedItems = <>
   <Nav.Item>
@@ -58,8 +61,7 @@ export const Layout = ({ children }) => {
   useEffect(() => {
 
     // zona=oeste,centro
-
-    const url = `http://localhost:3001/excursions?q=${search}&area=Centro-Este&time=2%20days,time=3%20days`;
+    const url = `http://localhost:3001/excursions?q=${search}&area=${area}&difficulty=${difficulty}&time=${time}`;
 
       fetch(url)
       .then((resp) => resp.json())
@@ -74,7 +76,7 @@ export const Layout = ({ children }) => {
 
     });
 
-  }, [search]);
+  }, [search, area, difficulty, time]);
 
   
   
