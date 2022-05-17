@@ -74,7 +74,7 @@ export const Layout = ({ children }) => {
 
     });
 
-  }, [search, filters]);
+  }, [search]);
 
   
   
