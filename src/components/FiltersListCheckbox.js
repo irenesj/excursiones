@@ -13,7 +13,6 @@ function FiltersListCheckbox(props){
 
         setSelected(!selected); 
        
-
             if(selected){
 
                 filterDispatch(unselectFilter({
@@ -24,6 +23,13 @@ function FiltersListCheckbox(props){
                 }));
             }
             else{
+
+                filterDispatch(selectFilter({
+
+                    filterName: props.filterName,
+                    filter: props.filter
+
+                }))
 
             }
            

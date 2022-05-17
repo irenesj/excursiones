@@ -13,7 +13,7 @@ export const filterSlice = createSlice({
     reducers: {
 
         selectFilter: (state, action) => {
-            
+        
            const { key, value} = action.payload; 
 
            switch(key){
@@ -34,7 +34,7 @@ export const filterSlice = createSlice({
 
         },
         unselectFilter: (state, action) => {
-
+       
             const { key, value} = action.payload;
 
             switch(key){
