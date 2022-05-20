@@ -6,11 +6,14 @@ import FiltersListCheckbox from "./FiltersListCheckbox";
 function FiltersList(props){
 
   
+    // This useState saves the filters info that is stored in the test server
     const [ arrayFilters, setArrayFilters ] = useState([]);
     
     useEffect(()=> {
 
+        // Variable that has the url that is needed for the fetch
         const url = `http://localhost:3001/filters?type=${props.filterName}`;
+        // Variable that saves the options that the fetch needs
         const options = {
     
             method: 'GET',

@@ -12,6 +12,7 @@ export const filterSlice = createSlice({
     },
     reducers: {
 
+        // This reducer receives the info of a checkbox, selects the filter and adds the filter to the arrays 
         selectFilter: (state, action) => {
         
            const { filterName, filter} = action.payload; 
@@ -33,6 +34,7 @@ export const filterSlice = createSlice({
            }
 
         },
+        // This reducer receives the info of a checkbox and unselects the filter 
         unselectFilter: (state, action) => {
        
             const { filterName, filter} = action.payload;

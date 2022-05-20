@@ -1,6 +1,4 @@
-
-// promise
-// respuesta del servidor -> se podria con async/await
+/** This function has the variables and the fetch that is neccessary for an user to logged */
 const userLogin = (mail, password) => {
 
       // Variable that has the url that is needed for the fetch
@@ -35,6 +33,7 @@ const userLogin = (mail, password) => {
 
 }
 
+/** This function has the variables and the fetch that is neccessary for an user to register */
 const registerUser = (name, surname, phone, mail,password) => {
 
     // Variable that has the url that is needed for the fetch
@@ -54,7 +53,7 @@ const registerUser = (name, surname, phone, mail,password) => {
         method: 'POST',
         mode: 'cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(user)
+        body: JSON.stringify(user) // Here we send the user's info that the user has given in the register form to the server
     };
 
     return fetch(url, options )

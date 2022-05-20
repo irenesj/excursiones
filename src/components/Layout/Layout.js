@@ -29,7 +29,7 @@ export const Layout = ({ children }) => {
   // Variable that says if some user is logged in or not
   const {login: isLoggedIn, user} = useSelector( (state) => state.loginReducer);
 
-  // Variable that saves the filters
+  // Variable that saves the filters stored in the test server
   const {area, difficulty, time} = useSelector( (state) => state.filterReducer);
 
   // Items that are displayed in the nav bar when no user is logged
@@ -42,7 +42,7 @@ export const Layout = ({ children }) => {
   </Nav.Item>
   </>
 
-  // Items that are displayed in the nav bar when a user is logged
+  // Items that are displayed in the nav bar when an user is logged
   const LoggedItems = <>
     <Nav.Item>
       <LandingPageUserProfile name={user && user.name}/>
@@ -57,7 +57,7 @@ export const Layout = ({ children }) => {
 
   }
 
-  // This useEffect ...
+  // This useEffect helps with the searching of an excursion
   useEffect(() => {
 
     // zona=oeste,centro
@@ -80,7 +80,7 @@ export const Layout = ({ children }) => {
 
   
   
-  // This useEffect
+  // This useEffect controls the token in the localStorage
   useEffect(() => {
 
 
@@ -88,8 +88,9 @@ export const Layout = ({ children }) => {
   const loadToken = () => {
   
     const localToken = localStorage["token"];
+    // Variable that has the url that is needed for the fetch
     const url = `http://localhost:3001/token/${localToken}`;
-    // Variable that saves the search that the user writes in the search bar 
+    // Variable that saves the options that the fetch needs
     const options = {
   
       method: 'GET',
