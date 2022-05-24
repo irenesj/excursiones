@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { login, logout} from '../../slicers/loginSlice';
 import { Routes, Route } from 'react-router-dom';
+import NavigationBar from '../NavigationBar';
 import Register from '../Register';
 import Filters from '../Filters';
 import Excursions from '../Excursions';
@@ -10,7 +11,6 @@ import UserPage from '../UserPage';
 import Footer from '../Footer';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
-import NavigationBar from '../NavigationBar';
 
 
 /** This is the layout, here goes the web structure  */
