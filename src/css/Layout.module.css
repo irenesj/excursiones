@@ -6,38 +6,3 @@
     border-bottom-left-radius: 0.8em;
     border-bottom-right-radius: 0.8em;
 }
-
-.nav {
-
-    padding-top: 20px;
-    background-color: #557027;
-    color: white;
-    font: 16px;
-    border-top-left-radius: 0.8em;
-    border-top-right-radius: 0.8em;
-    
-}
-
-.logo{
-
-    padding: 18px 15px 0 20px;
-    font-size: 23px;
-    font-weight: bolder;
-    font-style: italic;
-    
-}
-
-.nav a{
-
-    padding-top: 23.2px;
-    color: white;
-    text-decoration: none;
-
-}
-
-.searchBar {
-
-    width: 400px;
-    padding: 15px 0 25px 0;
-    
-}
