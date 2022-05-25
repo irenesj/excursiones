@@ -2,11 +2,13 @@ import React from "react";
 import { Row, Col, Nav } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import Logo from "./Logo";
 import SearchBar from "./SearchBar";
 import Login from './Login';
 import LandingPageUserProfile from './LandingPageUserProfile';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/NavigationBar.module.css';
+
 
 
 function NavigationBar(props) {
@@ -34,9 +36,7 @@ function NavigationBar(props) {
     return (
 
         <Row className={styles.nav}>
-            <Col className={styles.logo} xs="3">
-                <Link to='/'>Excursiones Juntos</Link>
-            </Col>
+            <Logo />
             <Col xs="9">
                 <Nav className="justify-content-end">
                    <SearchBar setExcursions={props.setExcursions} />
