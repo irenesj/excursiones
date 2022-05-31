@@ -38,7 +38,7 @@ function SearchBar(props) {
 
             });
 
-    }, [search, area, difficulty, time, props]);
+    }, [search, area, difficulty, time]);
 
     return (
 
