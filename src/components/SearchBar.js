@@ -20,6 +20,8 @@ function SearchBar(props) {
 
     }
 
+    const {setExcursions} = props;
+
     // This useEffect helps with the searching of an excursion
     useEffect(() => {
 
@@ -29,7 +31,7 @@ function SearchBar(props) {
             .then((resp) => resp.json())
             .then(function (data) {
 
-                props.setExcursions(data);
+                setExcursions(data);
 
             })
             .catch(function (error) {
@@ -38,7 +40,7 @@ function SearchBar(props) {
 
             });
 
-    }, [search, area, difficulty, time]);
+    }, [search, area, difficulty, time, setExcursions]);
 
     return (
 
