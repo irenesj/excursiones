@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
 
-/** This is the layout, here goes the web structure  */
+/** This is the layout, here goes the web structure. For this app I'll use the breakpoints xs, md and xl. */
 export const Layout = ({ children }) => {
 
   // Variable we need to be able to use dispatchers

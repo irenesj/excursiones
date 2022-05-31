@@ -10,7 +10,7 @@ function Logo(){
 
     return(
 
-        <Col className={styles.logo} xs="3">
+        <Col className={styles.logo} xs="12" md="3">
             <Link to='/'>Excursiones Juntos</Link>
         </Col>
 

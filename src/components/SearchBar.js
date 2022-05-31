@@ -44,7 +44,7 @@ function SearchBar(props) {
 
     return (
 
-        <Nav.Item className={styles.searchBar} md="5">
+        <Nav.Item className={styles.searchBar} xs="12" md="12" xl="9">
             <div className="form-group">
                 <input id="searchBar" className="form-control" type="search" placeholder="Busca el sitio al que quieras ir..." onKeyUp={introKeyPressed} ref={element => (element || {}).onsearch = introKeyPressed} />
             </div>

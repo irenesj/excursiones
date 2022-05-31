@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Nav } from "react-bootstrap";
+import { Row, Col, Nav, Container } from "react-bootstrap";
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import Logo from "./Logo";
@@ -17,14 +17,20 @@ function NavigationBar(props) {
     const { login: isLoggedIn, user } = useSelector((state) => state.loginReducer);
 
     // Items that are displayed in the nav bar when no user is logged
-    const NoLoggedItems = <>
-        <Nav.Item>
-            <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-            <Login />
-        </Nav.Item>
-    </>
+    const NoLoggedItems = <Container className="p-0">
+        <Row>
+            <Col xs="6">
+                <Nav.Item>
+                    <Nav.Link className="ml-auto" as={Link} to="register">Regístrate</Nav.Link>
+                </Nav.Item>
+            </Col>
+            <Col xs="6">
+                <Nav.Item>
+                    <Login />
+                </Nav.Item>
+            </Col>
+        </Row>
+    </Container>;
 
     // Items that are displayed in the nav bar when an user is logged
     const LoggedItems = <>
@@ -37,11 +43,22 @@ function NavigationBar(props) {
 
         <Row className={styles.nav}>
             <Logo />
-            <Col xs="9">
+            <Col xs="12" md="9">
                 <Nav className="justify-content-end">
-                   <SearchBar setExcursions={props.setExcursions} />
-                    {!isLoggedIn && NoLoggedItems}
-                    {isLoggedIn && LoggedItems}
+                    <Container>
+                        <Row>
+                            <Col xs="12" md="12" xl="8">
+                                <SearchBar setExcursions={props.setExcursions} />
+                            </Col>
+                            <Col xs="12" md="12" xl="4">
+                                
+                                {!isLoggedIn && NoLoggedItems}
+                                {isLoggedIn && LoggedItems}
+                            </Col>
+                        </Row>
+                    </Container>
+                  
+                    
                 </Nav>
             </Col>
         </Row>
