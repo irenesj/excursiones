@@ -8,7 +8,7 @@ function Filters(){
   
     return(
       
-      <Col xs="3">
+      <Col xs="12" md="3">
         <Accordion flush>
           <Accordion.Item eventKey="0" >
             <Accordion.Header>Zona</Accordion.Header>

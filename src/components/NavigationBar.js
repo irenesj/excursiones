@@ -51,7 +51,6 @@ function NavigationBar(props) {
                                 <SearchBar setExcursions={props.setExcursions} />
                             </Col>
                             <Col xs="12" md="12" xl="4">
-                                
                                 {!isLoggedIn && NoLoggedItems}
                                 {isLoggedIn && LoggedItems}
                             </Col>
