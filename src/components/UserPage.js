@@ -90,7 +90,7 @@ function UserPage(){
 
     return(
 
-    <Col xs="8">
+    <Col xs="12" md="8">
 
         <div className={styles.title}>Tu perfil</div>
         <div className={styles.userInfo}>
