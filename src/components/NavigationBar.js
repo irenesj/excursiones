@@ -17,7 +17,7 @@ function NavigationBar(props) {
     const { login: isLoggedIn, user } = useSelector((state) => state.loginReducer);
 
     // Items that are displayed in the nav bar when no user is logged
-    const NoLoggedItems = <Container className="p-0">
+    const NoLoggedItems = <Container className={styles.noLoggedItems}>
         <Row>
             <Col xs="6">
                 <Nav.Item>
