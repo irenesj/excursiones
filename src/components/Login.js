@@ -62,8 +62,8 @@ export function Login(){
             <Dropdown.ItemText className={styles.loginDropdownButtonText}>
                 <div className={styles.formText}>
                     <ValidatedFormGroup control="formBasicEmail" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail} message={false}/>
-                    <p>Nunca compartiremos tus datos con nadie</p>
                 </div>
+                <p>Nunca compartiremos tus datos con nadie</p>
             </Dropdown.ItemText>
             <Dropdown.ItemText>
                 <div className={styles.formText}>
