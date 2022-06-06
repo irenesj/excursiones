@@ -18,13 +18,15 @@ function UserPage(){
     const [ name, setName ] = useState(user && user.name);
     const [ surname, setSurname ] = useState(user && user.surname);
     const [ phone, setPhone ] = useState(user && user.phone);
+    const [ password, setPassword ] = useState(user && user.password);
     
     const currentUser = {
 
         name: name,
         surname: surname,
         mail: user && user.mail,
-        phone: phone
+        phone: phone,
+        password: password
         
     }
     const url = `http://localhost:3001/users/${currentUser.mail}`;
@@ -104,6 +106,9 @@ function UserPage(){
             </div>  
             <div>
                 <UserPageInputEdit info="Teléfono" isEditing={isEditing} inputToChange={setPhone} value={phone}/>
+            </div>  
+            <div>
+                <UserPageInputEdit info="Contraseña" isEditing={isEditing} inputToChange={setPassword} value={password}/>
             </div>  
         </div>
         {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEdit}>Editar</Button>}
