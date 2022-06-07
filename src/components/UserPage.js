@@ -3,6 +3,7 @@ import { Col, Button } from 'react-bootstrap';
 import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router";
 import UserPageInputEdit from "./UserPageInputEdit";
+import UserPageInputEditPassword from "./UserPageInputEditPassword";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/UserPage.module.css';
 import { updateUser } from "../slicers/loginSlice";
@@ -18,7 +19,7 @@ function UserPage(){
     const [ name, setName ] = useState(user && user.name);
     const [ surname, setSurname ] = useState(user && user.surname);
     const [ phone, setPhone ] = useState(user && user.phone);
-    const [ password, setPassword ] = useState(user && user.password);
+    const [ password, setPassword ] = useState('');
     
     const currentUser = {
 
@@ -108,7 +109,7 @@ function UserPage(){
                 <UserPageInputEdit info="Teléfono" isEditing={isEditing} inputToChange={setPhone} value={phone}/>
             </div>  
             <div>
-                <UserPageInputEdit info="Contraseña" isEditing={isEditing} inputToChange={setPassword} value={password}/>
+                <UserPageInputEditPassword info="Contraseña" isEditing={isEditing} inputToChange={setPassword} value={password}/>
             </div>  
         </div>
         {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEdit}>Editar</Button>}

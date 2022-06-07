@@ -55,7 +55,7 @@ function LandingPageUserProfile(props) {
 
         <Container>
             <Row>
-                <Col xs="12">
+                <Col xs="12" md="7" xl="12">
                     <SplitButton className={styles.userProfile} variant="success" title={text} >
                         <Dropdown.ItemText className={styles.dropdownText}><Link to='UserPage' className={styles.userProfile + " " + styles.black}>Perfil</Link></Dropdown.ItemText>
                         <Dropdown.Divider />
