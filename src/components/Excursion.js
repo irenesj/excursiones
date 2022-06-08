@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from 'react-bootstrap';
+import { Button, Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Excursion.module.css';
@@ -69,8 +69,7 @@ function Excursion(props){
 
     return(
 
-        <div className={styles.excursion}>
-
+        <Container className={styles.excursion}>
             <div className={styles.title}>{props.name}</div>
             <div className={styles.bold}>Zona:</div> {props.area}<br/> 
             <div className={styles.bold}>Dificultad:</div> {props.difficulty}<br/> 
@@ -80,7 +79,9 @@ function Excursion(props){
             { isLoggedIn && user && !user.excursions.includes(props.id) && BtnJoiningNojoined }
             { isLoggedIn && user && user.excursions.includes(props.id) && BtnAlreadyJoined }
 
-        </div>
+        </Container>
+
+        
 
     );
     
