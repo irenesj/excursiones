@@ -88,9 +88,12 @@ export const Layout = ({ children }) => {
         </Col>
       </Row>
       <Row>
-        <Filters/>
         <Routes>
-          <Route path='/' element={ <Excursions excursionData={ excursionArray } />} />
+          <Route path='/' element={ 
+          <>
+            <Filters/>
+            <Excursions excursionData={ excursionArray } />
+          </>} />
           <Route path='register' element={<Register />}/> 
           <Route path='userPage' element={<UserPage /> } />  
         </Routes>

@@ -1,7 +1,5 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
-import styles from '../css/UserPageInputEdit.module.css';
-
 
 function UserPageInputEdit(props){
 
@@ -18,8 +16,8 @@ function UserPageInputEdit(props){
     return (
 
         <div>
-                <label className={styles.userInputLabel}>{props.info}</label> {!props.isEditing && props.value} 
-                              {props.isEditing && editingInput}
+               {!props.isEditing && props.value} 
+                {props.isEditing && editingInput}
         </div>     
 
     );

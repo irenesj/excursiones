@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Col, Button } from 'react-bootstrap';
+import { Col, Button, Row, Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router";
 import UserPageInputEdit from "./UserPageInputEdit";
@@ -90,27 +90,48 @@ function UserPage(){
 
     return(
 
-    <Col xs="12" md="8">
-
+    <Row className="justify-content-center">
+        <Col xs="12" md="8" >
         <div className={styles.title}>Tu perfil</div>
-        <div className={styles.userInfo}>
-            <label className={styles.userInputLabel}>Correo electrónico</label> 
-            {user && user.mail}
-            <div>
-                <UserPageInputEdit info="Nombre" isEditing={isEditing} inputToChange={setName} value={name}/>
-            </div>                
-            <div>
-                <UserPageInputEdit info="Apellidos" isEditing={isEditing} inputToChange={setSurname} value={surname}/>
-            </div>  
-            <div>
-                <UserPageInputEdit info="Teléfono" isEditing={isEditing} inputToChange={setPhone} value={phone}/>
-            </div> 
-        </div>
+            <Container>
+                <Row >
+                    <Col className="text-md-end">
+                        <label className={styles.userInputLabel}>Correo:</label> 
+                    </Col>
+                    <Col className="text-md-start">
+                        {user && user.mail}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-md-end">
+                        <label className={styles.userInputLabel}>Nombre:</label> 
+                    </Col>
+                    <Col className="text-md-start">
+                        <UserPageInputEdit isEditing={isEditing} inputToChange={setName} value={name}/>    
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-md-end">
+                        <label className={styles.userInputLabel}>Apellidos:</label> 
+                    </Col>
+                    <Col className="text-md-start">
+                        <UserPageInputEdit isEditing={isEditing} inputToChange={setSurname} value={surname}/>   
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-md-end">
+                        <label className={styles.userInputLabel}>Teléfono:</label> 
+                    </Col>
+                    <Col className="text-md-start">
+                        <UserPageInputEdit isEditing={isEditing} inputToChange={setPhone} value={phone}/>   
+                    </Col>
+                </Row>
+            </Container>
         {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEdit}>Editar</Button>}
-        {isEditing && <Button className={styles.cancelBtn} variant="success" onClick={cancelEdit}>Cancelar</Button>}
+        {isEditing && <Button className={styles.cancelBtn} variant="danger" onClick={cancelEdit}>Cancelar</Button>}
         {isEditing && <Button className={styles.saveBtn} variant="success" onClick={saveEdit}>Guardar</Button>}
-
     </Col>
+    </Row>
 
     );
 
