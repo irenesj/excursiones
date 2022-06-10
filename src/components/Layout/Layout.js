@@ -19,16 +19,17 @@ export const Layout = ({ children }) => {
   // Variable we need to be able to use dispatchers
   const loginDispatch = useDispatch();
 
-  // Array that has the excursions that are needed in that moment
+  // Array of excursions that are needed in that moment which are the list of all the excursions and the search (for both the search bar and the filters)
   const [excursionArray, setExcursionArray] = useState([]);
   
-  // This useEffect controls the token in the localStorage
+  // This useEffect controls the token in the localStorage. The token is saved in the localStorage for the user to be able to stay logged in
   useEffect(() => {
 
 
-  // This function ..
+  // This function...
   const loadToken = () => {
   
+    // Variable that saves the current token that is in the localStorage
     const localToken = localStorage["token"];
     // Variable that has the url that is needed for the fetch
     const url = `http://localhost:3001/token/${localToken}`;
@@ -41,6 +42,7 @@ export const Layout = ({ children }) => {
 
     };
   
+    // If there´s a token
     if(localToken){
   
       fetch(url, options)
