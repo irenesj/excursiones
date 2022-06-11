@@ -9,8 +9,6 @@ import LandingPageUserProfile from './LandingPageUserProfile';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/NavigationBar.module.css';
 
-
-
 function NavigationBar(props) {
 
     // Variable that says if some user is logged in or not
@@ -56,12 +54,12 @@ function NavigationBar(props) {
                             </Col>
                         </Row>
                     </Container>
-                  
-                    
                 </Nav>
             </Col>
         </Row>
+
     );
+
 }
 
 export default NavigationBar;

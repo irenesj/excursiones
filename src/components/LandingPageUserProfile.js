@@ -13,7 +13,7 @@ function LandingPageUserProfile(props) {
     // Variable that we nedd to be able to use dispatchers
     const logoutDispatch = useDispatch();
 
-    // 
+    // This useSelector variable has the token that it is saved in the store
     const { token } = useSelector((state) => state.loginReducer);
 
     // Variable that saves the text that says welcome to the user that just had log in
