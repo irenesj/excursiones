@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../../css/Layout.module.css';
 
 
-/** This is the layout, here goes the web structure. For this app I'll use the breakpoints xs, md and xl. */
+//This is the layout, here goes the web structure. For this app I'll use the breakpoints xs, md and xl
 export const Layout = ({ children }) => {
 
   // Variable we need to be able to use dispatchers
@@ -31,8 +31,10 @@ export const Layout = ({ children }) => {
   
     // Variable that saves the current token that is in the localStorage
     const localToken = localStorage["token"];
+
     // Variable that has the url that is needed for the fetch
     const url = `http://localhost:3001/token/${localToken}`;
+
     // Variable that saves the options that the fetch needs
     const options = {
   
