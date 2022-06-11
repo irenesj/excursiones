@@ -8,6 +8,7 @@ function FiltersList(props) {
     // This useState saves the filters info that is stored in the test server
     const [arrayFilters, setArrayFilters] = useState([]);
 
+    // This useEffect brings the filters from the database with the fetch
     useEffect(() => {
 
         // Variable that has the url that is needed for the fetch
@@ -40,9 +41,7 @@ function FiltersList(props) {
     return (
 
         <ul className={styles.listInfo}>
-
             {arrayFilters.map(i => <FiltersListCheckbox key={i} filterName={props.filterName} filter={i} />)}
-
         </ul>
 
     );

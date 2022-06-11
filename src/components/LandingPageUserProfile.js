@@ -10,8 +10,12 @@ import { logout } from '../slicers/loginSlice';
 function LandingPageUserProfile(props) {
 
 
+    // Variable that we nedd to be able to use dispatchers
     const logoutDispatch = useDispatch();
+
+    // 
     const { token } = useSelector((state) => state.loginReducer);
+
     // Variable that saves the text that says welcome to the user that just had log in
     const text = <div>Bienvenido/a, {props.name}</div>
 
@@ -29,7 +33,6 @@ function LandingPageUserProfile(props) {
         }
 
     };
-
 
     // Function for logging out
     const logOut = () => {
@@ -50,7 +53,6 @@ function LandingPageUserProfile(props) {
 
     }
 
-
     return (
 
         <Container>
@@ -67,8 +69,8 @@ function LandingPageUserProfile(props) {
             </Row>
         </Container>
 
-
     );
+
 }
 
 export default LandingPageUserProfile;

@@ -22,11 +22,9 @@ function Excursions(props){
     return(
 
         <Col xs="12" md="9">
-
             <h2 className={styles.title}>Próximas excursiones</h2>
             {found && excursions}
             {!found && notFound}
-
         </Col>
        
     );

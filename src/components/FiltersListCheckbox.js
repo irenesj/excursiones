@@ -2,48 +2,47 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { selectFilter, unselectFilter } from "../slicers/filterSlice";
 
-function FiltersListCheckbox(props){
+function FiltersListCheckbox(props) {
 
     // Variable that saves if a checkbox is selected or not
-    const [ selected, setSelected ] = useState(false);
+    const [selected, setSelected] = useState(false);
 
-     // Variable that we nedd to be able to use dispatchers
-     const filterDispatch = useDispatch();  
+    // Variable that we nedd to be able to use dispatchers
+    const filterDispatch = useDispatch();
 
     // Function that changes the state of a checkbox, checked -> unchecked, unchecked -> checked
     const selectedCheckbox = () => {
 
-        setSelected(!selected); 
-       
-            if(selected){
+        setSelected(!selected);
 
-                filterDispatch(unselectFilter({
+        if (selected) {
 
-                    filterName: props.filterName,
-                    filter: props.filter
+            // If the checkbox is selected, unselect it
+            filterDispatch(unselectFilter({
 
-                }));
-            }
-            else{
+                filterName: props.filterName,
+                filter: props.filter
 
-                filterDispatch(selectFilter({
+            }));
+        }
+        else {
 
-                    filterName: props.filterName,
-                    filter: props.filter
+            // If it wasn't checked then select it
+            filterDispatch(selectFilter({
 
-                }))
+                filterName: props.filterName,
+                filter: props.filter
 
-            }
-           
+            }))
 
-     
+        }
 
     }
 
 
-    return(
+    return (
 
-        <li key={props.index}><input type="checkbox" onChange={selectedCheckbox}/> {props.filter}</li>
+        <li key={props.index}><input type="checkbox" onChange={selectedCheckbox} /> {props.filter}</li>
 
     );
 }
