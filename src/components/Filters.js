@@ -3,8 +3,8 @@ import { Col, Accordion } from 'react-bootstrap';
 import FiltersList from './FiltersList';
 import 'bootstrap/dist/css/bootstrap.css';
 
-function Filters() {
 
+function Filters() {
 
   return (
 

@@ -3,6 +3,7 @@ import FiltersListCheckbox from "./FiltersListCheckbox";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/FiltersList.module.css';
 
+
 function FiltersList(props) {
 
     // This useState saves the filters info that is stored in the test server

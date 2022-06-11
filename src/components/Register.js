@@ -4,90 +4,100 @@ import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from 'react-router-dom';
 import { login } from '../slicers/loginSlice';
 import ValidatedFormGroup from "./ValidatedFormGroup";
-import {validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword} from '../validation/validations.js'
+import { validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword } from '../validation/validations.js'
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Register.module.css';
 import { userLogin, registerUser } from "../helpers/helpers";
 
 
-function Register(){
+function Register() {
 
-    const isLoggedIn = useSelector(state => state.loginReducer.login )
+    // This useSelector gives us the info if an user is logged or not
+    const isLoggedIn = useSelector(state => state.loginReducer.login);
+
     // Variable that we nedd to be able to use dispatchers
-    const loginDispatch = useDispatch();  
+    const loginDispatch = useDispatch();
+
     // Variable that saves if the register button is disabled or not
     const [disabled, setDisabled] = useState(true);
+
     // Variable that receive and change the name that we received from the login form inputs
     const [name, setName] = useState("");
+
     // Variable that receive and change the surname that we received from the login form inputs
     const [surname, setSurname] = useState("");
+
     // Variable that receive and change the phone that we received from the login form inputs
     const [phone, setPhone] = useState("");
+
     // Variable that receive and change the mail that we received from the login form inputs
     const [mail, setMail] = useState("");
+
     // Variable that receive and change the password that we received from the login form inputs
     const [password, setPassword] = useState("");
+
     // Variable that receive and change the password that we received from the login form inputs
     const [samePassword, setSamePassword] = useState("");
 
-    // Function that allows register an user sending the POST request
+    // Function that allows register an user sending a POST request
     const submit = () => {
-        
-       registerUser(name, surname, phone, mail, password)
-        .then(data => {
 
-            return userLogin(mail, password);
-           
-        })
-        .then(data => {
+        registerUser(name, surname, phone, mail, password)
+            .then(data => {
 
-            loginDispatch(login({
+                return userLogin(mail, password);
 
-                user: data.user,
-                token: data.token
+            })
+            .then(data => {
 
-            }));
-            window.localStorage["token"] = data.token;
+                loginDispatch(login({
 
-        })
-        .catch(error => alert(error))
-        
-    
+                    user: data.user,
+                    token: data.token
+
+                }));
+                window.localStorage["token"] = data.token;
+
+            })
+            .catch(error => alert(error))
+
+
     }
 
     // This useEffect disables the button to register until all the information in the register inputs is correct
     useEffect(() => {
-        
-        if(validateName(name) && validateSurname(surname) && validatePhone(phone) 
-        && validateMail(mail) && validatePassword(password) && validSamePassword(password, samePassword)){
+
+        if (validateName(name) && validateSurname(surname) && validatePhone(phone)
+            && validateMail(mail) && validatePassword(password) && validSamePassword(password, samePassword)) {
             setDisabled(false);
         }
-        else{
+        else {
 
             setDisabled(true);
         }
 
     }, [name, surname, phone, mail, password, samePassword]);
 
-    if(isLoggedIn) {
-        return <Navigate replace to="/"/>;
+    // 
+    if (isLoggedIn) {
+        return <Navigate replace to="/" />;
     }
-    
-    return(
+
+    return (
 
         <Col>
             <Form className={styles.form}>
                 <Row className="mb-3">
-                    <ValidatedFormGroup control="formGridAddress1" name="Nombre" inputToChange={setName} validationFunction={validateName} value={name} message={true}/>
-                    <ValidatedFormGroup control="formGridAddress2" name="Apellidos" inputToChange={setSurname} validationFunction={validateSurname} value={surname} message={true}/>
+                    <ValidatedFormGroup control="formGridAddress1" name="Nombre" inputToChange={setName} validationFunction={validateName} value={name} message={true} />
+                    <ValidatedFormGroup control="formGridAddress2" name="Apellidos" inputToChange={setSurname} validationFunction={validateSurname} value={surname} message={true} />
                 </Row>
                 <Row className="mb-3">
-                    <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono" inputToChange={setPhone} validationFunction={validatePhone} value={phone} message={true}/>
-                    <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail} message={true}/>
+                    <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono" inputToChange={setPhone} validationFunction={validatePhone} value={phone} message={true} />
+                    <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail} message={true} />
                 </Row>
                 <Row>
-                    <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password} message={true}/>
-                    <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword} message={true}/>
+                    <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password} message={true} />
+                    <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword} message={true} />
                 </Row>
                 <Row>
                     <ul className={styles.list}>
@@ -95,12 +105,12 @@ function Register(){
                         <li>Debes estar registrado/a para poder apuntarte a las excursiones</li>
                     </ul>
                 </Row>
-                    <div className={styles.btn}>
-                        <Button variant="success" type="button" onClick={submit} disabled={disabled}>
-                            Enviar
-                        </Button>
-                    </div>
-            </Form>    
+                <div className={styles.btn}>
+                    <Button variant="success" type="button" onClick={submit} disabled={disabled}>
+                        Enviar
+                    </Button>
+                </div>
+            </Form>
         </Col>
 
     );

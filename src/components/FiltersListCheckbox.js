@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { selectFilter, unselectFilter } from "../slicers/filterSlice";
 
+
 function FiltersListCheckbox(props) {
 
     // Variable that saves if a checkbox is selected or not

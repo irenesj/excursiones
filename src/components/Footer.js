@@ -3,6 +3,7 @@ import { Col } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Footer.module.css';
 
+
 // This is the webpage footer
 function Footer() {
 

@@ -1,43 +1,45 @@
-/** This function has the variables and the fetch that is neccessary for an user to logged */
+// This function has the variables and the fetch that is neccessary for an user to logged
 const userLogin = (mail, password) => {
 
-      // Variable that has the url that is needed for the fetch
-      const url = 'http://localhost:3001/login';
+    // Variable that has the url that is needed for the fetch
+    const url = 'http://localhost:3001/login';
 
-      // Login object that we pass to the server for it to authenticate the user
-      const credentials = {
+    // Login object that we pass to the server for it to authenticate the user
+    const credentials = {
 
-          mail: mail,
-          password: password
-      }
+        mail: mail,
+        password: password
+    }
 
-      // Variable that saves the options that the fetch needs
-      const options = {
+    // Variable that saves the options that the fetch needs
+    const options = {
 
-          method: 'POST',
-          mode: 'cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(credentials)
+        method: 'POST',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(credentials)
 
-      };
+    };
 
-      return fetch(url, options)
-      .then(response => {
-        if (response.status === 401){
-            throw new Error("Datos incorrectos. Inténtalo de nuevo.");
-        }
-        else{
-            return response.json();
-        }
-    })
+    return fetch(url, options)
+
+        .then(response => {
+            if (response.status === 401) {
+                throw new Error("Datos incorrectos. Inténtalo de nuevo.");
+            }
+            else {
+                return response.json();
+            }
+        })
 
 }
 
-/** This function has the variables and the fetch that is neccessary for an user to register */
-const registerUser = (name, surname, phone, mail,password) => {
+// This function has the variables and the fetch that is neccessary for an user to register
+const registerUser = (name, surname, phone, mail, password) => {
 
     // Variable that has the url that is needed for the fetch
     const url = `http://localhost:3001/users`;
+
     // Variable that has a user with the information we have received from the register form, then this is sent to the server to add the user
     const user = {
 
@@ -47,6 +49,7 @@ const registerUser = (name, surname, phone, mail,password) => {
         mail: mail,
         password: password
     }
+
     // Variable that saves the options that the fetch needs
     const options = {
 
@@ -56,16 +59,16 @@ const registerUser = (name, surname, phone, mail,password) => {
         body: JSON.stringify(user) // Here we send the user's info that the user has given in the register form to the server
     };
 
-    return fetch(url, options )
-    .then(response => {
-        if (response.status === 409){
-            throw new Error("No puedes registrarte con ese correo");
-        }
-        else{
-            return response.json();
-        }
-        
-    })
+    return fetch(url, options)
+
+        .then(response => {
+            if (response.status === 409) {
+                throw new Error("No puedes registrarte con ese correo");
+            }
+            else {
+                return response.json();
+            }
+        })
 
 }
 
