@@ -5,7 +5,6 @@ import { updateUser } from '../slicers/loginSlice';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Excursion.module.css';
 
-
 function Excursion(props) {
 
 
