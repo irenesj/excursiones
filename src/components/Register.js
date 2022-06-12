@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Row, Col, Form, Button } from "react-bootstrap";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, useEffect } from 'react';
+import { Row, Col, Form, Button } from 'react-bootstrap';
+import { useSelector, useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { login } from '../slicers/loginSlice';
-import ValidatedFormGroup from "./ValidatedFormGroup";
+import ValidatedFormGroup from './ValidatedFormGroup';
 import { validateName, validateSurname, validatePhone, validateMail, validatePassword, validSamePassword } from '../validation/validations.js'
+import { userLogin, registerUser } from '../helpers/helpers';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Register.module.css';
-import { userLogin, registerUser } from "../helpers/helpers";
 
 
 function Register() {
@@ -42,6 +42,7 @@ function Register() {
     // Function that allows register an user sending a POST request
     const submit = () => {
 
+        // We use the function for register an user from the helpers
         registerUser(name, surname, phone, mail, password)
             .then(data => {
 
@@ -50,12 +51,14 @@ function Register() {
             })
             .then(data => {
 
+                // If there´s no problem in the server, the user logs in and the his/her information is saved in the store
                 loginDispatch(login({
 
                     user: data.user,
                     token: data.token
 
                 }));
+                // And then his/her token is saved in the localStorage
                 window.localStorage["token"] = data.token;
 
             })

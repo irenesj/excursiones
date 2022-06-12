@@ -1,9 +1,8 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 
-
+// This component controls the user page edit inputs
 function UserPageInputEdit(props){
-
 
     const inputChange = (event) => {
 

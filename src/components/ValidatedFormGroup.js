@@ -18,7 +18,6 @@ function ValidatedFormGroup(props){
  
     }
 
-
     return(
 
         <Form.Group as={Col} controlId={props.control}>

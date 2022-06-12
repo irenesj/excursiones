@@ -8,10 +8,10 @@ import styles from '../css/SearchBar.module.css';
 function SearchBar(props) {
 
     // Variable that saves the search that the user writes in the search bar 
-    const [search, setSearch] = useState('');
+    const [ search, setSearch ] = useState('');
 
     // Variable that saves the filters stored in the test server
-    const {area, difficulty, time} = useSelector( (state) => state.filterReducer);
+    const { area, difficulty, time } = useSelector( (state) => state.filterReducer);
 
     // Function that saves the information from the search input and updates its state
     const introKeyPressed = (event) => {
@@ -22,7 +22,7 @@ function SearchBar(props) {
     }
 
     // We need this variable in order to avoid a warning
-    const {setExcursions} = props;
+    const { setExcursions } = props;
 
     // This useEffect helps with the searching of an excursion
     useEffect(() => {

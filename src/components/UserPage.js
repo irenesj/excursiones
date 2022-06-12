@@ -13,12 +13,22 @@ function UserPage(){
     // Variable that we nedd to be able to use dispatchers
     const loginDispatch = useDispatch();  
 
+    // This useSelector gives us the info if an user is logged or not
     const { login: isLoggedIn, user } = useSelector((state) => state.loginReducer);
+
+    // This variable says if the user is editing information or not
     const [ isEditing, setIsEditing ] = useState(false);
+
+    // Variable that receive and change the name that we received from the edit inputs
     const [ name, setName ] = useState(user && user.name);
+
+    // Variable that receive and change the surname that we received from the edit inputs
     const [ surname, setSurname ] = useState(user && user.surname);
+
+    // Variable that receive and change the phone that we received from the edit inputs
     const [ phone, setPhone ] = useState(user && user.phone);
     
+    // Variable that sets the information for the current user
     const currentUser = {
 
         name: name,
@@ -27,7 +37,11 @@ function UserPage(){
         phone: phone
         
     }
+
+    // Variable that has the url that is needed for the fetch
     const url = `http://localhost:3001/users/${currentUser.mail}`;
+
+    // Variable that saves the options that the fetch needs
     const options = {
   
         method: 'PUT',
@@ -37,28 +51,32 @@ function UserPage(){
         body: JSON.stringify(currentUser)
     };
 
+    // If the user is not logged in we send him/her to the home page
     if(!isLoggedIn) {
         return <Navigate replace to='/'/>;
     }
 
+    // Function that gives an alert when the user starts editing. Then the inputs to edit the user's info appears
     const startEdit = () => {
 
         setIsEditing(true);
 
     }
 
+    // Function that gives an alert when the user cancels the editing. Then the inputs to edit the user's info disappears
     const cancelEdit = () => {
 
         setIsEditing(false);
     }
 
+    // Function that saves the info that the user has changed
     const saveEdit = () => {
 
         fetch(url, options)
         .then(response => {
 
             if (response.status === 401){
-                throw new Error("No estás autorizado para hacer esa operación");
+                throw new Error("No estás autorizado/a para hacer esta operación");
             }
             else{
                 return response.json();
@@ -83,8 +101,6 @@ function UserPage(){
             setIsEditing(false);
 
         })
-        
-        
 
     }
 
