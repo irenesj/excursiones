@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
+// This slicer saves the information of the user that is logged
 export const loginSlice = createSlice({
 
     name: 'loginSlice',

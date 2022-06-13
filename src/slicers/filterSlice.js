@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
+// This slicer saves the checkbox filters information
 export const filterSlice = createSlice({
 
     name: 'filterSlice',
@@ -13,7 +13,7 @@ export const filterSlice = createSlice({
     },
     reducers: {
 
-        // This reducer receives the info of a checkbox, selects the filter and adds the filter to the arrays 
+        // This reducer receives the info of a checkbox, selects the filter and adds the filter to the arrays of area, difficulty and time
         selectFilter: (state, action) => {
         
            const { filterName, filter} = action.payload; 
@@ -35,7 +35,7 @@ export const filterSlice = createSlice({
            }
 
         },
-        // This reducer receives the info of a checkbox and unselects the filter 
+        // This reducer receives the info of the unselected checkbox and deletes the filter from the store
         unselectFilter: (state, action) => {
        
             const { filterName, filter} = action.payload;
