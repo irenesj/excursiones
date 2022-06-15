@@ -62,7 +62,7 @@ function LandingPageUserProfile(props) {
                         <Dropdown.ItemText className={styles.dropdownText}><Link to='UserPage' className={styles.userProfile + " " + styles.black}>Perfil</Link></Dropdown.ItemText>
                         <Dropdown.Divider />
                         <Dropdown.ItemText className={styles.dropdownText}>
-                            <Button className={styles.logoutBtn} variant="danger" onClick={logOut}>Cerrar sesión</Button>
+                            <Button className={styles.logoutBtn} variant="secondary" onClick={logOut}>Cerrar sesión</Button>
                         </Dropdown.ItemText>
                     </SplitButton>
                 </Col>

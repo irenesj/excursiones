@@ -69,9 +69,12 @@ export function Login() {
                 </div>
             </Dropdown.ItemText>
             <Dropdown.ItemText>
-                <Button className={styles.sendBtn} variant="success" type="button" onClick={submit} disabled={disabled}>
+                {disabled && <Button className={styles.sendBtn} variant="secondary" type="button" onClick={submit} disabled={disabled}>
                     Enviar
-                </Button>
+                </Button>}
+                {!disabled && <Button className={styles.sendBtn} variant="success" type="button" onClick={submit} disabled={disabled}>
+                    Enviar
+                </Button>}
             </Dropdown.ItemText>
         </DropdownButton>
 

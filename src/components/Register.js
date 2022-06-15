@@ -110,9 +110,12 @@ function Register() {
                     </ul>
                 </Row>
                 <div className={styles.btn}>
-                    <Button variant="success" type="button" onClick={submit} disabled={disabled}>
+                    {disabled && <Button variant="secondary" type="button" onClick={submit} disabled={disabled}>
                         Enviar
-                    </Button>
+                    </Button>}
+                    {!disabled && <Button variant="success" type="button" onClick={submit} disabled={disabled}>
+                        Enviar
+                    </Button>}
                 </div>
             </Form>
         </Col>
