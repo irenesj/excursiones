@@ -46,12 +46,13 @@ function Register() {
         registerUser(name, surname, phone, mail, password)
             .then(data => {
 
+                // After registering, the user is logged in automatically
                 return userLogin(mail, password);
 
             })
             .then(data => {
 
-                // If there´s no problem in the server, the user logs in and the his/her information is saved in the store
+                // If there´s no problem in the server, the user logs in and his/her information is saved in the store
                 loginDispatch(login({
 
                     user: data.user,
@@ -81,7 +82,7 @@ function Register() {
 
     }, [name, surname, phone, mail, password, samePassword]);
 
-    // 
+    // When the user registers and then is automatically logged in is redirected to the home page
     if (isLoggedIn) {
         return <Navigate replace to="/" />;
     }

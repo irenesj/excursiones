@@ -13,7 +13,7 @@ function SearchBar(props) {
     // Variable that saves the filters stored in the test server
     const { area, difficulty, time } = useSelector( (state) => state.filterReducer);
 
-    // Function that saves the information from the search input and updates its state
+    // Function that saves the information from the search bar input and updates its state
     const introKeyPressed = (event) => {
 
         let currentSearch = event.target.value;
@@ -21,7 +21,7 @@ function SearchBar(props) {
 
     }
 
-    // We need this variable in order to avoid a warning
+    // We need this variable in order to avoid a warning in the navigator
     const { setExcursions } = props;
 
     // This useEffect helps with the searching of an excursion
