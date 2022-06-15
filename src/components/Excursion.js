@@ -12,7 +12,7 @@ function Excursion(props) {
     // This useSelector says if a user is logged in or not and it gives us the user info too
     const { login: isLoggedIn, user } = useSelector((state) => state.loginReducer);
 
-    // Variable that we nedd to be able to use dispatchers
+    // Variable that we need to be able to use dispatchers
     const loginDispatch = useDispatch();
 
     // Variable that saves the mail of the current user

@@ -10,7 +10,7 @@ import { logout } from '../slicers/loginSlice';
 function LandingPageUserProfile(props) {
 
 
-    // Variable that we nedd to be able to use dispatchers
+    // Variable that we need to be able to use dispatchers
     const logoutDispatch = useDispatch();
 
     // This useSelector variable has the token that it is saved in the store

@@ -10,7 +10,7 @@ import { userLogin } from '../helpers/helpers.js';
 
 export function Login() {
 
-    // Variable that we nedd to be able to use dispatchers
+    // Variable that we need to be able to use dispatchers
     const loginDispatch = useDispatch();
 
     // Variable that saves if the login button is disabled or not
