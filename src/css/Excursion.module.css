@@ -14,7 +14,6 @@
 
 .title{
 
-    padding-bottom: 15px;
     font-size: 30px;
     font-weight: bolder;
     text-transform: uppercase;
@@ -23,21 +22,15 @@
 .bold{
 
     display: inline-block;
-    padding: 15px 0px;
+    padding: 5px 0px;
     font-size: large;
     font-weight: bold;
 
 }
 
-.btn {
-
-    margin: 15px 0 0 40%;
-
-}
-
 .joinExcursionParagraph {
 
-    margin: 15px 0 0 40%;
+    padding-top: 1.5rem;
     color: #557027;
     font-weight: bold;
     text-transform: uppercase;

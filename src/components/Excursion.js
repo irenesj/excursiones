@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container, Button, Row, Col } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateUser } from '../slicers/loginSlice';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -7,7 +7,6 @@ import styles from '../css/Excursion.module.css';
 
 
 function Excursion(props) {
-
 
     // This useSelector says if a user is logged in or not and it gives us the user info too
     const { login: isLoggedIn, user } = useSelector((state) => state.loginReducer);
@@ -67,7 +66,7 @@ function Excursion(props) {
     // Variable that has the button that appears when the user isn´t still signed up in that excursion in concrete
     const BtnJoiningNojoined = <>
 
-        <Button className={styles.btn} variant="success" type="button" onClick={joinExcursion}>
+        <Button className="mt-4" variant="success" type="button" onClick={joinExcursion}>
             Apuntarse
         </Button>
 
@@ -83,16 +82,37 @@ function Excursion(props) {
     return (
 
         <Container className={styles.excursion}>
-
-            <div className={styles.title}>{props.name}</div>
-            <div className={styles.bold}>Zona:</div> {props.area}<br />
-            <div className={styles.bold}>Dificultad:</div> {props.difficulty}<br />
-            <div className={styles.bold}>Tiempo estimado:</div> {props.time}<br />
-            <div className={styles.bold}>Descripción:</div> {props.description}<br />
-
-            {isLoggedIn && user && !user.excursions.includes(props.id) && BtnJoiningNojoined}
-            {isLoggedIn && user && user.excursions.includes(props.id) && BtnAlreadyJoined}
-
+            <Row>
+                <Col>
+                    <div className={styles.title}>{props.name}</div>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <div className={styles.bold}>Zona:</div> {props.area}
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <div className={styles.bold}>Dificultad:</div> {props.difficulty}
+                </Col>
+            </Row>
+            <Row>
+            <Col>
+                <div className={styles.bold}>Tiempo estimado:</div> {props.time}
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    <div className={styles.bold}>Descripción:</div> {props.description}
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    {isLoggedIn && user && !user.excursions.includes(props.id) && BtnJoiningNojoined}
+                    {isLoggedIn && user && user.excursions.includes(props.id) && BtnAlreadyJoined}
+                </Col>
+            </Row>
         </Container>
 
     );
