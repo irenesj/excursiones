@@ -109,55 +109,56 @@ function UserPage() {
 
     return (
 
-        <Row className="justify-content-center">
-            <Col xs="12" md="8" >
-                <div className={styles.title}>Tu perfil</div>
-                <Container>
-                    <Row >
-                        <Col className="text-start text-md-end" xs="12" md="6">
-                            <label className={styles.userInputLabel}>Correo:</label>
-                        </Col>
-                        <Col className="text-start" xs="12" md="6">
-                            {user && user.mail}
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="text-start text-md-end" xs="12" md="6">
-                            <label className={styles.userInputLabel}>Nombre:</label>
-                        </Col>
-                        <Col className="text-start" xs="12" md="6">
-                            <UserPageInputEdit isEditing={isEditing} inputToChange={setName} value={name} />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="text-start text-md-end" xs="12" md="6">
-                            <label className={styles.userInputLabel}>Apellidos:</label>
-                        </Col>
-                        <Col className="text-start" xs="12" md="6">
-                            <UserPageInputEdit isEditing={isEditing} inputToChange={setSurname} value={surname} />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col className="text-start text-md-end" xs="12" md="6">
-                            <label className={styles.userInputLabel}>Teléfono:</label>
-                        </Col>
-                        <Col className="text-start" xs="12" md="6">
-                            <UserPageInputEdit isEditing={isEditing} inputToChange={setPhone} value={phone} />
-                        </Col>
-                    </Row>
-                </Container>
-                <Container className={styles.btns}>
-                    <Row>
-                        <Col xs="10" md="3" className="offset-md-5 offset-1">
-                            {!isEditing && <Button className="w-100" variant="success" onClick={startEdit}>Editar</Button>}
-                            {isEditing && <Button className="w-100 mb-2" variant="danger" onClick={cancelEdit}>Cancelar</Button>}
-                            {isEditing && <Button className="w-100" variant="success" onClick={saveEdit}>Guardar</Button>}
-                        </Col>
-                    </Row>
-                </Container>
-
-            </Col>
-        </Row>
+        <div>
+            <Container>
+                <Row>
+                    <Col className={styles.title}>
+                        Tu perfil
+                    </Col>
+                </Row>
+                <Row >
+                    <Col className="text-start text-md-end" xs="12" md="6">
+                        <label className={styles.userInputLabel}>Correo:</label>
+                    </Col>
+                    <Col className="text-start" xs="12" md="6">
+                        {user && user.mail}
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-start text-md-end" xs="12" md="6">
+                        <label className={styles.userInputLabel}>Nombre:</label>
+                    </Col>
+                    <Col className="text-start" xs="12" md="6">
+                        <UserPageInputEdit isEditing={isEditing} inputToChange={setName} value={name} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-start text-md-end" xs="12" md="6">
+                        <label className={styles.userInputLabel}>Apellidos:</label>
+                    </Col>
+                    <Col className="text-start" xs="12" md="6">
+                        <UserPageInputEdit isEditing={isEditing} inputToChange={setSurname} value={surname} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-start text-md-end" xs="12" md="6">
+                        <label className={styles.userInputLabel}>Teléfono:</label>
+                    </Col>
+                    <Col className="text-start" xs="12" md="6">
+                        <UserPageInputEdit isEditing={isEditing} inputToChange={setPhone} value={phone} />
+                    </Col>
+                </Row>
+            </Container>
+            <Container className={styles.btns}>
+                <Row>
+                    <Col xs="10" md="2" className="offset-md-5 offset-1">
+                        {!isEditing && <Button className="w-100" variant="success" onClick={startEdit}>Editar</Button>}
+                        {isEditing && <Button className="w-100 mb-2" variant="danger" onClick={cancelEdit}>Cancelar</Button>}
+                        {isEditing && <Button className="w-100" variant="success" onClick={saveEdit}>Guardar</Button>}
+                    </Col>
+                </Row>
+            </Container>
+        </div>
 
     );
 
