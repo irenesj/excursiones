@@ -146,9 +146,16 @@ function UserPage() {
                         </Col>
                     </Row>
                 </Container>
-                {!isEditing && <Button className={styles.editBtn} variant="success" onClick={startEdit}>Editar</Button>}
-                {isEditing && <Button className={styles.cancelBtn} variant="danger" onClick={cancelEdit}>Cancelar</Button>}
-                {isEditing && <Button className={styles.saveBtn} variant="success" onClick={saveEdit}>Guardar</Button>}
+                <Container className={styles.btns}>
+                    <Row>
+                        <Col xs="10" md="4" className="offset-md-4 offset-1">
+                            {!isEditing && <Button className="w-100" variant="success" onClick={startEdit}>Editar</Button>}
+                            {isEditing && <Button className="w-100 mb-2" variant="danger" onClick={cancelEdit}>Cancelar</Button>}
+                            {isEditing && <Button className="w-100" variant="success" onClick={saveEdit}>Guardar</Button>}
+                        </Col>
+                    </Row>
+                </Container>
+
             </Col>
         </Row>
 
