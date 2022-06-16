@@ -1,11 +1,5 @@
-.userInputLabel {
+.userInput {
 
-    display: block;
-    margin: 10px 0;
-    padding-left: 15px;
-    text-indent: -15px;
-    font-size: large;
-    font-weight: bold;
-    text-transform: uppercase;
+    width: 100%;
+
 }
- 

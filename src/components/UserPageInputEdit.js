@@ -1,5 +1,7 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import styles from '../css/UserPageInputEdit.module.css';
+
 
 // This component controls the user page edit inputs
 function UserPageInputEdit(props){
@@ -11,11 +13,11 @@ function UserPageInputEdit(props){
 
     }
 
-    const editingInput = <input type="text" onChange={inputChange} value={props.value} />;
+    const editingInput = <input type="text" className={styles.userInput} onChange={inputChange} value={props.value} />;
 
     return (
 
-        <div>
+        <div >
                {!props.isEditing && props.value} 
                 {props.isEditing && editingInput}
         </div>     

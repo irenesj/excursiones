@@ -3,9 +3,10 @@ import { Col, Button, Row, Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router";
 import UserPageInputEdit from "./UserPageInputEdit";
+import { updateUser } from "../slicers/loginSlice";
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/UserPage.module.css';
-import { updateUser } from "../slicers/loginSlice";
+
 
 
 function UserPage() {
@@ -113,34 +114,34 @@ function UserPage() {
                 <div className={styles.title}>Tu perfil</div>
                 <Container>
                     <Row >
-                        <Col className="text-md-end">
+                        <Col className="text-start text-md-end" xs="12" md="6">
                             <label className={styles.userInputLabel}>Correo:</label>
                         </Col>
-                        <Col className="text-md-start">
+                        <Col className="text-start" xs="12" md="6">
                             {user && user.mail}
                         </Col>
                     </Row>
                     <Row>
-                        <Col className="text-md-end">
+                        <Col className="text-start text-md-end" xs="12" md="6">
                             <label className={styles.userInputLabel}>Nombre:</label>
                         </Col>
-                        <Col className="text-md-start">
+                        <Col className="text-start" xs="12" md="6">
                             <UserPageInputEdit isEditing={isEditing} inputToChange={setName} value={name} />
                         </Col>
                     </Row>
                     <Row>
-                        <Col className="text-md-end">
+                        <Col className="text-start text-md-end" xs="12" md="6">
                             <label className={styles.userInputLabel}>Apellidos:</label>
                         </Col>
-                        <Col className="text-md-start">
+                        <Col className="text-start" xs="12" md="6">
                             <UserPageInputEdit isEditing={isEditing} inputToChange={setSurname} value={surname} />
                         </Col>
                     </Row>
                     <Row>
-                        <Col className="text-md-end">
+                        <Col className="text-start text-md-end" xs="12" md="6">
                             <label className={styles.userInputLabel}>Teléfono:</label>
                         </Col>
-                        <Col className="text-md-start">
+                        <Col className="text-start" xs="12" md="6">
                             <UserPageInputEdit isEditing={isEditing} inputToChange={setPhone} value={phone} />
                         </Col>
                     </Row>
