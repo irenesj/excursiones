@@ -151,7 +151,7 @@ function UserPage() {
             </Container>
             <Container className={styles.btns}>
                 <Row>
-                    <Col xs="10" md="2" className="offset-md-5 offset-1">
+                    <Col xs="12" md="2" className="offset-md-5">
                         {!isEditing && <Button className="w-100" variant="success" onClick={startEdit}>Editar</Button>}
                         {isEditing && <Button className="w-100 mb-2" variant="danger" onClick={cancelEdit}>Cancelar</Button>}
                         {isEditing && <Button className="w-100" variant="success" onClick={saveEdit}>Guardar</Button>}
