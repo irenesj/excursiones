@@ -46,7 +46,7 @@ function Excursion(props) {
                     return response.json();
                 }
 
-            })
+            }) // The user´s excursion array gets updated with the excursion he/she just joined
             .then(data => {
 
                 loginDispatch(updateUser({
