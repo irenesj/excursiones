@@ -66,7 +66,7 @@ function Excursion(props) {
     // Variable that has the button that appears when the user isn´t still signed up in that excursion in concrete
     const BtnJoiningNojoined = <>
 
-        <Button className="mt-4" variant="success" type="button" onClick={joinExcursion}>
+        <Button className="w-100 mt-4" variant="success" type="button" onClick={joinExcursion}>
             Apuntarse
         </Button>
 
@@ -98,8 +98,8 @@ function Excursion(props) {
                 </Col>
             </Row>
             <Row>
-            <Col>
-                <div className={styles.bold}>Tiempo estimado:</div> {props.time}
+                <Col>
+                    <div className={styles.bold}>Tiempo estimado:</div> {props.time}
                 </Col>
             </Row>
             <Row>
@@ -108,7 +108,7 @@ function Excursion(props) {
                 </Col>
             </Row>
             <Row>
-                <Col>
+                <Col xs="12" md="2" className="offset-md-5">
                     {isLoggedIn && user && !user.excursions.includes(props.id) && BtnJoiningNojoined}
                     {isLoggedIn && user && user.excursions.includes(props.id) && BtnAlreadyJoined}
                 </Col>
