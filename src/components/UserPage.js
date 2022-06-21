@@ -148,14 +148,6 @@ function UserPage() {
                         <UserPageInputEdit isEditing={isEditing} inputToChange={setPhone} value={phone} />
                     </Col>
                 </Row>
-                <Row>
-                    <Col className="text-start text-md-end" xs="12" md="6">
-                        <label className={styles.userInputLabel}>Excursiones a las que te has apuntado:</label>
-                    </Col>
-                    <Col className="text-start" xs="12" md="4">
-                        {user && user.excursions}
-                    </Col>
-                </Row>
             </Container>
             <Container className={styles.btns}>
                 <Row>
