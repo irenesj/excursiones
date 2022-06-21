@@ -1,3 +1,14 @@
+.title{
+
+    margin-top: 60px;
+    padding-bottom: 20px;
+    color: #557027;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
 .form {
 
     background-color: white;

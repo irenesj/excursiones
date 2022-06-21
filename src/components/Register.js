@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Form, Button } from 'react-bootstrap';
+import { Row, Col, Form, Button, Container } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { login } from '../slicers/loginSlice';
@@ -89,36 +89,44 @@ function Register() {
 
     return (
 
-        <Col>
-            <Form className={styles.form}>
-                <Row className="mb-3">
-                    <ValidatedFormGroup control="formGridAddress1" name="Nombre" inputToChange={setName} validationFunction={validateName} value={name} message={true} />
-                    <ValidatedFormGroup control="formGridAddress2" name="Apellidos" inputToChange={setSurname} validationFunction={validateSurname} value={surname} message={true} />
-                </Row>
-                <Row className="mb-3">
-                    <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono" inputToChange={setPhone} validationFunction={validatePhone} value={phone} message={true} />
-                    <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail} message={true} />
-                </Row>
-                <Row>
-                    <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password} message={true} />
-                    <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword} message={true} />
-                </Row>
-                <Row>
-                    <ul className={styles.list}>
-                        <li>Tu contraseña debe tener al menos 8 caracteres, una letra y un número</li>
-                        <li>Debes estar registrado/a para poder apuntarte a las excursiones</li>
-                    </ul>
-                </Row>
-                <div className={styles.btn}>
-                    {disabled && <Button variant="secondary" type="button" onClick={submit} disabled={disabled}>
-                        Enviar
-                    </Button>}
-                    {!disabled && <Button variant="success" type="button" onClick={submit} disabled={disabled}>
-                        Enviar
-                    </Button>}
-                </div>
-            </Form>
-        </Col>
+        <Container>
+            <Row>
+                <Col xs="12">
+                   <h2 className={styles.title}>Bienvenido/a</h2> 
+                </Col>
+            </Row>
+            <Col>
+                <Form className={styles.form}>
+                    <Row className="mb-3">
+                        <ValidatedFormGroup control="formGridAddress1" name="Nombre" inputToChange={setName} validationFunction={validateName} value={name} message={true} />
+                        <ValidatedFormGroup control="formGridAddress2" name="Apellidos" inputToChange={setSurname} validationFunction={validateSurname} value={surname} message={true} />
+                    </Row>
+                    <Row className="mb-3">
+                        <ValidatedFormGroup control="formGridPhone" inputType="tel" name="Teléfono" inputToChange={setPhone} validationFunction={validatePhone} value={phone} message={true} />
+                        <ValidatedFormGroup control="formGridEmail" inputType="email" name="Correo electrónico" inputToChange={setMail} validationFunction={validateMail} value={mail} message={true} />
+                    </Row>
+                    <Row>
+                        <ValidatedFormGroup control="formGridPassword1" inputType="password" name="Contraseña" inputToChange={setPassword} validationFunction={validatePassword} value={password} message={true} />
+                        <ValidatedFormGroup control="formGridPassword2" inputType="password" name="Repite la contraseña" inputToChange={setSamePassword} validationFunction={validatePassword} value={samePassword} message={true} />
+                    </Row>
+                    <Row>
+                        <ul className={styles.list}>
+                            <li>Tu contraseña debe tener al menos 8 caracteres, una letra y un número</li>
+                            <li>Debes estar registrado/a para poder apuntarte a las excursiones</li>
+                        </ul>
+                    </Row>
+                    <div className={styles.btn}>
+                        {disabled && <Button variant="secondary" type="button" onClick={submit} disabled={disabled}>
+                            Enviar
+                        </Button>}
+                        {!disabled && <Button variant="success" type="button" onClick={submit} disabled={disabled}>
+                            Enviar
+                        </Button>}
+                    </div>
+                </Form>
+            </Col>
+        </Container>
+            
 
     );
 

@@ -128,7 +128,7 @@ function UserPage() {
                     <Col className="text-start text-md-end" xs="12" md="6">
                         <label className={styles.userInputLabel}>Nombre:</label>
                     </Col>
-                    <Col className="text-start" xs="12" md="6">
+                    <Col className="text-start" xs="12" md="4">
                         <UserPageInputEdit isEditing={isEditing} inputToChange={setName} value={name} />
                     </Col>
                 </Row>
@@ -136,7 +136,7 @@ function UserPage() {
                     <Col className="text-start text-md-end" xs="12" md="6">
                         <label className={styles.userInputLabel}>Apellidos:</label>
                     </Col>
-                    <Col className="text-start" xs="12" md="6">
+                    <Col className="text-start" xs="12" md="4">
                         <UserPageInputEdit isEditing={isEditing} inputToChange={setSurname} value={surname} />
                     </Col>
                 </Row>
@@ -144,8 +144,16 @@ function UserPage() {
                     <Col className="text-start text-md-end" xs="12" md="6">
                         <label className={styles.userInputLabel}>Teléfono:</label>
                     </Col>
-                    <Col className="text-start" xs="12" md="6">
+                    <Col className="text-start" xs="12" md="4">
                         <UserPageInputEdit isEditing={isEditing} inputToChange={setPhone} value={phone} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col className="text-start text-md-end" xs="12" md="6">
+                        <label className={styles.userInputLabel}>Excursiones a las que te has apuntado:</label>
+                    </Col>
+                    <Col className="text-start" xs="12" md="4">
+                        {user && user.excursions}
                     </Col>
                 </Row>
             </Container>
@@ -154,7 +162,7 @@ function UserPage() {
                     <Col xs="12" md="2" className="offset-md-5">
                         {!isEditing && <Button className="w-100" variant="success" onClick={startEdit}>Editar</Button>}
                         {isEditing && <Button className="w-100 mb-2" variant="danger" onClick={cancelEdit}>Cancelar</Button>}
-                        {isEditing && <Button className="w-100" variant="success" onClick={saveEdit}>Guardar</Button>}
+                        {isEditing && <Button className="w-100 mb-2" variant="success" onClick={saveEdit}>Guardar</Button>}
                     </Col>
                 </Row>
             </Container>
