@@ -72,7 +72,7 @@ function UserPage() {
         setIsEditing(false);
     }
 
-    // Function that saves the info that the user has changed
+    // Function that saves the info the user has changed
     const saveEdit = () => {
 
         fetch(url, options)

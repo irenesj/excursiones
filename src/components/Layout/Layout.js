@@ -26,7 +26,7 @@ export const Layout = ({ children }) => {
   useEffect(() => {
 
 
-    // This function...
+    // This function saves the current token and logs the user again in case that the webpage is refreshed. With this the user won´t lose his session
     const loadToken = () => {
 
       // Variable that saves the current token that is in the localStorage
@@ -50,6 +50,7 @@ export const Layout = ({ children }) => {
         fetch(url, options)
           .then((resp) => {
 
+            // If it´s the correct token and the correct user...
             if (resp.status === 404) {
               throw new Error();
             }
@@ -57,7 +58,8 @@ export const Layout = ({ children }) => {
 
           })
           .then(function (data) {
-
+             
+            // ...the user gets logged in again
             loginDispatch(login({
 
               user: data.user,
