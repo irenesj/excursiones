@@ -75,7 +75,7 @@ function Excursion(props) {
     // Variable that has the button that appears when the user is signed up in that excursion in concrete
     const BtnAlreadyJoined = <>
 
-        <h4 className="offset-3 offset-md-2 mt-4 text-uppercase text-success"><strong>Apuntado/a</strong></h4>
+        <h5 className="offset-3 offset-md-2 mt-4 text-uppercase text-success"><strong>Apuntado/a</strong></h5>
 
     </>
 
