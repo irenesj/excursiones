@@ -4,9 +4,10 @@ import { validateMail, validatePassword } from '../validation/validations.js';
 import ValidatedFormGroup from './ValidatedFormGroup';
 import { login } from '../slicers/loginSlice';
 import { useDispatch } from 'react-redux';
+import { userLogin } from '../helpers/helpers.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import styles from '../css/Login.module.css';
-import { userLogin } from '../helpers/helpers.js';
+
 
 export function Login() {
 
@@ -28,12 +29,14 @@ export function Login() {
         userLogin(mail, password)
             .then(data => {
 
+                // The user logs in and we store his/her info and his/her token in the store...
                 loginDispatch(login({
 
                     user: data.user,
                     token: data.token
 
                 }));
+                // ...and then we save his/her token in the navigator localStorage
                 window.localStorage["token"] = data.token;
 
             })
