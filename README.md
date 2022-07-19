@@ -1,6 +1,6 @@
-In the project directory, you can run:
+In the console go to the excursiones directory, and then run:
 
 ### `npm start`
 
-Runs the app in development mode.
-Then open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+This command runs the app in development mode.
+Then go to [http://localhost:3000](http://localhost:3000) to view the app in the browser.
