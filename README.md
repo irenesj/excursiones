@@ -1,3 +1,4 @@
+First, you need to install Node.js if you don´t have it installed.
 In the console, go to the excursiones directory, and then run:
 
 ### `npm start`
