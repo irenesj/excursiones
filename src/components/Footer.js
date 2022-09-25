@@ -7,11 +7,18 @@ import styles from '../css/Footer.module.css';
 // This is the webpage footer
 function Footer() {
 
+    // Function that returns the current year
+    const getCurrentYear = () => {
+
+        return new Date().getFullYear();
+        
+    };
+
     return (
 
         <div className={styles.footer}>
             <Col xs="12">
-                <p>© Excursiones Juntos 2022. Todos los derechos reservados.</p>
+                <p>© Excursiones Juntos 2021 - {getCurrentYear()}. Todos los derechos reservados.</p>
                 <p><a href="mailto:excursionesjuntos@gmail.com">Contacto</a></p>
             </Col>
         </div>
