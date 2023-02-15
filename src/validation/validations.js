@@ -38,9 +38,6 @@ export function validatePassword(password) {
 
 // This function validates the same password input
 export function validSamePassword(password, samePassword) {
-    /*const validPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-
-    return validPassword.test(samePassword) && password === samePassword;*/
 
     return validatePassword(samePassword) && password === samePassword;
 
