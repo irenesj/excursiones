@@ -1,11 +1,11 @@
-// This function validates the name of the user
+// This function deletes the blank spaces at the beginning and at the end of the string. Then, validates the name of the user
 export function validateName(name) {
 
     return name.trim() !== "";
 
 }
 
-// This function validates the surname of the user
+// This function deletes the blank spaces at the beginning and at the end of the string. Then, validates the surname of the user
 export function validateSurname(surname) {
 
     return surname.trim() !== "";
@@ -38,8 +38,10 @@ export function validatePassword(password) {
 
 // This function validates the same password input
 export function validSamePassword(password, samePassword) {
-    const validPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    /*const validPassword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
-    return validPassword.test(samePassword) && password === samePassword;
+    return validPassword.test(samePassword) && password === samePassword;*/
+
+    return validatePassword(samePassword) && password === samePassword;
 
 }
